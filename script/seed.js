@@ -1,7 +1,56 @@
 "use strict";
 
-const { db, User } = require("../server/db");
+const { db, User, Product } = require("../server/db");
 
+const users = [
+  {
+    username: "SonGoku",
+    password: "chichi",
+    email: "kakarot@gmail.com",
+  },
+];
+
+const products = [
+  {
+    name: "Son Goku",
+    description: "Goku Figurine",
+    price: 22.99,
+    imageUrl:
+      "https://target.scene7.com/is/image/Target/GUEST_232d2b10-81eb-4016-8f3e-df68270643e8",
+    quantity: 100,
+  },
+  {
+    name: "Vegeta",
+    description: "Vegeta Figurine",
+    price: 22.99,
+    imageUrl: "https://i.ebayimg.com/images/g/IUgAAOSwe5ZiGeAF/s-l400.jpg",
+    quantity: 100,
+  },
+  {
+    name: "Picolo",
+    description: "Picolo Figurine",
+    price: 22.99,
+    imageUrl:
+      "https://www.picclickimg.com/d/l400/pict/125292512070_/2008-Bandai-Dragon-Ball-Z-Piccolo-Action-Figure.jpg",
+    quantity: 100,
+  },
+  {
+    name: "Gohan",
+    description: "Gohan Figurine",
+    price: 22.99,
+    imageUrl:
+      "https://target.scene7.com/is/image/Target/GUEST_3c240bc4-ab8d-4c93-9d52-e80d3c0f4dd9",
+    quantity: 100,
+  },
+  {
+    name: "Krillin",
+    description: "Krillin Figurine",
+    price: 22.99,
+    imageUrl:
+      "https://target.scene7.com/is/image/Target/GUEST_8f8ef81d-2e46-4310-b7b5-5bddca5d7624",
+    quantity: 100,
+  },
+];
 /**
  * seed - this function clears the database, updates tables to
  *      match the models, and populates the database.
@@ -10,17 +59,15 @@ async function seed() {
   await db.sync({ force: true }); // clears db and matches models to tables
   console.log("db synced!");
 
-  const users = [
-    {
-      username: "Son Goku",
-      password: "chichi",
-      email: "kakarot@gmail.com",
-    },
-  ];
-
   await Promise.all(
     users.map((user) => {
       return User.create(user);
+    })
+  );
+
+  await Promise.all(
+    products.map((product) => {
+      return Product.create(product);
     })
   );
 

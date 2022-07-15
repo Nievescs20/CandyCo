@@ -1,3 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  position: relative;
+  font-family: sans-serif;
+  min-height: 91.1vh;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 90px;
+}
+
 .dropdown {
   position: absolute;
   /* top: 50px;
@@ -49,4 +64,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  border: 2px solid black;
+  width: 30%
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.figurine {
+  border: 2px solid black
 }

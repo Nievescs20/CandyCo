@@ -13,7 +13,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formName = e.target.name;
-    const username = e.target.username.value;
+    const username = e.target.username.value.toLowerCase();
     const password = e.target.password.value;
     dispatch(authenticate(username, password, formName));
   };

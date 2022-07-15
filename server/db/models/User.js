@@ -62,6 +62,10 @@ User.findByToken = async function (token) {
   }
 };
 
+User.beforeCreate(async (user) => {
+  user.username = user.username.toLowerCase();
+});
+
 const hashPassword = async (user) => {
   if (user.changed("password")) {
     user.password = await bcrypt.hash(user.password, SALT_ROUNDS);

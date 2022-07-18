@@ -71,7 +71,7 @@ function SingleProduct(props) {
             <img
               src={singleProduct.imageUrl}
               alt="Two each of gray, white, and black shirts laying flat."
-              className="w-full h-full object-center object-contain"
+              className="w-full h-full object-center object-contain border-2 rounded-[12px]"
             />
           </div>
           <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
@@ -177,12 +177,9 @@ function SingleProduct(props) {
                   </svg>
                 </div>
                 <p className="sr-only">4 out of 5 stars</p>
-                <a
-                  href="#"
-                  className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
-                >
+                <div className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
                   {singleProduct.reviews} reviews
-                </a>
+                </div>
               </div>
             </div>
 

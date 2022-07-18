@@ -14,6 +14,72 @@ const users = [
     email: "saiyanhonor@gmail.com",
     role: "admin",
   },
+  {
+    username: "SonGohan",
+    password: "marin",
+    email: "sayaman@gmail.com",
+    role: "admin",
+  },
+  {
+    username: "yamcha",
+    password: "single",
+    email: "foreveralone@gmail.com",
+    role: "customer",
+  },
+  {
+    username: "tienshinhan",
+    password: "chiaotzu",
+    email: "thirdeyeblind@gmail.com",
+    role: "admin",
+  },
+  {
+    username: "chiaotzu",
+    password: "tien",
+    email: "tallman@gmail.com",
+    role: "admin",
+  },
+  {
+    username: "herculesatan",
+    password: "ilovebu",
+    email: "mynameismark@gmail.com",
+    role: "customer",
+  },
+  {
+    username: "cell",
+    password: "tastyandroids",
+    email: "fromthefuture@gmail.com",
+    role: "admin",
+  },
+  {
+    username: "trunks",
+    password: "kidtrunks",
+    email: "halfgotenks@gmail.com",
+    role: "customer",
+  },
+  {
+    username: "goten",
+    password: "studysaiyan",
+    email: "otherhalfgotenks@gmail.com",
+    role: "customer",
+  },
+  {
+    username: "lordfrieza",
+    password: "dmanyoukakarot",
+    email: "immortality@gmail.com",
+    role: "admin",
+  },
+  {
+    username: "android18",
+    password: "krillin<3",
+    email: "marronsmama@gmail.com",
+    role: "admin",
+  },
+  {
+    username: "android17",
+    password: "animallover",
+    email: "zookeeper@gmail.com",
+    role: "admin",
+  },
 ];
 
 const products = [

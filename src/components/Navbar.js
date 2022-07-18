@@ -119,7 +119,7 @@ const Navbar = () => {
             </Link>
             {user.role === "admin" ? (
               <>
-                <Link to="userProfiles">
+                <Link to="userprofiles">
                   <div className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-8">
                     User Profiles
                   </div>

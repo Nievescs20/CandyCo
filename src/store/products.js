@@ -1,11 +1,18 @@
 import axios from "axios";
+import { randomThreeProducts } from "../utility/functions";
 
 //action types
 const GET_PRODUCTS = "GET_PRODUCTS";
+const GET_THREE_PRODUCTS = "GET_THREE_PRODUCTS";
 
 //action creators
 const getProducts = (products) => ({
   type: GET_PRODUCTS,
+  products,
+});
+
+const getThreeProducts = (products) => ({
+  type: GET_THREE_PRODUCTS,
   products,
 });
 
@@ -21,12 +28,24 @@ export const getProductsThunk = () => {
   };
 };
 
-let initialState = [];
+export const getThreeProductsThunk = () => {
+  return async (dispatch) => {
+    console.log("HELLLLLLO");
+    const { data: products } = await axios.get("/api/products");
+    const three = randomThreeProducts(products);
+    console.log("THREEEEEEE", three);
+    dispatch(getThreeProducts(three));
+  };
+};
+
+let initialState = { allProducts: [], threeProducts: [] };
 //reducer
 const productsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_PRODUCTS:
-      return action.products;
+      return { ...state, allProducts: action.products };
+    case GET_THREE_PRODUCTS:
+      return { ...state, threeProducts: action.products };
     default:
       return state;
   }

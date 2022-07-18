@@ -9,6 +9,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import SingleProduct from "./SingleProduct";
 import UserProfile from "./UserProfile";
+import { getProductsThunk } from "../store/products";
 
 const RoutesComponent = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const RoutesComponent = () => {
 
   useEffect(() => {
     dispatch(me());
+    dispatch(getProductsThunk());
   }, []);
 
   return (

@@ -18,35 +18,46 @@ const users = [
 
 const products = [
   {
-    name: "Son Goku",
+    name: "Son Goku Action Figure",
     description: "Goku Figurine",
     price: 22.99,
     imageUrl:
       "https://target.scene7.com/is/image/Target/GUEST_232d2b10-81eb-4016-8f3e-df68270643e8",
     quantity: 100,
+    mainCategory: "Collectable",
+    subCategory: "Action Figure",
+    reviews: Math.floor(Math.random() * 200),
   },
   {
-    name: "Vegeta",
+    name: "Vegeta Action Figure",
     description: "Vegeta Figurine",
     price: 22.99,
     imageUrl: "https://i.ebayimg.com/images/g/IUgAAOSwe5ZiGeAF/s-l400.jpg",
     quantity: 100,
+    mainCategory: "Collectable",
+    subCategory: "Action Figure",
+    reviews: Math.floor(Math.random() * 200),
   },
   {
-    name: "Picolo",
+    name: "Picolo Action Figure",
     description: "Picolo Figurine",
     price: 22.99,
-    imageUrl:
-      "https://www.picclickimg.com/d/l400/pict/125292512070_/2008-Bandai-Dragon-Ball-Z-Piccolo-Action-Figure.jpg",
+    imageUrl: "https://i.ebayimg.com/images/g/XeUAAOSwOztccAta/s-l400.jpg",
     quantity: 100,
+    mainCategory: "Collectable",
+    subCategory: "Action Figure",
+    reviews: Math.floor(Math.random() * 200),
   },
   {
-    name: "Gohan",
+    name: "Gohan Action Figure",
     description: "Gohan Figurine",
     price: 22.99,
     imageUrl:
       "https://target.scene7.com/is/image/Target/GUEST_3c240bc4-ab8d-4c93-9d52-e80d3c0f4dd9",
     quantity: 100,
+    mainCategory: "Collectable",
+    subCategory: "Action Figure",
+    reviews: Math.floor(Math.random() * 200),
   },
   {
     name: "Krillin",
@@ -55,6 +66,9 @@ const products = [
     imageUrl:
       "https://target.scene7.com/is/image/Target/GUEST_8f8ef81d-2e46-4310-b7b5-5bddca5d7624",
     quantity: 100,
+    mainCategory: "Collectable",
+    subCategory: "Action Figure",
+    reviews: Math.floor(Math.random() * 1000),
   },
 ];
 /**

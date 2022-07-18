@@ -8,6 +8,12 @@ const users = [
     password: "chichi",
     email: "kakarot@gmail.com",
   },
+  {
+    username: "PrinceVegeta",
+    password: "bulma",
+    email: "saiyanhonor@gmail.com",
+    role: "admin",
+  },
 ];
 
 const products = [

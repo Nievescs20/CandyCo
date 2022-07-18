@@ -14,11 +14,15 @@ const Home = () => {
     <div>
       {isLoggedIn ? (
         <div id="home">
-          <h3>Welcome, {username}</h3>
+          <h3 className="font-semibold text-2xl tracking-tight">
+            Welcome {username}
+          </h3>
         </div>
       ) : (
         <div id="home">
-          <h3>Welcome</h3>
+          <h3 className="font-semibold text-2xl tracking-tight">
+            Welcome Guest
+          </h3>
         </div>
       )}
     </div>

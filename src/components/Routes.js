@@ -8,6 +8,7 @@ import Home from "./Home";
 import Login from "./Login";
 import Signup from "./Signup";
 import SingleProduct from "./SingleProduct";
+import UserProfile from "./UserProfile";
 
 const RoutesComponent = () => {
   const dispatch = useDispatch();
@@ -21,9 +22,10 @@ const RoutesComponent = () => {
   }, []);
 
   return (
-    <div>
+    <div id="body">
       {isLoggedIn ? (
         <Routes>
+          <Route path="/profile" element={<UserProfile />} />
           <Route path="/products" element={<AllProducts />} />
           <Route path="/products/:id" element={<SingleProduct />} />
           <Route path="/home" element={<Home />} />
@@ -35,7 +37,7 @@ const RoutesComponent = () => {
           <Route path="/products" element={<AllProducts />} />
           <Route path="/products/:id" element={<SingleProduct />} />
 
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login name="hi" />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<Navigate to="/home" replace />} />
         </Routes>

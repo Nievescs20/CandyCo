@@ -2,9 +2,17 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { authenticate } from "../store";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = (props) => {
   const dispatch = useDispatch();
+  let location = useLocation();
+  let navigate = useNavigate();
+  let params = useParams();
+
+  console.log("location", location);
+  console.log("navigate", navigate);
+  console.log("params", params);
 
   const { error } = useSelector((state) => {
     return state.auth;
@@ -20,24 +28,43 @@ const Login = () => {
 
   return (
     <div id="logins">
-      <form id="loginForm" onSubmit={handleSubmit} name="login">
-        <div>
+      <form
+        className="loginForm flex flex-col justify-center"
+        onSubmit={handleSubmit}
+        name="login"
+      >
+        <div className="my-2">
           <label htmlFor="username">
-            <small>Username</small>
+            <small>Username: </small>
           </label>
-          <input name="username" type="text" />
+          <input
+            className="rounded text-blue-500 bg-orange-200 "
+            name="username"
+            type="text"
+          />
         </div>
-        <div>
+        <div className="my-2">
           <label htmlFor="password">
-            <small>Password</small>
+            <small>Password: </small>
           </label>
-          <input name="password" type="password" />
+          <input
+            className="rounded text-blue-500 bg-orange-200"
+            name="password"
+            type="password"
+          />
         </div>
         <div>
-          <button type="submit">Login</button>
+          <button className=" hover:bg-blue-200 text-black py-1 px-4 rounded border-2">
+            Login
+          </button>
         </div>
         <p>
-          Dont have an account? <Link to="/signup">Sign Up</Link>
+          Dont have an account?{" "}
+          <Link className="underline underline-offset-4" to="/signup">
+            <button className="underline hover:bg-blue-200 text-black py-1 px-3 rounded">
+              Sign Up
+            </button>
+          </Link>
         </p>
         {error && error.response && (
           <div style={{ color: "red" }}> {error.response.data} </div>

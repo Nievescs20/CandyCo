@@ -7,10 +7,13 @@ function SingleProduct(props) {
   const singleProduct = useSelector((state) => state.singleProduct);
   const dispatch = useDispatch();
   const { id } = useParams();
+  const params = useParams();
 
   useEffect(() => {
     dispatch(getProductThunk(id));
   }, []);
+
+  console.log(params);
 
   return (
     <div className="container">

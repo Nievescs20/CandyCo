@@ -22,15 +22,13 @@ const RoutesComponent = () => {
     return state.auth;
   });
 
-  console.log("routes", user);
-
   useEffect(() => {
     dispatch(me());
     dispatch(getProductsThunk());
   }, []);
 
   return (
-    <div id="body">
+    <div className="h-fit w-full route">
       {isLoggedIn ? (
         <div>
           {user.role === "admin" ? (

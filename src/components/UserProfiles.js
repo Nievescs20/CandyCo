@@ -10,12 +10,10 @@ function UserProfiles(props) {
     dispatch(getUsersFromDb());
   }, []);
 
-  console.log("users", users);
-
   return (
-    <div className="overflow-x-auto relative flex justify-center mt-20 h-96 overflow-y-auto">
-      <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 w-3/4">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <div className="overflow-x-auto relative flex justify-center mt-20 h-80 overflow-y-auto">
+      <table className="w-full text-sm text-left text-white dark:text-white w-3/4">
+        <thead className="text-xs text-orange-700 uppercase bg-blue-200 dark:bg-blue-400 dark:text-orange-700 sticky top-0">
           <tr>
             <th scope="col" className="py-3 px-6">
               User Name
@@ -32,7 +30,7 @@ function UserProfiles(props) {
           {users.length &&
             users.map((user) => (
               <tr
-                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                className="bg-white border-b dark:bg-orange-400 dark:border-gray-700"
                 key={user.id}
               >
                 <td className="py-4 px-6">{user.username}</td>

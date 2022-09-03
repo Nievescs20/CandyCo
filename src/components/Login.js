@@ -6,13 +6,13 @@ import { useParams, useLocation, useNavigate } from "react-router-dom";
 
 const Login = (props) => {
   const dispatch = useDispatch();
-  let location = useLocation();
-  let navigate = useNavigate();
-  let params = useParams();
+  // let location = useLocation();
+  // let navigate = useNavigate();
+  // let params = useParams();
 
-  console.log("location", location);
-  console.log("navigate", navigate);
-  console.log("params", params);
+  // console.log("location", location);
+  // console.log("navigate", navigate);
+  // console.log("params", params);
 
   const { error } = useSelector((state) => {
     return state.auth;

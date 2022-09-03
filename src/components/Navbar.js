@@ -14,94 +14,21 @@ const Navbar = () => {
     return state.auth;
   });
 
-  const location = useLocation();
-
-  console.log("location", location);
+  // const location = useLocation();
 
   return (
-    // <div id="navbar">
-    //   <nav>
-    //     <div>
-    //       <Link to="/home">
-    //         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
-    //           Home
-    //         </button>
-    //       </Link>
-    //     </div>
-    //     {isLoggedIn ? (
-    //       <div>
-    //         {state.role === "admin" ? (
-    //           <div className="flex justify-center">
-    //             <div className="text-orange-500 font-bold text-2xl self-center">
-    //               DBZ Commerce
-    //             </div>
-    //             <div className="dropdown">
-    //               <button>{state.username}</button>
-    //               <div className="dropdown-content">
-    //                 <div onClick={() => dispatch(logout())}>Logout</div>
-    //               </div>
-    //             </div>
-    //           </div>
-    //         ) : (
-    //           <div className="flex justify-center">
-    //             <div className="text-orange-500 font-bold text-2xl self-center">
-    //               DBZ Commerce
-    //             </div>
-    //             <div className="dropdown">
-    //               <div className="dropdown-content">
-    //                 {/* <button onClick={() => dispatch(logout())}>Logout</button> */}
-    //                 <Link to="/login">
-    //                   <button
-    //                     onClick={() => dispatch(logout())}
-    //                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
-    //                   >
-    //                     Logout
-    //                   </button>
-    //                 </Link>
-    //               </div>
-    //             </div>
-    //           </div>
-    //         )}
-    //       </div>
-    //     ) : (
-    //       <div>
-    //         <div className="flex justify-center">
-    //           <div className="text-orange-500 font-bold text-2xl">
-    //             DBZ Commerce
-    //           </div>
-    //         </div>
-    //         <div className="flex justify-end mx-5">
-    //           {location.pathname !== "/login" ? (
-    //             <div className="">
-    //               <Link to="/login">
-    //                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
-    //                   Login
-    //                 </button>
-    //               </Link>
-    //             </div>
-    //           ) : (
-    //             <div className="">
-    //               <Link to="/home">
-    //                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
-    //                   Home
-    //                 </button>
-    //               </Link>
-    //             </div>
-    //           )}
-    //         </div>
-    //         <div className="flex justify-end mx-5"></div>
-    //       </div>
-    //     )}
-    //   </nav>
-    //   <hr />
-    // </div>
-    <nav className="flex items-center justify-between flex-wrap bg-orange-400 p-6">
+    <nav className="flex items-center justify-between flex-wrap bg-orange-400 p-6 nav">
       <Link to="/home">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <img
-            style={{ height: "70px", width: "70px", marginRight: "20px" }}
-            src="https://www.icons101.com/icon_ico/id_80140/Dragon_Ball_Z_alt.ico"
-            alt="dragon-ball-shenron"
+            style={{
+              height: "70px",
+              width: "157.5px",
+              marginRight: "20px",
+            }}
+            src="/dbz-navbar-img.png"
+            className="bg-orange-300"
+            alt="Dragonball Z Fighters"
           />
 
           <span className="font-semibold text-2xl tracking-tight">
@@ -139,7 +66,7 @@ const Navbar = () => {
                 </Link>
                 <Link to="cart">
                   <div className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-8">
-                    Cart
+                    Your Bag
                   </div>
                 </Link>
               </>

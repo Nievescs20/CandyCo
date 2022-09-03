@@ -2,19 +2,20 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div id="footer">
+    <div className="w-full flex flex-col justify-center items-center bg-gray-700 absolute bottom-0">
       <p>Created By</p>
       <div className="socials">
         <a href="https://github.com/nievescs20">
           <img
-            style={{ height: "30px", width: "30px" }}
             src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
             alt="github-icon"
+            className="h-8 w-8"
           />
         </a>
       </div>
-      <div id="footerBottom">
-        <p style={{ fontSize: "12px" }}>Copyright ©2022 DBZ-Commerce</p>
+      <br />
+      <div className="flex justify-center bg-gray-500 w-full items-end ">
+        <p className="text-xs">Copyright ©2022 DBZ-Commerce</p>
       </div>
     </div>
   );

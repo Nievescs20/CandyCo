@@ -30,10 +30,8 @@ export const getProductsThunk = () => {
 
 export const getThreeProductsThunk = () => {
   return async (dispatch) => {
-    console.log("HELLLLLLO");
     const { data: products } = await axios.get("/api/products");
     const three = randomThreeProducts(products);
-    console.log("THREEEEEEE", three);
     dispatch(getThreeProducts(three));
   };
 };

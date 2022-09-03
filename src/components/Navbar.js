@@ -73,6 +73,11 @@ const Navbar = () => {
             )}
           </div>
           <div>
+            <div className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-8 underline">
+              {`Weclome ${user.firstName
+                .slice(0, 1)
+                .toUpperCase()}${user.firstName.slice(1)}`}
+            </div>
             <div
               className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-blue-400 hover:bg-white mt-4 lg:mt-0"
               onClick={() => dispatch(logout())}

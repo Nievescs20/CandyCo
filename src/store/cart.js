@@ -67,37 +67,37 @@ export const addCartThunk = (product, quantity) => {
           ? JSON.parse(window.localStorage.getItem("cart"))
           : { products: [] };
 
-        let newItem = true;
+        let duplicateItem = false;
         if (cart.products) {
-          for (let i = 0; i < cart.products.length; i++) {
-            if (cart.products[i].orderItems.productId === product.id) {
-              newItem = false;
+          for (let productItem of cart.products) {
+            if (productItem.orderItems.productId === product.id) {
+              duplicateItem = true;
               break;
             }
           }
         }
-        if (newItem) {
+
+        if (!duplicateItem) {
           cart.products.push({
             productName: product.productName,
             imageUrl: product.imageUrl,
             price: product.price,
             orderItems: {
               productId: product.id,
-              totalQuantity: parseInt(quantity),
-              totalCost: cost,
+              quantity: parseInt(quantity),
+              totalPrice: cost,
             },
           });
         }
         // if already in the cart, just updating quantity
         else {
-          for (let i = 0; i < cart.products.length; i++) {
-            if (cart.products[i].orderItems.productId === product.id) {
-              cart.products[i].orderItems.totalQuantity =
-                cart.products[i].orderItems.totalQuantity + parseInt(quantity);
-              cart.products[i].orderItems.totalCost =
-                cart.products[i].orderItems.totalCost +
-                parseInt(quantity) * cart.products[i].price;
+          for (let productItem of cart.products) {
+            if (productItem.orderItems.productId === product.id) {
+              productItem.orderItems.quantity += parseInt(quantity);
+              productItem.orderItems.totalPrice +=
+                parseInt(quantity) * productItem.price;
             }
+            break;
           }
         }
 

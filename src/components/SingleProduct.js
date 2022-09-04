@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import productsReducer from "../store/products";
 import { getProductThunk } from "../store/singleProduct";
 import SuggestedProducts from "./SuggestedProducts";
+import { addCartThunk } from "../store/cart";
 
 function SingleProduct(props) {
   const singleProduct = useSelector((state) => state.singleProduct);
-  console.log(singleProduct);
+  const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   const { id } = useParams();
-  const params = useParams();
+  // const params = useParams();
 
+  const handleQuantity = (e) => {
+    setQuantity(e.target.value);
+  };
+
+  const handleAddProduct = () => {
+    dispatch(addCartThunk(singleProduct, quantity));
+    console.log("singleProduct", singleProduct);
+    console.log("quantity", quantity);
+  };
   useEffect(() => {
     dispatch(getProductThunk(id));
   }, []);
@@ -181,11 +190,33 @@ function SingleProduct(props) {
                 </div>
               </div>
             </div>
+            <br></br>
+            <div>
+              Quantity:
+              <select
+                className={"quantity"}
+                name="quantity"
+                id="quantity"
+                onChange={handleQuantity}
+              >
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
+                <option value={5}>5</option>
+                <option value={6}>6</option>
+                <option value={7}>7</option>
+                <option value={8}>8</option>
+                <option value={9}>9</option>
+                <option value={10}>10</option>
+              </select>
+            </div>
 
             <div className="mt-10">
               <button
-                type="submit"
+                // type="submit"
                 className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                onClick={handleAddProduct}
               >
                 Add to bag
               </button>

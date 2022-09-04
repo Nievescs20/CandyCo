@@ -51,8 +51,8 @@ export const addCartThunk = (product, quantity) => {
           "/api/cart",
           {
             productId: product.id,
-            totalQuantity: quantity,
-            totalCost: cost,
+            quantity: quantity,
+            totalPrice: cost,
           },
           {
             headers: {

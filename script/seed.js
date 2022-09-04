@@ -202,67 +202,62 @@ const shippings = [
 
 const orders = [
   {
-    isOpen: true,
-    orderStatus: "Processing",
+    status: "open",
   },
   {
-    isOpen: false,
-    orderStatus: "Delivered",
+    status: "closed",
   },
   {
-    isOpen: true,
-    orderStatus: "Shipping",
+    status: "closed",
   },
   {
-    isOpen: true,
-    orderStatus: "Canceled",
+    status: "closed",
   },
   {
-    isOpen: true,
-    orderStatus: "In-Cart",
+    status: "closed",
   },
 ];
 
 const orderProducts = [
   {
-    price: 22.99,
     quantity: 1,
+    totalPrice: 22.99,
     productId: 1,
     orderId: 1,
   },
   {
-    price: 22.99,
     quantity: 3,
+    totalPrice: 68.97,
     productId: 1,
     orderId: 2,
   },
   {
-    price: 22.99,
     quantity: 2,
+    totalPrice: 45.98,
     productId: 2,
     orderId: 1,
   },
   {
-    price: 22.99,
     quantity: 1,
+    totalPrice: 22.99,
     productId: 3,
     orderId: 3,
   },
   {
-    price: 22.99,
     quantity: 4,
+    totalPrice: 91.96,
     productId: 4,
     orderId: 4,
   },
   {
-    price: 22.99,
     quantity: 1,
+    totalPrice: 22.99,
     productId: 4,
     orderId: 2,
   },
   {
-    price: 22.99,
     quantity: 2,
+    totalPrice: 45.98,
     productId: 4,
     orderId: 5,
   },
@@ -353,7 +348,7 @@ async function seed() {
   await order5.setUser(user5);
 
   await console.log(Object.keys(OrderProduct.prototype));
-  console.log("user1 ", user1);
+  // console.log("user1 ", user1);
 
   console.log(`seeded successfully`);
 }

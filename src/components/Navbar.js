@@ -14,8 +14,6 @@ const Navbar = () => {
     return state.auth;
   });
 
-  // const location = useLocation();
-
   return (
     <nav className="flex items-center justify-between flex-wrap bg-orange-400 p-6 nav">
       <Link to="/home">

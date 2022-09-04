@@ -31,7 +31,7 @@ const RoutesComponent = () => {
     <div className="h-fit w-full route">
       {isLoggedIn ? (
         <div>
-          {user.role === "admin" ? (
+          {user.isAdmin === true ? (
             <Routes>
               <Route path="/userprofiles" element={<UserProfiles />} />
               <Route path="/products" element={<AllProducts />} />
@@ -54,7 +54,6 @@ const RoutesComponent = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/products" element={<AllProducts />} />
           <Route path="/products/:id" element={<SingleProduct />} />
-
           <Route path="/login" element={<Login name="hi" />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<Navigate to="/home" replace />} />

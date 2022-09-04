@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="w-full flex flex-col justify-center items-center bg-gray-700 absolute bottom-0">
+    <div className="w-full flex flex-col justify-center items-center bg-orange-400 absolute bottom-0">
       <p>Created By</p>
       <div className="socials">
         <a href="https://github.com/nievescs20">
@@ -14,7 +14,7 @@ const Footer = () => {
         </a>
       </div>
       <br />
-      <div className="flex justify-center bg-gray-500 w-full items-end ">
+      <div className="flex justify-center bg-orange-500 w-full items-end ">
         <p className="text-xs">Copyright ©2022 DBZ-Commerce</p>
       </div>
     </div>

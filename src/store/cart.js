@@ -3,6 +3,7 @@ import axios from "axios";
 const UPDATE_CART = "UPDATE_CART";
 const RESET_CART = "RESET_CART";
 const GET_CART = "GET_CART";
+const REMOVE_ITEM = "REMOVE_ITEM";
 
 export const updateCart = (cart) => ({
   type: UPDATE_CART,
@@ -12,6 +13,11 @@ export const updateCart = (cart) => ({
 export const getCart = (cart) => ({
   type: GET_CART,
   cart,
+});
+
+export const removeItem = (id) => ({
+  type: REMOVE_ITEM,
+  id,
 });
 
 export const resetCart = () => ({
@@ -33,6 +39,50 @@ export const getCartThunk = () => {
       } else {
         const cart = JSON.parse(window.localStorage.getItem("cart"));
         dispatch(getCart(cart.products));
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+
+export const removeItemThunk = (id) => {
+  return async (dispatch) => {
+    console.log("id from thunk", id);
+    try {
+      const token = window.localStorage.getItem("token");
+      if (token) {
+        // logged in user
+        // const { data } = await axios.post(
+        //   "/api/cart",
+        //   {
+        //     productId: product.productId,
+        //     productName: product.productName,
+        //     imageUrl: product.imageUrl,
+        //     quantity: parseInt(quantity),
+        //     price: product.price,
+        //     totalPrice: cost,
+        //   },
+        //   {
+        //     headers: {
+        //       authorization: token,
+        //     },
+        //   }
+        // );
+        // console.log("DB DATA", data);
+        // dispatch(updateCart(data));
+      } else {
+        // for a guest or not signed in user
+        let cart = JSON.parse(window.localStorage.getItem("cart"));
+        console.log("cart from thunk", cart);
+        const newCart = cart.products.filter((item) => {
+          console.log(item.id);
+          return item.id !== id;
+        });
+        console.log(newCart);
+        cart = { ...cart, products: newCart };
+        window.localStorage.setItem("cart", JSON.stringify(cart));
+        dispatch(updateCart(cart.products));
       }
     } catch (err) {
       console.log(err);

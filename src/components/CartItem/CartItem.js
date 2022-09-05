@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addCartThunk } from "../../store/cart";
+import { addCartThunk, removeItemThunk } from "../../store/cart";
 import { Button } from "@material-ui/core";
 // import { CartItemType } from "../App";
 
@@ -16,8 +16,12 @@ const CartItem = ({ item }) => {
   const dispatch = useDispatch();
 
   const handleQuantityChange = (product, quantity) => {
-    console.log("item in qtyChange", product);
-    dispatch(addCartThunk(product, quantity));
+    if (product.quantity === 1 && quantity < 0) {
+      dispatch(removeItemThunk(item.id));
+    } else {
+      dispatch(addCartThunk(product, quantity));
+    }
+    // dispatch(addCartThunk(product, quantity));
   };
 
   return (

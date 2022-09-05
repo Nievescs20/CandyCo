@@ -25,7 +25,7 @@ const Navbar = () => {
               marginRight: "20px",
             }}
             src="/dbz-navbar-img.png"
-            className="bg-orange-300"
+            className="bg-orange-400"
             alt="Dragonball Z Fighters"
           />
 

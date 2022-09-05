@@ -32,7 +32,7 @@ export const getCartThunk = () => {
         dispatch(getCart(data));
       } else {
         const cart = JSON.parse(window.localStorage.getItem("cart"));
-        dispatch(getCart(cart));
+        dispatch(getCart(cart.products));
       }
     } catch (err) {
       console.log(err);
@@ -43,6 +43,7 @@ export const getCartThunk = () => {
 export const addCartThunk = (product, quantity) => {
   return async (dispatch) => {
     const cost = product.price * quantity;
+    console.log("product in thunk", product);
     try {
       const token = window.localStorage.getItem("token");
       if (token) {
@@ -50,8 +51,11 @@ export const addCartThunk = (product, quantity) => {
         const { data } = await axios.post(
           "/api/cart",
           {
-            productId: product.id,
-            quantity: quantity,
+            productId: product.productId,
+            productName: product.productName,
+            imageUrl: product.imageUrl,
+            quantity: parseInt(quantity),
+            price: product.price,
             totalPrice: cost,
           },
           {
@@ -60,17 +64,18 @@ export const addCartThunk = (product, quantity) => {
             },
           }
         );
+        console.log("DB DATA", data);
         dispatch(updateCart(data));
       } else {
         // for a guest or not signed in user
-        let cart = JSON.parse(window.localStorage.getItem("cart"))
+        let cart = window.localStorage.getItem("cart")
           ? JSON.parse(window.localStorage.getItem("cart"))
           : { products: [] };
 
         let duplicateItem = false;
         if (cart.products) {
           for (let productItem of cart.products) {
-            if (productItem.orderItems.productId === product.id) {
+            if (productItem.id === product.id) {
               duplicateItem = true;
               break;
             }
@@ -79,30 +84,28 @@ export const addCartThunk = (product, quantity) => {
 
         if (!duplicateItem) {
           cart.products.push({
-            productName: product.productName,
+            id: product.id,
+            description: product.description,
+            fullDescription: product.fullDescription,
+            productName: product.name,
             imageUrl: product.imageUrl,
             price: product.price,
-            orderItems: {
-              productId: product.id,
-              quantity: parseInt(quantity),
-              totalPrice: cost,
-            },
+            quantity: parseInt(quantity),
+            totalPrice: cost,
           });
         }
         // if already in the cart, just updating quantity
         else {
           for (let productItem of cart.products) {
-            if (productItem.orderItems.productId === product.id) {
-              productItem.orderItems.quantity += parseInt(quantity);
-              productItem.orderItems.totalPrice +=
-                parseInt(quantity) * productItem.price;
+            if (productItem.id === product.id) {
+              productItem.quantity += parseInt(quantity);
+              productItem.totalPrice += parseInt(quantity) * productItem.price;
             }
-            break;
           }
         }
 
         window.localStorage.setItem("cart", JSON.stringify(cart));
-        dispatch(updateCart(cart));
+        dispatch(updateCart(cart.products));
       }
     } catch (err) {
       console.log(err);
@@ -110,14 +113,16 @@ export const addCartThunk = (product, quantity) => {
   };
 };
 
-const initialState = {};
+const initialState = {
+  products: [],
+};
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_CART:
-      return action.cart;
+      return { ...state, products: action.cart };
     case UPDATE_CART:
-      return action.cart;
+      return { ...state, products: action.cart };
     default:
       return state;
   }

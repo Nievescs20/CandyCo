@@ -20,12 +20,11 @@ router.get("/", requireToken, async (req, res, next) => {
     }
 
     res.send(
-      await Order.findOne({
+      await OrderProduct.findAll({
+        order: ["orderId"], // adding order by so the result will not jump around
         where: {
-          id: order.id,
+          orderId: order.id,
         },
-        include: [Product],
-        order: [[Product, "id", "desc"]], // adding order by so the result will not jump around
       })
     );
   } catch (ex) {
@@ -49,7 +48,6 @@ router.post("/", requireToken, async (req, res, next) => {
         userId: req.user.dataValues.id,
       });
     }
-
     // step 2: check whether this item is already in the cart
     let product = await OrderProduct.findOne({
       where: {
@@ -61,27 +59,32 @@ router.post("/", requireToken, async (req, res, next) => {
     console.log("product", product);
     if (product) {
       const newQuantity = product.quantity + parseInt(req.body.quantity);
-      const newCost = product.totalPrice + req.body.totalPrice;
+      const newCost = Number(product.totalPrice) + req.body.totalPrice;
+      console.log("product.totalPrice", Number(product.totalPrice));
+      console.log("req.body.totalPrice", req.body.totalPrice);
+      console.log("new Cost", newCost);
       await product.update({
         quantity: newQuantity,
-        totalCost: newCost,
+        totalPrice: newCost,
       });
     } else {
       await OrderProduct.create({
         orderId: order.id,
         productId: req.body.productId,
+        productName: req.body.productName,
+        imageUrl: req.body.imageUrl,
         quantity: req.body.quantity,
+        price: req.body.price,
         totalPrice: req.body.totalPrice,
       });
     }
     // step3: send back entire order
     res.send(
-      await Order.findOne({
+      await OrderProduct.findAll({
         where: {
-          id: order.id,
+          orderId: order.id,
         },
-        include: [Product],
-        order: [[Product, "id", "desc"]],
+        order: [["createdAt", "asc"]],
       })
     );
   } catch (error) {

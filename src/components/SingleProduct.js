@@ -18,8 +18,6 @@ function SingleProduct(props) {
 
   const handleAddProduct = () => {
     dispatch(addCartThunk(singleProduct, quantity));
-    console.log("singleProduct", singleProduct);
-    console.log("quantity", quantity);
   };
   useEffect(() => {
     dispatch(getProductThunk(id));

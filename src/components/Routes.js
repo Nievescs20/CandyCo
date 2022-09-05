@@ -9,6 +9,7 @@ import Signup from "./Signup";
 import SingleProduct from "./SingleProduct";
 import UserProfile from "./UserProfile";
 import UserProfiles from "./UserProfiles";
+import Cart from "./Cart/Cart";
 import { getProductsThunk } from "../store/products";
 
 const RoutesComponent = () => {
@@ -37,6 +38,7 @@ const RoutesComponent = () => {
               <Route path="/products" element={<AllProducts />} />
               <Route path="/products/:id" element={<SingleProduct />} />
               <Route path="/home" element={<Home />} />
+              <Route path="/cart" element={<Cart />} />
               <Route path="*" element={<Navigate to="/home" replace />} />
             </Routes>
           ) : (
@@ -45,6 +47,7 @@ const RoutesComponent = () => {
               <Route path="/products" element={<AllProducts />} />
               <Route path="/products/:id" element={<SingleProduct />} />
               <Route path="/home" element={<Home />} />
+              <Route path="/cart" element={<Cart />} />
               <Route path="*" element={<Navigate to="/home" replace />} />
             </Routes>
           )}
@@ -56,6 +59,7 @@ const RoutesComponent = () => {
           <Route path="/products/:id" element={<SingleProduct />} />
           <Route path="/login" element={<Login name="hi" />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/" element={<Navigate to="/home" replace />} />
         </Routes>
       )}

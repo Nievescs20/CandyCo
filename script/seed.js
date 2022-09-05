@@ -202,7 +202,7 @@ const shippings = [
 
 const orders = [
   {
-    status: "open",
+    status: "closed",
   },
   {
     status: "closed",

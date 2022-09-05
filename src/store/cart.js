@@ -48,38 +48,28 @@ export const getCartThunk = () => {
 
 export const removeItemThunk = (id) => {
   return async (dispatch) => {
-    console.log("id from thunk", id);
     try {
       const token = window.localStorage.getItem("token");
       if (token) {
         // logged in user
-        // const { data } = await axios.post(
-        //   "/api/cart",
-        //   {
-        //     productId: product.productId,
-        //     productName: product.productName,
-        //     imageUrl: product.imageUrl,
-        //     quantity: parseInt(quantity),
-        //     price: product.price,
-        //     totalPrice: cost,
-        //   },
-        //   {
-        //     headers: {
-        //       authorization: token,
-        //     },
-        //   }
-        // );
-        // console.log("DB DATA", data);
-        // dispatch(updateCart(data));
+        await axios.post(
+          "/api/cart/deleteItem",
+          {
+            productId: id,
+          },
+          {
+            headers: {
+              authorization: token,
+            },
+          }
+        );
+        dispatch(removeItem(id));
       } else {
         // for a guest or not signed in user
         let cart = JSON.parse(window.localStorage.getItem("cart"));
-        console.log("cart from thunk", cart);
         const newCart = cart.products.filter((item) => {
-          console.log(item.id);
           return item.id !== id;
         });
-        console.log(newCart);
         cart = { ...cart, products: newCart };
         window.localStorage.setItem("cart", JSON.stringify(cart));
         dispatch(updateCart(cart.products));
@@ -93,7 +83,6 @@ export const removeItemThunk = (id) => {
 export const addCartThunk = (product, quantity) => {
   return async (dispatch) => {
     const cost = product.price * quantity;
-    console.log("product in thunk", product);
     try {
       const token = window.localStorage.getItem("token");
       if (token) {
@@ -101,8 +90,8 @@ export const addCartThunk = (product, quantity) => {
         const { data } = await axios.post(
           "/api/cart",
           {
-            productId: product.productId,
-            productName: product.productName,
+            productId: product.id,
+            productName: product.name,
             imageUrl: product.imageUrl,
             quantity: parseInt(quantity),
             price: product.price,
@@ -114,7 +103,6 @@ export const addCartThunk = (product, quantity) => {
             },
           }
         );
-        console.log("DB DATA", data);
         dispatch(updateCart(data));
       } else {
         // for a guest or not signed in user
@@ -135,13 +123,86 @@ export const addCartThunk = (product, quantity) => {
         if (!duplicateItem) {
           cart.products.push({
             id: product.id,
-            description: product.description,
-            fullDescription: product.fullDescription,
+            // description: product.description,
+            // fullDescription: product.fullDescription,
             productName: product.name,
             imageUrl: product.imageUrl,
             price: product.price,
             quantity: parseInt(quantity),
             totalPrice: cost,
+            productId: product.id,
+          });
+        }
+        // if already in the cart, just updating quantity
+        else {
+          for (let productItem of cart.products) {
+            if (productItem.id === product.id) {
+              productItem.quantity += parseInt(quantity);
+              productItem.totalPrice += parseInt(quantity) * productItem.price;
+            }
+          }
+        }
+
+        window.localStorage.setItem("cart", JSON.stringify(cart));
+        dispatch(updateCart(cart.products));
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+
+export const changeCartQuantityThunk = (product, quantity) => {
+  return async (dispatch) => {
+    const cost = product.price * quantity;
+    try {
+      const token = window.localStorage.getItem("token");
+      if (token) {
+        // logged in user
+        const { data } = await axios.post(
+          "/api/cart",
+          {
+            productId: product.productId,
+            productName: product.name,
+            imageUrl: product.imageUrl,
+            quantity: parseInt(quantity),
+            price: product.price,
+            totalPrice: cost,
+          },
+          {
+            headers: {
+              authorization: token,
+            },
+          }
+        );
+        dispatch(updateCart(data));
+      } else {
+        // for a guest or not signed in user
+        let cart = window.localStorage.getItem("cart")
+          ? JSON.parse(window.localStorage.getItem("cart"))
+          : { products: [] };
+
+        let duplicateItem = false;
+        if (cart.products) {
+          for (let productItem of cart.products) {
+            if (productItem.id === product.id) {
+              duplicateItem = true;
+              break;
+            }
+          }
+        }
+
+        if (!duplicateItem) {
+          cart.products.push({
+            id: product.id,
+            // description: product.description,
+            // fullDescription: product.fullDescription,
+            productName: product.name,
+            imageUrl: product.imageUrl,
+            price: product.price,
+            quantity: parseInt(quantity),
+            totalPrice: cost,
+            productId: product.id,
           });
         }
         // if already in the cart, just updating quantity
@@ -173,6 +234,11 @@ const cartReducer = (state = initialState, action) => {
       return { ...state, products: action.cart };
     case UPDATE_CART:
       return { ...state, products: action.cart };
+    case REMOVE_ITEM:
+      return {
+        ...state,
+        products: state.products.filter((item) => item.productId !== action.id),
+      };
     default:
       return state;
   }

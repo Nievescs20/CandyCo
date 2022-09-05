@@ -34,7 +34,6 @@ router.get("/", requireToken, async (req, res, next) => {
 
 router.post("/", requireToken, async (req, res, next) => {
   try {
-    console.log("req.body", req.body);
     // step 1: find or create the order
     let order = await Order.findOne({
       where: {
@@ -56,13 +55,9 @@ router.post("/", requireToken, async (req, res, next) => {
       },
     });
     // allowing user to add same item multiple times
-    console.log("product", product);
     if (product) {
       const newQuantity = product.quantity + parseInt(req.body.quantity);
       const newCost = Number(product.totalPrice) + req.body.totalPrice;
-      console.log("product.totalPrice", Number(product.totalPrice));
-      console.log("req.body.totalPrice", req.body.totalPrice);
-      console.log("new Cost", newCost);
       await product.update({
         quantity: newQuantity,
         totalPrice: newCost,
@@ -70,6 +65,7 @@ router.post("/", requireToken, async (req, res, next) => {
     } else {
       await OrderProduct.create({
         orderId: order.id,
+        hello: req.body.productId,
         productId: req.body.productId,
         productName: req.body.productName,
         imageUrl: req.body.imageUrl,
@@ -87,6 +83,30 @@ router.post("/", requireToken, async (req, res, next) => {
         order: [["createdAt", "asc"]],
       })
     );
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post("/deleteItem", requireToken, async (req, res, next) => {
+  try {
+    let order = await Order.findOne({
+      where: {
+        userId: req.user.dataValues.id,
+        status: "open",
+      },
+    });
+
+    let product = await OrderProduct.findOne({
+      where: {
+        orderId: order.id,
+        productId: req.body.productId,
+      },
+    });
+
+    await product.destroy();
+
+    res.sendStatus(200);
   } catch (error) {
     next(error);
   }

@@ -2,17 +2,29 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addCartThunk } from "../store/cart";
+import toast, { Toaster } from "react-hot-toast";
 
 function AllProducts(props) {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.allProducts);
 
+  const notify = (product, quantity) =>
+    toast(`${quantity} ${product.name} Added To Cart!`, {
+      duration: 2000,
+      position: "top-right",
+      style: { backgroundColor: "dodgerblue" },
+    });
+
   const handleAdd = (product, quantity) => {
+    notify(product, quantity);
     dispatch(addCartThunk(product, quantity));
   };
 
   return (
     <div className="bg-white">
+      <div>
+        <Toaster />
+      </div>
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 ">
         <h2 className="sr-only">Products</h2>
         <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">

@@ -124,8 +124,6 @@ export const addCartThunk = (product, quantity) => {
         if (!duplicateItem) {
           cart.products.push({
             id: product.id,
-            // description: product.description,
-            // fullDescription: product.fullDescription,
             productName: product.name,
             imageUrl: product.imageUrl,
             price: product.price,

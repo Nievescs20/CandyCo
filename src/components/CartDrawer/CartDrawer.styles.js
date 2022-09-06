@@ -8,7 +8,5 @@ export const Wrapper = styled.div`
 export const StyledButton = styled(IconButton)`
   position: fixed;
   z-index: 100;
-  left: 99%;
-  top: 50%;
   padding: 30px;
 `;

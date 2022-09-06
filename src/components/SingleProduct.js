@@ -4,27 +4,39 @@ import { useParams } from "react-router-dom";
 import { getProductThunk } from "../store/singleProduct";
 import SuggestedProducts from "./SuggestedProducts";
 import { addCartThunk } from "../store/cart";
+import toast, { Toaster } from "react-hot-toast";
 
 function SingleProduct(props) {
   const singleProduct = useSelector((state) => state.singleProduct);
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   const { id } = useParams();
-  // const params = useParams();
+
+  const notify = (product, quantity) =>
+    toast(`${quantity} ${product.name}(s) Added To Cart!`, {
+      duration: 2000,
+      position: "top-right",
+      style: { backgroundColor: "dodgerblue" },
+    });
 
   const handleQuantity = (e) => {
     setQuantity(e.target.value);
   };
 
   const handleAddProduct = () => {
+    notify(singleProduct, quantity);
     dispatch(addCartThunk(singleProduct, quantity));
   };
+
   useEffect(() => {
     dispatch(getProductThunk(id));
   }, []);
 
   return (
     <div className="bg-white">
+      <div>
+        <Toaster />
+      </div>
       <div className="pt-6">
         <nav aria-label="Breadcrumb">
           <ol

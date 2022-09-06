@@ -33,9 +33,11 @@ function UserProfiles(props) {
                 className="bg-white border-b dark:bg-orange-400 dark:border-gray-700"
                 key={user.id}
               >
-                <td className="py-4 px-6">{user.username}</td>
+                <td className="py-4 px-6">{`${user.lastName}, ${user.firstName}`}</td>
                 <td className="py-4 px-6">{user.email}</td>
-                <td className="py-4 px-6">{user.role}</td>
+                <td className="py-4 px-6">
+                  {user.isAdmin ? "Admin" : "Customer"}
+                </td>
               </tr>
             ))}
         </tbody>

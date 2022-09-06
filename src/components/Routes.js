@@ -35,6 +35,7 @@ const RoutesComponent = () => {
           {user.isAdmin === true ? (
             <Routes>
               <Route path="/userprofiles" element={<UserProfiles />} />
+              <Route path="/profile" element={<UserProfile />} />
               <Route path="/products" element={<AllProducts />} />
               <Route path="/products/:id" element={<SingleProduct />} />
               <Route path="/home" element={<Home />} />

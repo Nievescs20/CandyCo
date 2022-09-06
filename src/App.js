@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -6,12 +6,14 @@ import Footer from "./components/Footer";
 import CartDrawer from "./components/CartDrawer/CartDrawer";
 
 const App = () => {
+  const [cartOpen, setCartOpen] = useState(false);
+
   return (
     <div className="relative min-h-screen">
-      <Navbar />
+      {/* <Navbar /> */}
       {/* <Routes /> */}
-      <CartDrawer />
-      <Footer />
+      <CartDrawer setCartOpen={setCartOpen} cartOpen={cartOpen} />
+      {/* <Footer /> */}
     </div>
   );
 };

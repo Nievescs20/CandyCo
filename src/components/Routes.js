@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { me } from "../store";
 import AllProducts from "./AllProducts";
-import Home from "./Home";
+import Home from "./Home/Home";
 import Login from "./Login";
 import Signup from "./Signup";
 import SingleProduct from "./SingleProduct";

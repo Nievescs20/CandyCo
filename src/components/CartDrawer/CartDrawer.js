@@ -27,6 +27,7 @@ const CartDrawer = ({ setCartOpen, cartOpen }) => {
           anchor="right"
           open={cartOpen}
           onClose={() => setCartOpen(false)}
+          style={{ backgroundColor: "lightslategray" }}
         >
           <Cart />
         </Drawer>

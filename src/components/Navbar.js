@@ -39,6 +39,7 @@ const Navbar = ({ setCartOpen }) => {
           justifyContent: "center",
           alignItems: "center",
           height: "10vh",
+          backgroundColor: "black",
         }}
       >
         <div style={{ flex: "2", display: "flex", justifyContent: "center" }}>
@@ -51,7 +52,7 @@ const Navbar = ({ setCartOpen }) => {
                     width: "157.5px",
                     marginRight: "20px",
                   }}
-                  src="/CandyCo-background.png"
+                  src="/CandyCo-background-white.png"
                   className=""
                   alt="Candy Co Logo"
                 />
@@ -155,9 +156,7 @@ const Navbar = ({ setCartOpen }) => {
                     <button
                       style={{
                         margin: "10px",
-                        border: "1px solid hotpink",
-                        borderRadius: "4px",
-                        padding: "2px",
+                        color: "hotpink",
                       }}
                     >
                       Login / Sign Up

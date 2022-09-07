@@ -10,10 +10,7 @@ const App = () => {
 
   return (
     <div className="relative min-h-screen">
-      {/* <Navbar /> */}
-      {/* <Routes /> */}
       <CartDrawer setCartOpen={setCartOpen} cartOpen={cartOpen} />
-      {/* <Footer /> */}
     </div>
   );
 };

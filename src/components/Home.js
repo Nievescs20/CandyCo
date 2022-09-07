@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 import LightSpeed from "react-reveal/LightSpeed";
 
@@ -111,17 +112,19 @@ const Home = () => {
                 >
                   Give Me Something Sweet To EAT!
                 </b>
-                <button
-                  style={{
-                    backgroundColor: "purple",
-                    color: "white",
-                    borderRadius: "8px",
-                    padding: "6px",
-                    width: "100px",
-                  }}
-                >
-                  Shop Now
-                </button>
+                <Link to="/products">
+                  <button
+                    style={{
+                      backgroundColor: "purple",
+                      color: "white",
+                      borderRadius: "8px",
+                      padding: "6px",
+                      width: "100px",
+                    }}
+                  >
+                    Shop Now
+                  </button>
+                </Link>
               </Fade>
             </div>
           </div>

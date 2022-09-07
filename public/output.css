@@ -398,6 +398,21 @@ object {
   /* 2 */
 }
 
+.MuiPaper-root {
+  background-color: black !important;
+}
+
+.cart-btn {
+  background-color: purple;
+}
+
+.cart-btn:hover {
+  background-color: rgb(109, 4, 109);
+}
+
+.sc-dkzDqf {
+  background-color: lightgray;
+}
 /*
 Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
 */

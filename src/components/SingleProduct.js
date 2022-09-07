@@ -88,30 +88,15 @@ function SingleProduct(props) {
           <div className="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block img-hover-zoom--slowmo">
             <img
               src={singleProduct.imageUrl}
-              alt="Two each of gray, white, and black shirts laying flat."
+              alt="CANDY!!!"
               className="w-full h-full object-center object-contain border-2 rounded-[12px]"
             />
           </div>
-          <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-            <div className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-              <img
-                src={singleProduct.imageUrl2}
-                alt="Model wearing plain black basic tee."
-                className="w-full h-full object-center object-cover"
-              />
-            </div>
-            <div className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-              <img
-                src={singleProduct.imageUrl3}
-                alt="Model wearing plain gray basic tee."
-                className="w-full h-full object-center object-cover"
-              />
-            </div>
-          </div>
+
           <div className="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
             <img
-              src={singleProduct.imageUrl4}
-              alt="Model wearing plain white basic tee."
+              src={singleProduct.imageUrl2}
+              alt="MORE CANDY!!!"
               className="w-full h-full object-center object-contain"
             />
           </div>
@@ -225,7 +210,7 @@ function SingleProduct(props) {
             <div className="mt-10">
               <button
                 // type="submit"
-                className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 "
                 onClick={handleAddProduct}
               >
                 Add to bag

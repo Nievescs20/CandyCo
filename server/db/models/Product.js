@@ -36,16 +36,6 @@ const Product = db.define("product", {
     defaultValue:
       "http://cdn.shopify.com/s/files/1/1140/8354/collections/Dragon_Ball_z_400.png?v=1588174725",
   },
-  imageUrl3: {
-    type: Sequelize.STRING,
-    defaultValue:
-      "http://cdn.shopify.com/s/files/1/1140/8354/collections/Dragon_Ball_z_400.png?v=1588174725",
-  },
-  imageUrl4: {
-    type: Sequelize.STRING,
-    defaultValue:
-      "https://static.wikia.nocookie.net/dragonball/images/a/ad/Z_fighters_manga.jpg/",
-  },
   quantity: {
     type: Sequelize.INTEGER,
     defaultValue: 0,

@@ -42,7 +42,7 @@ const Cart = () => {
       ))}
       <div
         style={{
-          backgroundColor: "lightblue",
+          backgroundColor: "gray",
           position: "fixed",
           bottom: "5%",
           // display: "flex",
@@ -57,13 +57,13 @@ const Cart = () => {
             justifyContent: "space-between",
           }}
         >
-          <div>
+          <div style={{ color: "white" }}>
             <h2>Subtotal:</h2>
             <h2>Tax:</h2>
             <h2>Flat Rate Shipping:</h2>
             <h2>Total:</h2>
           </div>
-          <div>
+          <div style={{ color: "white" }}>
             <h2>${calculateTotal(cart).toFixed(2)}</h2>
             <h2>${(calculateTotal(cart) * 0.0725).toFixed(2)}</h2>
             <h2>${shipping}</h2>
@@ -79,11 +79,11 @@ const Cart = () => {
             // type="submit"
             className={
               cart.length
-                ? "mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                ? "mt-10 w-full cart-btn border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 : "mt-10 w-full bg-gray-500 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white"
             }
             // className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            disabled={cart.length ? false : true}
+            // disabled={cart.length ? false : true}
             onClick={() => console.log("checkout!")}
           >
             Checkout

@@ -90,7 +90,9 @@ const Navbar = ({ setCartOpen }) => {
               </div>
             ) : (
               <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <button style={{ color: "lightgreen" }}>SHOP</button>
+                <Link to="/products">
+                  <button style={{ color: "lightgreen" }}>SHOP</button>
+                </Link>
                 <button style={{ color: "dodgerblue" }}>GIFTS</button>
                 <button style={{ color: "lightpink" }}>BULK CANDY</button>
                 <button style={{ color: "orange" }}>HALLOWEEN</button>
@@ -124,7 +126,7 @@ const Navbar = ({ setCartOpen }) => {
                     backgroundColor: "#40e0d0",
                   }}
                 >
-                  <Badge badgeContent={cart.length} color="secondary">
+                  <Badge badgeContent={cart.length} color="default">
                     <AddShoppingCart />
                   </Badge>
                 </StyledButton>
@@ -145,7 +147,7 @@ const Navbar = ({ setCartOpen }) => {
               >
                 <StyledButton
                   onClick={() => setCartOpen(true)}
-                  style={{ padding: "15px", backgroundColor: "#40e0d0" }}
+                  style={{ padding: "15px", backgroundColor: "orange" }}
                 >
                   <Badge badgeContent={cart.length} color="secondary">
                     <AddShoppingCart />

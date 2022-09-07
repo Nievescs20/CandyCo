@@ -27,20 +27,9 @@ const CartDrawer = ({ setCartOpen, cartOpen }) => {
           anchor="right"
           open={cartOpen}
           onClose={() => setCartOpen(false)}
-          style={{ backgroundColor: "lightslategray" }}
         >
           <Cart />
         </Drawer>
-
-        {/* <StyledButton
-          onClick={() => setCartOpen(true)}
-          style={{ backgroundColor: "dodgerblue" }}
-        >
-          <Badge badgeContent={cart.length} color="secondary">
-            <AddShoppingCart />
-          </Badge>
-        </StyledButton> */}
-
         <Routes />
       </Wrapper>
     </>

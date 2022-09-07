@@ -42,7 +42,6 @@ const CartDrawer = ({ setCartOpen, cartOpen }) => {
 
         <Routes />
       </Wrapper>
-      <Footer />
     </>
   );
 };

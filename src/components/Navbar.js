@@ -5,6 +5,8 @@ import { Badge } from "@material-ui/core";
 import { AddShoppingCart } from "@material-ui/icons";
 import { StyledButton } from "./CartDrawer/CartDrawer.styles";
 import { logout } from "../store";
+import Slide from "react-reveal/Slide";
+import Flip from "react-reveal/Flip";
 
 const Navbar = ({ setCartOpen }) => {
   const dispatch = useDispatch();
@@ -20,121 +22,154 @@ const Navbar = ({ setCartOpen }) => {
   });
 
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-orange-400 p-6 nav">
-      <Link to="/home">
-        <div className="flex items-center flex-shrink-0 text-white mr-6">
-          <img
-            style={{
-              height: "70px",
-              width: "157.5px",
-              marginRight: "20px",
-            }}
-            src="/dbz-navbar-img.png"
-            className="bg-orange-400"
-            alt="Dragonball Z Fighters"
-          />
-
-          <span className="font-semibold text-2xl tracking-tight">
-            DBZ Commerce
-          </span>
-        </div>
-      </Link>
-      {isLoggedIn ? (
-        <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div className="text-sm lg:flex-grow">
-            <Link to="/products">
-              <div className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-8 text-xl">
-                Products
+    <div>
+      <div
+        style={{
+          backgroundColor: "tomato",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <div>Get FREE standard shipping with any purchase of $50 or MORE!</div>
+      </div>
+      <div
+        className=""
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "10vh",
+        }}
+      >
+        <div style={{ flex: "2", display: "flex", justifyContent: "center" }}>
+          <Flip bottom>
+            <Link to="/home">
+              <div className="">
+                <img
+                  style={{
+                    height: "70px",
+                    width: "157.5px",
+                    marginRight: "20px",
+                  }}
+                  src="/CandyCo-background.png"
+                  className=""
+                  alt="Candy Co Logo"
+                />
               </div>
             </Link>
-            {user.isAdmin ? (
-              <>
-                <Link to="userprofiles">
-                  <div className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-8 text-xl">
-                    User Profiles
+          </Flip>
+        </div>
+        <Slide right>
+          <div style={{ flex: "3" }}>
+            {isLoggedIn ? (
+              <div
+                style={{
+                  flex: "2",
+                }}
+              >
+                {user.isAdmin ? (
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    <div style={{ color: "lightgreen" }}>ALL PROFILES</div>
+                    <div style={{ color: "dodgerblue" }}>USER PROFILES</div>
                   </div>
-                </Link>
-                <Link to="profile">
-                  <div className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-8 text-xl">
-                    Admin Profile
+                ) : (
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    <div style={{ color: "lightgreen" }}>SHOP</div>
+                    <div style={{ color: "dodgerblue" }}>GIFTS</div>
+                    <div style={{ color: "lightpink" }}>BULK CANDY</div>
+                    <div style={{ color: "orange" }}>HALLOWEEN</div>
+                    <div style={{ color: "gold" }}>SALE</div>
+                    <div style={{ color: "lightcoral" }}>ABOUT</div>
                   </div>
-                </Link>
-              </>
+                )}
+              </div>
             ) : (
-              <>
-                <Link to="profile">
-                  <div className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-8 text-xl">
-                    Profile
-                  </div>
-                </Link>
-              </>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <button style={{ color: "lightgreen" }}>SHOP</button>
+                <button style={{ color: "dodgerblue" }}>GIFTS</button>
+                <button style={{ color: "lightpink" }}>BULK CANDY</button>
+                <button style={{ color: "orange" }}>HALLOWEEN</button>
+                <button style={{ color: "gold" }}>SALE</button>
+                <button style={{ color: "lightcoral" }}>ABOUT</button>
+              </div>
             )}
           </div>
           <div
             style={{
-              width: "300px",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
+              flex: "2",
             }}
           >
-            <div className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white  underline text-xl">
-              {`Weclome ${user.firstName
-                .slice(0, 1)
-                .toUpperCase()}${user.firstName.slice(1)}`}
-            </div>
-            <StyledButton
-              onClick={() => setCartOpen(true)}
-              style={{ padding: "15px", backgroundColor: "#40e0d0" }}
-            >
-              <Badge badgeContent={cart.length} color="secondary">
-                <AddShoppingCart />
-              </Badge>
-            </StyledButton>
-            <div
-              className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-blue-400 hover:bg-white mt-4 lg:mt-0"
-              onClick={() => dispatch(logout())}
-            >
-              Logout
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div className="text-sm lg:flex-grow">
-            <Link to="/products">
-              <div className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-8 text-xl">
-                Products
-              </div>
-            </Link>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              width: "150px",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <StyledButton
-              onClick={() => setCartOpen(true)}
-              style={{ padding: "15px", backgroundColor: "#40e0d0" }}
-            >
-              <Badge badgeContent={cart.length} color="secondary">
-                <AddShoppingCart />
-              </Badge>
-            </StyledButton>
-            <div>
-              <Link to="/login">
-                <div className="inline-block ml-4 text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-blue-400 hover:bg-white mt-4 lg:mt-0 ">
-                  Login
+            {isLoggedIn ? (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  alignItems: "center",
+                }}
+              >
+                <div style={{ margin: "10px" }}>
+                  {`Weclome ${user.firstName
+                    .slice(0, 1)
+                    .toUpperCase()}${user.firstName.slice(1)}`}
                 </div>
-              </Link>
-            </div>
+                <StyledButton
+                  onClick={() => setCartOpen(true)}
+                  style={{
+                    padding: "15px",
+                    backgroundColor: "#40e0d0",
+                  }}
+                >
+                  <Badge badgeContent={cart.length} color="secondary">
+                    <AddShoppingCart />
+                  </Badge>
+                </StyledButton>
+                <div
+                  onClick={() => dispatch(logout())}
+                  style={{ margin: "10px" }}
+                >
+                  Logout
+                </div>
+              </div>
+            ) : (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  alignItems: "center",
+                }}
+              >
+                <StyledButton
+                  onClick={() => setCartOpen(true)}
+                  style={{ padding: "15px", backgroundColor: "#40e0d0" }}
+                >
+                  <Badge badgeContent={cart.length} color="secondary">
+                    <AddShoppingCart />
+                  </Badge>
+                </StyledButton>
+                <div>
+                  <Link to="/login">
+                    <button
+                      style={{
+                        margin: "10px",
+                        border: "1px solid hotpink",
+                        borderRadius: "4px",
+                        padding: "2px",
+                      }}
+                    >
+                      Login / Sign Up
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            )}
           </div>
-        </div>
-      )}
-    </nav>
+        </Slide>
+      </div>
+    </div>
   );
 };
 

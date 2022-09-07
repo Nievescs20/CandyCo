@@ -1215,7 +1215,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  border: 2px solid black
+  margin-top: 20vh;
 }
 
 #home {
@@ -1355,6 +1355,13 @@ input {
 
 .group:hover .group-hover\:opacity-75 {
   opacity: 0.75;
+}
+
+.background {
+  background-image: url("/goku-background.jpg") ;
+  background-size: contain;
+  height: 100%;
+  overflow: hidden;
 }
 
 @media (prefers-color-scheme: dark) {

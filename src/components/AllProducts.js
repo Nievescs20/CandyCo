@@ -21,7 +21,7 @@ function AllProducts(props) {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-white background">
       <div>
         <Toaster />
       </div>

@@ -30,7 +30,10 @@ const Navbar = ({ setCartOpen }) => {
           justifyContent: "center",
         }}
       >
-        <div>Get FREE standard shipping with any purchase of $50 or MORE!</div>
+        <div>
+          Purchase Any Two Gift Baskets Of Value $50 Or More And Receive A Free
+          CancyCo Tote!
+        </div>
       </div>
       <div
         className=""
@@ -72,8 +75,17 @@ const Navbar = ({ setCartOpen }) => {
                   <div
                     style={{ display: "flex", justifyContent: "space-between" }}
                   >
-                    <div style={{ color: "lightgreen" }}>ALL PROFILES</div>
-                    <div style={{ color: "dodgerblue" }}>USER PROFILES</div>
+                    <Link to="/products">
+                      <div style={{ color: "lightgreen" }}>ALL PRODUCTS</div>
+                    </Link>
+                    <Link to="/userprofiles">
+                      <div style={{ color: "dodgerblue" }}>
+                        All USER PROFILES
+                      </div>
+                    </Link>
+                    <Link to="/profile">
+                      <div style={{ color: "lightpink" }}>ADMIN PROFILE</div>
+                    </Link>
                   </div>
                 ) : (
                   <div
@@ -114,28 +126,25 @@ const Navbar = ({ setCartOpen }) => {
                   alignItems: "center",
                 }}
               >
-                <div style={{ margin: "10px" }}>
+                <div style={{ margin: "10px", color: "gold" }}>
                   {`Weclome ${user.firstName
                     .slice(0, 1)
                     .toUpperCase()}${user.firstName.slice(1)}`}
                 </div>
                 <StyledButton
                   onClick={() => setCartOpen(true)}
-                  style={{
-                    padding: "15px",
-                    backgroundColor: "#40e0d0",
-                  }}
+                  style={{ padding: "15px", backgroundColor: "orange" }}
                 >
                   <Badge badgeContent={cart.length} color="default">
                     <AddShoppingCart />
                   </Badge>
                 </StyledButton>
-                <div
+                <button
                   onClick={() => dispatch(logout())}
-                  style={{ margin: "10px" }}
+                  style={{ margin: "10px", color: "hotpink" }}
                 >
                   Logout
-                </div>
+                </button>
               </div>
             ) : (
               <div

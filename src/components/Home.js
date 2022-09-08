@@ -1,10 +1,13 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { addCartThunk } from "../store/cart";
+import toast, { Toaster } from "react-hot-toast";
 import Fade from "react-reveal/Fade";
 import LightSpeed from "react-reveal/LightSpeed";
 
 const Home = () => {
+  const dispatch = useDispatch();
   const { username } = useSelector((state) => {
     return state.auth;
   });
@@ -21,32 +24,59 @@ const Home = () => {
   const sweets = [
     {
       name: "Halloween Surprise Smash Pumpkin",
+      description: "Halloweens hottest treat is a serious *SMASH*",
       price: 70.0,
       imageUrl:
         "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220614-By-Asha-Fuller-DCB0040_836x.jpg?v=1660147193",
+      imageUrl2:
+        "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0036_836x.jpg?v=1661192633",
     },
     {
       name: "Monster Mash Crispy Pop",
+      description:
+        "This chocolate-covered Rice Crispy Treat is definitely more sweet than scary",
       price: 12.0,
       imageUrl:
         "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0055_836x.jpg?v=1660076741",
+      imageUrl2:
+        "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0060_836x.jpg?v=1660076758",
     },
     {
       name: "Creepy Candy Coffin",
+      description: "Coffin Shaped box of gummy body parts!",
       price: 10.0,
       imageUrl:
         "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0034_836x.jpg?v=1661192633",
+      imageUrl2:
+        "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0036_836x.jpg?v=1661192633",
     },
     {
       name: "Graveyard Grub Mix",
+      description:
+        "This monster popcorn candy mix is sweet, salty, and so Halloween-ready!",
       price: 14.0,
       imageUrl:
         "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220803-By-Asha-Fuller-DCB-0095_836x.jpg?v=1661183435",
+      imageUrl2:
+        "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220803-By-Asha-Fuller-DCB-0100_836x.jpg?v=1661183435",
     },
   ];
 
+  const notify = (product, quantity) =>
+    toast(`${quantity} ${product.name} Added To Cart!`, {
+      duration: 2000,
+      position: "top-right",
+      style: { backgroundColor: "dodgerblue" },
+    });
+
+  const handleAdd = (product, quantity) => {
+    notify(product, quantity);
+    dispatch(addCartThunk(product, quantity));
+  };
+
   return (
     <div className="flex flex-col chris">
+      <Toaster />
       <div
         style={{
           backgroundImage: `url(${spookyHouseBg})`,
@@ -153,15 +183,17 @@ const Home = () => {
           <div style={{ color: "white", fontSize: "32px" }}>
             This Is Halloween
           </div>
-          <button
-            style={{
-              backgroundColor: "none",
-              color: "orange",
-              fontSize: "26px",
-            }}
-          >
-            {"Shop Now >"}
-          </button>
+          <Link to="/products">
+            <button
+              style={{
+                backgroundColor: "none",
+                color: "orange",
+                fontSize: "26px",
+              }}
+            >
+              {"Shop Now >"}
+            </button>
+          </Link>
         </div>
       </div>
       <LightSpeed left>
@@ -190,6 +222,20 @@ const Home = () => {
                 <img src={candy.imageUrl} alt={candy.imageUrl} />
                 <div>{candy.name}</div>
                 <div>${candy.price.toFixed(2)}</div>
+                <button
+                  style={{
+                    width: "150px",
+                    backgroundColor: "purple",
+                    border: "2px solid hotpink",
+                    margin: "5px",
+                    borderRadius: "6px",
+                    color: "white",
+                    padding: "3px",
+                  }}
+                  onClick={() => handleAdd(candy, 1)}
+                >
+                  Add To Cart
+                </button>
               </div>
             ))}
           </div>

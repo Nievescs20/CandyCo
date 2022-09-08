@@ -20,7 +20,9 @@ const CartDrawer = ({ setCartOpen, cartOpen }) => {
   }, []);
 
   return (
-    <>
+    <div
+      style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+    >
       <Navbar setCartOpen={setCartOpen} />
       <Wrapper>
         <Drawer
@@ -32,7 +34,8 @@ const CartDrawer = ({ setCartOpen, cartOpen }) => {
         </Drawer>
         <Routes />
       </Wrapper>
-    </>
+      <Footer />
+    </div>
   );
 };
 

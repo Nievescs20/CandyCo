@@ -7,95 +7,18 @@ const {
 
 const users = [
   {
-    email: "kakarot@gmail.com",
-    password: "chichi",
-    firstName: "Goku",
-    lastName: "Son",
+    email: "user@gmail.com",
+    password: "123",
+    firstName: "test",
+    lastName: "user",
+    isAdmin: false,
+  },
+  {
+    email: "admin@gmail.com",
+    password: "123",
+    firstName: "test",
+    lastName: "admin",
     isAdmin: true,
-  },
-  {
-    email: "saiyanhonor@gmail.com",
-    password: "bulma",
-    firstName: "Vegeta",
-    lastName: "Vegeta",
-    isAdmin: true,
-  },
-  {
-    email: "ssayaman@gmail.com",
-    password: "marin",
-    firstName: "Gohan",
-    lastName: "Son",
-    isAdmin: false,
-  },
-  {
-    email: "foreveralone@gmail.com",
-    password: "single",
-    firstName: "Yamcha",
-    lastName: "Yamcha",
-    isAdmin: false,
-  },
-  {
-    email: "thirdeyeblind@gmail.com",
-    password: "chiaotzu",
-    firstName: "Tien",
-    lastName: "Shinahn",
-    isAdmin: false,
-  },
-  {
-    email: "tallman@gmail.com",
-    password: "tien",
-    firstName: "Chiaotzu",
-    lastName: "Chiaotzu",
-    isAdmin: false,
-  },
-  {
-    email: "mynameismark@gmail.com",
-    password: "ilovebu",
-    firstName: "Hercule",
-    lastName: "Satan",
-    isAdmin: false,
-  },
-  {
-    email: "fromthefuture@gmail.com",
-    password: "tastyandroids",
-    firstName: "Cell",
-    lastName: "Cell",
-    isAdmin: false,
-  },
-  {
-    email: "halfgotenks@gmail.com",
-    password: "kidtrunks",
-    firstName: "Trunks",
-    lastName: "Vegeta",
-    isAdmin: false,
-  },
-  {
-    email: "otherhalfgotenks@gmail.com",
-    password: "studysaiyan",
-    firstName: "Goten",
-    lastName: "Son",
-    isAdmin: false,
-  },
-  {
-    email: "immortality@gmail.com",
-    password: "damnyougoku",
-    firstName: "Freeza",
-    lastName: "Freeza",
-    isAdmin: false,
-  },
-  {
-    email: "marronsmama@gmail.com",
-    password: "kirllin<3",
-    firstName: "Android",
-    lastName: "18",
-    isAdmin: false,
-  },
-  {
-    email: "zookeeper@gmail.com",
-    password: "animallover@gmail.com",
-    firstName: "Android",
-    lastName: "17",
-    isAdmin: false,
   },
 ];
 
@@ -178,7 +101,7 @@ const products = [
     imageUrl2:
       "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/8928-PRODUCT_03-500_500-1424438648917_a1843665-1eed-4a52-aa1e-aa77fe291aa2_836x.png?v=1565185061",
     quantity: 100,
-    mainCategory: "Bulk",
+    mainCategory: "Gift",
     subCategory: "Bulk",
     reviews: Math.floor(Math.random() * 200),
   },
@@ -192,7 +115,7 @@ const products = [
     imageUrl2:
       "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/2019-12-05-DCB-AF11889_836x.jpg?v=1648569770",
     quantity: 100,
-    mainCategory: "Bulk",
+    mainCategory: "Gift",
     subCategory: "Bulk",
     reviews: Math.floor(Math.random() * 200),
   },
@@ -205,7 +128,7 @@ const products = [
     imageUrl2:
       "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/DCB_2020_Baskets_ChocolateLoversBucket_03_836x.jpg?v=1604446787",
     quantity: 100,
-    mainCategory: "Bulk",
+    mainCategory: "Gift",
     subCategory: "Bulk",
     reviews: Math.floor(Math.random() * 200),
   },
@@ -213,14 +136,210 @@ const products = [
     name: "ULTIMATE TUB OF FUN",
     description:
       "Stuffed with sweets like Swedish Fish®, Runts®, Gobstoppers®, Nerds®, WARHEADS® & more!",
-    price: 22.0,
+    price: 180.0,
     imageUrl:
       "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/DCB_2021_Gifting_UltimatePartyInABucket_2-KS-EDITED_836x.jpg?v=1630071222",
     imageUrl2:
       "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20210610-By-Asha-Fuller-DCB-0052-KS-EDITED_836x.jpg?v=1648569880",
     quantity: 100,
-    mainCategory: "Bulk",
+    mainCategory: "Gift",
     subCategory: "Bulk",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: '5" MINI BEAR BANK WITH SOUR TRIPLE BEARS',
+    description:
+      "Giant mini bear filled with fruity, marshmallowy Sour Triple Bears is an adorable treat!",
+    price: 12.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/DCB_2021_Gifting_UltimatePartyInABucket_2-KS-EDITED_836x.jpg?v=1630071222",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/ROLLOVERFILL2_836x.jpg?v=1635968657",
+    quantity: 100,
+    mainCategory: "Gummy",
+    subCategory: "Gummy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "UNDER THE SEA GRAB & GO POUCH",
+    description:
+      "Under The Sea creature gummy mix is the cutest gift for the sea animal lover",
+    price: 7.5,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/Grab_Go-UnderTheSea-836x836_836x.jpg?v=1619617603",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/2020-01-23-DCB-AF12406_836x.jpg?v=1619209286",
+    quantity: 100,
+    mainCategory: "Gummy",
+    subCategory: "Gummy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "SUPER SOUR GRAB & GO POUCH",
+    description:
+      "Carry your candy in sweet style with this exclusive signature mix of assorted sour candy",
+    price: 7.5,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/Grab_Go-SuperSourl-836x836_836x.jpg?v=1619208212",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/2020-01-23-DCB-AF12401_836x.jpg?v=1619208212",
+    quantity: 100,
+    mainCategory: "Gummy",
+    subCategory: "Gummy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "VINTAGE STYLE GUMBALL MACHINE",
+    description:
+      "This vintage-style gumball machine is a nostalgic gift that's on everyone’s list!",
+    price: 75.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220805-By-Asha-Fuller-DCB-0011_836x.jpg?v=1661443480",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20210719-By-Asha-Fuller-DCB-0022_836x.jpg?v=1661443480",
+    quantity: 100,
+    mainCategory: "Gift",
+    subCategory: "Gumball",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "MEGA CANDY BUTTONS",
+    description:
+      "Make way for the mega-sized version of the nostalgic candy buttons from your childhood!",
+    price: 5.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/7789-PRODUCT_01-500_500-1414529464582_0024d656-8f27-4b98-a8f3-502d6230d756_836x.png?v=1565185052",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/7789-PRODUCT_02-500_500-1414529468960_de5bcb72-d2ee-450b-9456-c88ad5937d6d_836x.png?v=1565185053",
+    quantity: 100,
+    mainCategory: "Candy",
+    subCategory: "Candy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "MEGA CANDY NECKLACE",
+    description:
+      "Accessorize with this giant, colorful and tasty edible candy necklace with nearly 3 feet of stylish sweets.",
+    price: 6.5,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/9502-PRODUCT_01-500_500-1445271983859_aa2d2f8f-ee69-4484-a405-e3b0e9255fb6_836x.png?v=1564486580",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/9502-PRODUCT_02-500_500-1445271988438_836x.png?v=1564486580",
+    quantity: 100,
+    mainCategory: "Candy",
+    subCategory: "Candy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "SWEET CANDY HOUSE",
+    description:
+      "We've upped the ante and stuffed our Sweet Candy House with goodies galore!",
+    price: 6.5,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20210610-By-Asha-Fuller-DCB-0021_836x.jpg?v=1624892798",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20210610-By-Asha-Fuller-DCB-0023_836x.jpg?v=1624892798",
+    quantity: 100,
+    mainCategory: "Candy",
+    subCategory: "Candy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "SMALL DELUXE CANDY CAKE",
+    description:
+      "A Small alternative candy bar birthday cake constructed entirely of candy favorites like Hershey’s® Cookies ‘n’ Creme, Twizzlers®, Airheads® and more!",
+    price: 100.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20211214-By-Asha-Fuller-DCB-0053_836x.jpg?v=1644849886",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20211214-By-Asha-Fuller-DCB-0055_836x.jpg?v=1644849886",
+    quantity: 100,
+    mainCategory: "Gift",
+    subCategory: "Bulk",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "MEDIUM DELUXE CANDY CAKE",
+    description:
+      "Our Medium Sized alternative candy bar birthday cake constructed entirely of candy favorites like Hershey’s® Cookies ‘n’ Creme, Twizzlers®, Airheads® and more!",
+    price: 150.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20211214-By-Asha-Fuller-DCB-0050_836x.jpg?v=1644867005",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20211214-By-Asha-Fuller-DCB-0052_836x.jpg?v=1644849931",
+    quantity: 100,
+    mainCategory: "Gift",
+    subCategory: "Bulk",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "LARGE DELUXE CANDY CAKE",
+    description:
+      "Our Largest alternative candy bar birthday cake constructed entirely of candy favorites like Hershey’s® Cookies ‘n’ Creme, Twizzlers®, Airheads® and more!",
+    price: 175.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20211214-By-Asha-Fuller-DCB-0048_836x.jpg?v=1644867019",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20211214-By-Asha-Fuller-DCB-0054_836x.jpg?v=1644849983",
+    quantity: 100,
+    mainCategory: "Gift",
+    subCategory: "Bulk",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "MEGA SOUR CANDY BUTTONS",
+    description:
+      "We've turned this classic treat into a super-sized, totally tart candy experience",
+    price: 5.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/7790-PRODUCT_01-500_500-1414529481244_06c0c710-5ece-4fb9-8102-65e1147c4ca7_836x.png?v=1565185053",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/7790-PRODUCT_02-500_500-1414529485692_a256aa64-7e9a-4b78-b92e-fae7474b93ba_836x.png?v=1565185053",
+    quantity: 100,
+    mainCategory: "Candy",
+    subCategory: "Candy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "UNBEARABLY AWESOME GRAB & GO POUCH",
+    description:
+      "Carry your candy in sweet style with this unique, hard-to-find mix of gummy bears",
+    price: 7.5,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/Grab_Go-UnBearblyAwesome-836x836_836x.jpg?v=1619617605",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/2020-01-23-DCB-AF12408_836x.jpg?v=1619208680",
+    quantity: 100,
+    mainCategory: "Gummy",
+    subCategory: "Gummy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "OVER THE RAINBOW GRAB & GO POUCH",
+    description:
+      "Take a rainbow anywhere you go! Full of delicious candies in every shade, this resealable rainbow-colored candy pouch is ready for any adventure",
+    price: 7.5,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/2020-01-23-DCB-AF12340_836x.jpg?v=1596142416",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/2020-01-23-DCB-AF12393_836x.jpg?v=1596137681",
+    quantity: 100,
+    mainCategory: "Gummy",
+    subCategory: "Gummy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "JUNK FOOD GRAB & GO POUCH",
+    description:
+      " Indulge with fast food-shaped gummies and candies like Gummy Cola Bottles, Gummy Fried Eggs, Gummy Hot Dogs and more",
+    price: 7.5,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/Grab_Go-JunkFood-836x836_e66798fe-0f06-4b9c-a129-53f739c60a54_836x.jpg?v=1619195084",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/2020-01-23-DCB-AF12412_836x.jpg?v=1619195084",
+    quantity: 100,
+    mainCategory: "Gummy",
+    subCategory: "Gummy",
     reviews: Math.floor(Math.random() * 200),
   },
 ];

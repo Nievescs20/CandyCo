@@ -28,18 +28,36 @@ const Cart = () => {
 
   return (
     <Wrapper>
-      <h2 style={{ textAlign: "center" }}>Your Cart</h2>
-      {cart.length === 0 ? (
-        <p style={{ textAlign: "center" }}>No items in cart.</p>
-      ) : null}
-      {cart.map((item) => (
-        <CartItem
-          key={item.productName}
-          item={item}
-          // addToCart={addToCart}
-          // removeFromCart={removeFromCart}
-        />
-      ))}
+      <h2
+        style={{
+          textAlign: "center",
+          color: "white",
+          fontFamily: "Special Elite, cursive",
+        }}
+      >
+        Your Cart
+      </h2>
+      <div style={{ height: "60vh" }}>
+        {cart.length === 0 ? (
+          <p
+            style={{
+              textAlign: "center",
+              color: "white",
+              fontFamily: "Special Elite, cursive",
+            }}
+          >
+            No items in cart.
+          </p>
+        ) : null}
+        {cart.map((item) => (
+          <CartItem
+            key={item.productName}
+            item={item}
+            // addToCart={addToCart}
+            // removeFromCart={removeFromCart}
+          />
+        ))}
+      </div>
       <div
         style={{
           backgroundColor: "gray",
@@ -57,13 +75,13 @@ const Cart = () => {
             justifyContent: "space-between",
           }}
         >
-          <div style={{ color: "white" }}>
+          <div style={{ color: "white", fontFamily: "Special Elite, cursive" }}>
             <h2>Subtotal:</h2>
             <h2>Tax:</h2>
             <h2>Flat Rate Shipping:</h2>
             <h2>Total:</h2>
           </div>
-          <div style={{ color: "white" }}>
+          <div style={{ color: "white", fontFamily: "Special Elite, cursive" }}>
             <h2>${calculateTotal(cart).toFixed(2)}</h2>
             <h2>${(calculateTotal(cart) * 0.0725).toFixed(2)}</h2>
             <h2>${shipping}</h2>

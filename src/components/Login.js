@@ -18,6 +18,8 @@ const Login = (props) => {
     return state.auth;
   });
 
+  const bg = "/CandyCo-background.png";
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formName = e.target.name;
@@ -27,9 +29,11 @@ const Login = (props) => {
   };
 
   return (
-    <div id="logins">
+    <div id="logins" style={{ backgroundImage: `url(${bg})` }}>
       <div
         style={{
+          backgroundColor: "white",
+          opacity: "0.95",
           width: "40vw",
           border: "2px solid hotpink",
           borderRadius: "8px",

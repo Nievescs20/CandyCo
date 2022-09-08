@@ -4,8 +4,9 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   font-family: Arial, Helvetica, sans-serif;
-  border-bottom: 1px solid lightblue;
+  border-bottom: 1px solid black;
   padding-bottom: 20px;
+  align-items: center;
 
   div {
     flex: 1;
@@ -20,6 +21,5 @@ export const Wrapper = styled.div`
   img {
     max-width: 80px;
     object-fit: cover;
-    margin-left: 40px;
   }
 `;

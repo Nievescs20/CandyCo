@@ -1,6 +1,6 @@
 const { yellow } = require("chalk");
 const { db } = require("./db");
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 8080;
 const app = require("./app");
 const seed = require("../script/seed");
 
@@ -12,7 +12,7 @@ const init = async () => {
       await db.sync();
     }
     app.listen(PORT, () =>
-      console.log(yellow(`Going Super Saiyan on port ${PORT}`))
+      console.log(yellow(`👻 Going Spooky On Port ${PORT} 👻`))
     );
   } catch (ex) {
     console.log(ex);

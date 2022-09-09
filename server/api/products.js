@@ -14,36 +14,88 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get("/category/:category", async (req, res, next) => {
+router.get("/bulk", async (req, res, next) => {
   try {
-    const category = req.params.category;
-    if (category === "Action-Figure") {
-      const products = await Product.findAll({
-        where: { subCategory: "Action-Figure" },
-      });
-      res.json(products);
-    } else if (category === "Clothing") {
-      const products = await Product.findAll({
-        where: { mainCategory: "Clothing" },
-      });
-      res.json(products);
-    } else if (category === "Media") {
-      const products = await Product.findAll({
-        where: { mainCategory: "Media" },
-      });
-      res.json(products);
-    } else if (category === "low-stock") {
-      const products = await Product.findAll({
-        where: { inventory: { [Op.between]: [1, 60] } },
-      });
-      res.json(products);
-    } else {
-      res.status(404).send("Not Found");
-    }
+    const products = await Product.findAll({
+      where: {
+        mainCategory: "Bulk",
+      },
+    });
+    res.json(products);
   } catch (err) {
     next(err);
   }
 });
+
+router.get("/gift", async (req, res, next) => {
+  try {
+    const products = await Product.findAll({
+      where: {
+        mainCategory: "Gift",
+      },
+    });
+    res.json(products);
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.get("/halloween", async (req, res, next) => {
+  try {
+    const products = await Product.findAll({
+      where: {
+        mainCategory: "Halloween",
+      },
+    });
+    res.json(products);
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.get("/sale", async (req, res, next) => {
+  try {
+    const products = await Product.findAll({
+      where: {
+        mainCategory: "Sale",
+      },
+    });
+    res.json(products);
+  } catch (err) {
+    next(err);
+  }
+});
+
+// router.get("/category/:category", async (req, res, next) => {
+//   try {
+//     const category = req.params.category;
+//     if (category === "Action-Figure") {
+//       const products = await Product.findAll({
+//         where: { subCategory: "Action-Figure" },
+//       });
+//       res.json(products);
+//     } else if (category === "Clothing") {
+//       const products = await Product.findAll({
+//         where: { mainCategory: "Clothing" },
+//       });
+//       res.json(products);
+//     } else if (category === "Media") {
+//       const products = await Product.findAll({
+//         where: { mainCategory: "Media" },
+//       });
+//       res.json(products);
+//     } else if (category === "low-stock") {
+//       const products = await Product.findAll({
+//         where: { inventory: { [Op.between]: [1, 60] } },
+//       });
+//       res.json(products);
+//     } else {
+//       res.status(404).send("Not Found");
+//     }
+//   } catch (err) {
+//     next(err);
+//   }
+// });
 
 router.get("/:productId", async (req, res, next) => {
   try {

@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { getCartThunk } from "../../store/cart";
 import { Button } from "@material-ui/core";
+
 // import { CartItemType } from "../App";
 import CartItem from "../CartItem/CartItem";
 
@@ -13,7 +15,7 @@ import { Wrapper } from "./Cart.styles";
 //   removeFromCart: (id: number) => void;
 // };
 
-const Cart = () => {
+const Cart = ({ setCartOpen }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart?.products) || [];
   const tax = 1.0725;
@@ -93,19 +95,21 @@ const Cart = () => {
           </div>
         </div>
         <div>
-          <button
-            // type="submit"
-            className={
-              cart.length
-                ? "mt-10 w-full cart-btn border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                : "mt-10 w-full bg-gray-500 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white"
-            }
-            // className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            // disabled={cart.length ? false : true}
-            onClick={() => console.log("checkout!")}
-          >
-            Checkout
-          </button>
+          <Link to="/checkout">
+            <button
+              // type="submit"
+              className={
+                cart.length
+                  ? "mt-10 w-full cart-btn border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  : "mt-10 w-full bg-gray-500 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white"
+              }
+              // className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              // disabled={cart.length ? false : true}
+              onClick={() => setCartOpen(false)}
+            >
+              Checkout
+            </button>
+          </Link>
         </div>
       </div>
     </Wrapper>

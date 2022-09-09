@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const {
-  models: { User, Order, Product, OrderProduct },
+  models: { User, Order, Product, OrderProduct, OrderHistory },
 } = require("../db");
 const { requireToken } = require("./middleware");
 
@@ -105,6 +105,34 @@ router.post("/deleteItem", requireToken, async (req, res, next) => {
     });
 
     await product.destroy();
+
+    res.sendStatus(200);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post("/completeOrder", async (req, res, next) => {
+  console.log("body", req.body);
+  try {
+    let order = await Order.findOne({
+      where: {
+        id: req.body.orderNumber,
+        // status: "open",
+      },
+    });
+
+    if (order) {
+      order.update({ status: "closed" });
+    }
+
+    await OrderHistory.create({
+      customerId: req.body.customerId,
+      orderNumber: req.body.orderNumber,
+      customerName: req.body.customerName,
+      customerEmail: req.body.customerEmail,
+      total: req.body.total,
+    });
 
     res.sendStatus(200);
   } catch (error) {

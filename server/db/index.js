@@ -3,7 +3,7 @@ const User = require("./models/User");
 const Product = require("./models/Product");
 const OrderProduct = require("./models/OrderProduct");
 const Order = require("./models/Order");
-// const Shipping = require("./models/Shipping");
+const OrderHistory = require("./models/OrderHistory");
 
 Order.belongsToMany(Product, { through: OrderProduct });
 Product.belongsToMany(Order, { through: OrderProduct });
@@ -21,5 +21,6 @@ module.exports = {
     Product,
     OrderProduct,
     Order,
+    OrderHistory,
   },
 };

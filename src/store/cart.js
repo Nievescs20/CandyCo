@@ -94,7 +94,7 @@ export const addCartThunk = (product, quantity) => {
             productId: product.id,
             productName: product.name,
             imageUrl: product.imageUrl,
-            quantity: parseInt(quantity),
+            quantity: Number(quantity),
             price: product.price,
             totalPrice: cost,
           },
@@ -127,7 +127,7 @@ export const addCartThunk = (product, quantity) => {
             productName: product.name,
             imageUrl: product.imageUrl,
             price: product.price,
-            quantity: parseInt(quantity),
+            quantity: Number(quantity),
             totalPrice: cost,
             productId: product.id,
           });
@@ -136,8 +136,8 @@ export const addCartThunk = (product, quantity) => {
         else {
           for (let productItem of cart.products) {
             if (productItem.id === product.id) {
-              productItem.quantity += parseInt(quantity);
-              productItem.totalPrice += parseInt(quantity) * productItem.price;
+              productItem.quantity += Number(quantity);
+              productItem.totalPrice += Number(quantity) * productItem.price;
             }
           }
         }
@@ -164,7 +164,7 @@ export const changeCartQuantityThunk = (product, quantity) => {
             productId: product.productId,
             productName: product.name,
             imageUrl: product.imageUrl,
-            quantity: parseInt(quantity),
+            quantity: Number(quantity),
             price: product.price,
             totalPrice: cost,
           },
@@ -199,7 +199,7 @@ export const changeCartQuantityThunk = (product, quantity) => {
             productName: product.name,
             imageUrl: product.imageUrl,
             price: product.price,
-            quantity: parseInt(quantity),
+            quantity: Number(quantity),
             totalPrice: cost,
             productId: product.id,
           });
@@ -208,8 +208,8 @@ export const changeCartQuantityThunk = (product, quantity) => {
         else {
           for (let productItem of cart.products) {
             if (productItem.id === product.id) {
-              productItem.quantity += parseInt(quantity);
-              productItem.totalPrice += parseInt(quantity) * productItem.price;
+              productItem.quantity += Number(quantity);
+              productItem.totalPrice += Number(quantity) * productItem.price;
             }
           }
         }
@@ -219,6 +219,48 @@ export const changeCartQuantityThunk = (product, quantity) => {
       }
     } catch (err) {
       console.log(err);
+    }
+  };
+};
+
+export const closeOrderThunk = (orderInfo) => {
+  console.log("close order thunk new", orderInfo);
+  return async (dispatch) => {
+    try {
+      await axios.post("/api/cart/completeOrder", orderInfo);
+      const token = window.localStorage.getItem("token");
+      if (!token) {
+        const cart = JSON.parse(window.localStorage.getItem("cart"));
+        if (cart) {
+          console.log("remove");
+          window.localStorage.removeItem("cart");
+        }
+      }
+      dispatch(resetCart());
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const paymentThunk = (amount, token) => {
+  return async (dispatch) => {
+    try {
+    } catch (error) {}
+    const response = await axios.post("/api/payment", {
+      token,
+      product: { price: amount, name: "Candy Purchase" },
+    });
+    const { status } = response.data;
+    console.log("Response:", response.data);
+    if (status === "success") {
+      console.log("Success! Check email for details");
+
+      this.setState({ status: "Success! Check email for details" });
+    } else {
+      console.log("Something went wrong");
+
+      this.setState({ status: "Something went wrong" });
     }
   };
 };
@@ -238,6 +280,8 @@ const cartReducer = (state = initialState, action) => {
         ...state,
         products: state.products.filter((item) => item.productId !== action.id),
       };
+    case RESET_CART:
+      return { products: [] };
     default:
       return state;
   }

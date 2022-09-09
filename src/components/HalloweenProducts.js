@@ -3,12 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addCartThunk } from "../store/cart";
 import toast, { Toaster } from "react-hot-toast";
-import { getProductsThunk } from "../store/products";
+import { getHalloweenProductsThunk } from "../store/products";
 
-function AllProducts(props) {
+function HalloweenProducts(props) {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products.allProducts);
-  // const [show, setShow] = useState(true);
+  const products = useSelector((state) => state.products.halloweenProducts);
 
   const notify = (product, quantity) =>
     toast(`${quantity} ${product.name} Added To Cart!`, {
@@ -23,50 +22,29 @@ function AllProducts(props) {
   };
 
   useEffect(() => {
-    dispatch(getProductsThunk());
+    dispatch(getHalloweenProductsThunk());
   }, []);
 
   return (
     <div className="bg-white">
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "125px",
-        }}
-      >
+      <div style={{ width: "100%" }}>
+        <img
+          src="https://cdn.accentuate.io/275496009901/1634743319282/2022-Halloween-Desktop-300-1.jpg?v=1661796674480"
+          alt="falling candy"
+          style={{ width: "100%" }}
+        />
+      </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <div
           style={{
-            fontSize: "42px",
             fontFamily: "Special Elite, cursive",
             color: "orange",
+            padding: "30px",
+            fontSize: "42px",
           }}
         >
-          WE'VE GOT CANDY FOR EVERYONE
+          Terrifyingly Tasty Treats For Everyone!
         </div>
-      </div>
-      <div style={{ width: "60%", margin: "auto auto" }}>
-        <video
-          width="100%"
-          height="100%"
-          autoplay="true"
-          loop="true"
-          muted="true"
-          webkit-playsinline=""
-          playsinline=""
-          preload="none"
-          className="shogun-image"
-        >
-          <source
-            src="https://i.shgcdn.com/c3411ee3-e114-4757-a10e-f67655c79bf0/gif2video/-/format/webm/-/quality/lighter/"
-            type="video/webm"
-          />
-          <source
-            src="https://i.shgcdn.com/c3411ee3-e114-4757-a10e-f67655c79bf0/gif2video/-/format/mp4/-/quality/lighter/"
-            type="video/mp4"
-          />
-        </video>
       </div>
 
       <div>
@@ -129,4 +107,4 @@ function AllProducts(props) {
   );
 }
 
-export default AllProducts;
+export default HalloweenProducts;

@@ -25,12 +25,12 @@ const Navbar = ({ setCartOpen }) => {
     <div>
       <div
         style={{
-          backgroundColor: "tomato",
+          backgroundColor: "darkgreen",
           display: "flex",
           justifyContent: "center",
         }}
       >
-        <div>
+        <div style={{ color: "white" }}>
           Purchase Any Two Gift Baskets Of Value $50 Or More And Receive A Free
           CancyCo Tote!
         </div>
@@ -91,12 +91,22 @@ const Navbar = ({ setCartOpen }) => {
                   <div
                     style={{ display: "flex", justifyContent: "space-between" }}
                   >
-                    <div style={{ color: "lightgreen" }}>SHOP</div>
-                    <div style={{ color: "dodgerblue" }}>GIFTS</div>
-                    <div style={{ color: "lightpink" }}>BULK CANDY</div>
-                    <div style={{ color: "orange" }}>HALLOWEEN</div>
-                    <div style={{ color: "gold" }}>SALE</div>
-                    <div style={{ color: "lightcoral" }}>ABOUT</div>
+                    <Link to="/products">
+                      <button style={{ color: "lightgreen" }}>SHOP</button>
+                    </Link>
+                    <Link to="/gifts">
+                      <button style={{ color: "dodgerblue" }}>GIFTS</button>
+                    </Link>
+                    <Link to="/bulkcandy">
+                      <button style={{ color: "lightpink" }}>BULK CANDY</button>
+                    </Link>
+                    <Link to="/halloween">
+                      <button style={{ color: "orange" }}>HALLOWEEN</button>
+                    </Link>
+                    <Link to="/sale">
+                      <button style={{ color: "gold" }}>SALE</button>
+                    </Link>
+                    <button style={{ color: "lightcoral" }}>ABOUT</button>
                   </div>
                 )}
               </div>
@@ -105,10 +115,18 @@ const Navbar = ({ setCartOpen }) => {
                 <Link to="/products">
                   <button style={{ color: "lightgreen" }}>SHOP</button>
                 </Link>
-                <button style={{ color: "dodgerblue" }}>GIFTS</button>
-                <button style={{ color: "lightpink" }}>BULK CANDY</button>
-                <button style={{ color: "orange" }}>HALLOWEEN</button>
-                <button style={{ color: "gold" }}>SALE</button>
+                <Link to="/gifts">
+                  <button style={{ color: "dodgerblue" }}>GIFTS</button>
+                </Link>
+                <Link to="/bulkcandy">
+                  <button style={{ color: "lightpink" }}>BULK CANDY</button>
+                </Link>
+                <Link to="/halloween">
+                  <button style={{ color: "orange" }}>HALLOWEEN</button>
+                </Link>
+                <Link to="/sale">
+                  <button style={{ color: "gold" }}>SALE</button>
+                </Link>
                 <button style={{ color: "lightcoral" }}>ABOUT</button>
               </div>
             )}
@@ -126,16 +144,18 @@ const Navbar = ({ setCartOpen }) => {
                   alignItems: "center",
                 }}
               >
-                <div style={{ margin: "10px", color: "gold" }}>
-                  {`Weclome ${user.firstName
-                    .slice(0, 1)
-                    .toUpperCase()}${user.firstName.slice(1)}`}
-                </div>
+                <Link to="/profile">
+                  <div style={{ margin: "10px", color: "gold" }}>
+                    {`Weclome ${user.firstName
+                      .slice(0, 1)
+                      .toUpperCase()}${user.firstName.slice(1)}`}
+                  </div>
+                </Link>
                 <StyledButton
                   onClick={() => setCartOpen(true)}
                   style={{ padding: "15px", backgroundColor: "orange" }}
                 >
-                  <Badge badgeContent={cart.length} color="default">
+                  <Badge badgeContent={cart.length} color="error">
                     <AddShoppingCart />
                   </Badge>
                 </StyledButton>

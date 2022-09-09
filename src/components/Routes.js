@@ -10,7 +10,12 @@ import SingleProduct from "./SingleProduct";
 import UserProfile from "./UserProfile";
 import UserProfiles from "./UserProfiles";
 import Cart from "./Cart/Cart";
-import { getProductsThunk } from "../store/products";
+import Checkout from "./Checkout";
+import Confirmation from "./Confirmation";
+import BulkCandy from "./BulkCandy";
+import Gifts from "./Gifts";
+import HalloweenProducts from "./HalloweenProducts";
+import SaleProducts from "./SaleProducts";
 
 const RoutesComponent = () => {
   const dispatch = useDispatch();
@@ -25,7 +30,6 @@ const RoutesComponent = () => {
 
   useEffect(() => {
     dispatch(me());
-    dispatch(getProductsThunk());
   }, []);
 
   return (
@@ -40,6 +44,12 @@ const RoutesComponent = () => {
               <Route path="/products/:id" element={<SingleProduct />} />
               <Route path="/home" element={<Home />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/confirmation" element={<Confirmation />} />
+              <Route path="/bulkcandy" element={<BulkCandy />} />
+              <Route path="/gifts" element={<Gifts />} />
+              <Route path="/halloween" element={<HalloweenProducts />} />
+              <Route path="/sale" element={<SaleProducts />} />
               <Route path="*" element={<Navigate to="/home" replace />} />
             </Routes>
           ) : (
@@ -49,6 +59,12 @@ const RoutesComponent = () => {
               <Route path="/products/:id" element={<SingleProduct />} />
               <Route path="/home" element={<Home />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/confirmation" element={<Confirmation />} />
+              <Route path="/bulkcandy" element={<BulkCandy />} />
+              <Route path="/gifts" element={<Gifts />} />
+              <Route path="/halloween" element={<HalloweenProducts />} />
+              <Route path="/sale" element={<SaleProducts />} />
               <Route path="*" element={<Navigate to="/home" replace />} />
             </Routes>
           )}
@@ -61,6 +77,12 @@ const RoutesComponent = () => {
           <Route path="/login" element={<Login name="hi" />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/confirmation" element={<Confirmation />} />
+          <Route path="/bulkcandy" element={<BulkCandy />} />
+          <Route path="/gifts" element={<Gifts />} />
+          <Route path="/halloween" element={<HalloweenProducts />} />
+          <Route path="/sale" element={<SaleProducts />} />
           <Route path="/" element={<Navigate to="/home" replace />} />
         </Routes>
       )}

@@ -49,15 +49,31 @@ const Footer = () => {
               width: "20vw",
             }}
           >
-            <div className="container-1" style={{ color: "orange" }}>
-              <div>Contact Us</div>
-              <div>Find a Store</div>
-              <div>Shipping Information</div>
+            <div
+              className="container-1"
+              style={{
+                color: "orange",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+              }}
+            >
+              <button>Contact Us</button>
+              <button>Find a Store</button>
+              <button>Shipping Information</button>
             </div>
-            <div className="container-2" style={{ color: "purple" }}>
-              <div>Our Brand</div>
-              <div>Our Blog</div>
-              <div>Careers</div>
+            <div
+              className="container-2"
+              style={{
+                color: "purple",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+              }}
+            >
+              <button>Our Brand</button>
+              <button>Our Blog</button>
+              <button>Careers</button>
             </div>
           </div>
           <div

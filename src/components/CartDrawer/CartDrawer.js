@@ -30,7 +30,7 @@ const CartDrawer = ({ setCartOpen, cartOpen }) => {
           open={cartOpen}
           onClose={() => setCartOpen(false)}
         >
-          <Cart />
+          <Cart setCartOpen={setCartOpen} />
         </Drawer>
         <Routes />
       </Wrapper>

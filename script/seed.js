@@ -342,6 +342,228 @@ const products = [
     subCategory: "Gummy",
     reviews: Math.floor(Math.random() * 200),
   },
+  {
+    name: "ANNIVERSARY FOILED CHOCOLATE COVERED COOKIE SET",
+    description:
+      "Delicious chocolate covered cookies delightfully decorated for any occassion",
+    price: 35.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20211215-By-Asha-Fuller-DCB-0023_836x.jpg?v=1650384189",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20211215-By-Asha-Fuller-DCB-0015_836x.jpg?v=1644612467",
+    quantity: 100,
+    mainCategory: "Gift",
+    subCategory: "Snack",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "MILK CHOCOLATE CARAMELS BULK BAG",
+    description:
+      "Rich, chewy, and smooth milk chocolate-covered caramels are an indulgent midday treat!",
+    price: 9.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/MicrosoftTeams-image_1_97121671-8aca-4dcd-8234-ce231bb2f2e1_836x.jpg?v=1624649044",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/GoldBagImage_532fc11b-bbf9-41da-a336-c1c14afd1eb3_836x.jpg?v=1624649044",
+    quantity: 100,
+    mainCategory: "Bulk",
+    subCategory: "Bulk Candy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "COOKIES N CREAM CARAMELS BULK BAG",
+    description:
+      "Rich caramel combines perfectly with a blend of chocolate cookies & sweet cream to create this indulgent treat",
+    price: 9.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/CookiesandCream_6fc6320d-7de8-463a-961f-6e930611cfa9_836x.jpg?v=1645201753",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/GoldBagImage_532fc11b-bbf9-41da-a336-c1c14afd1eb3_836x.jpg?v=1624649044",
+    quantity: 100,
+    mainCategory: "Bulk",
+    subCategory: "Bulk Candy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "TRIPLE CHOCOLATE TOFFEE BULK BAG",
+    description:
+      "Indulge in handcrafted toffee covered in right dark, milk and white chocolate!",
+    price: 9.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/TripleChocolateToffee_03a95715-af16-4430-bbbb-754fb4a0123d_836x.jpg?v=1620926323",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/GoldBagImage_532fc11b-bbf9-41da-a336-c1c14afd1eb3_836x.jpg?v=1624649044",
+    quantity: 100,
+    mainCategory: "Bulk",
+    subCategory: "Bulk Candy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "CHOCOLATE COVERED COOKIE CRUMB BALLS BULK BAG",
+    description:
+      "We’re crazy for these chocolate-covered cookie balls! Keep this reusable pouch around for whenever you need a crunchy, chocolatey, totally delicious bite",
+    price: 9.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/KoppersMilkChocolateCookieCrumbs_fb833668-50a0-4c48-8c03-6103303eaa1b_836x.jpg?v=1645191766",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/GoldBagImage_532fc11b-bbf9-41da-a336-c1c14afd1eb3_836x.jpg?v=1624649044",
+    quantity: 100,
+    mainCategory: "Bulk",
+    subCategory: "Bulk Candy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "CHOCOLATE COVERED COOKIE DOUGH BULK BAG",
+    description:
+      "You don’t need an oven for fresh-baked taste! Just open the resealable pouch whenever chocolate chip cookie cravings strike",
+    price: 9.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/1949_fd456048-4d45-482c-92f3-ab42b2215f1c_836x.jpg?v=1620179769",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/GoldBagImage_532fc11b-bbf9-41da-a336-c1c14afd1eb3_836x.jpg?v=1624649044",
+    quantity: 100,
+    mainCategory: "Bulk",
+    subCategory: "Bulk Candy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "MILK CHOCOLATE SANDWICH COOKIES BULK BAG",
+    description:
+      "Fan favorite chocolate sandwich cookies just got a chocolate upgrade! It’s a good thing these come in bulk—it’s impossible to eat just one",
+    price: 9.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/122_aba1cddd-ecdf-4df0-8008-009d4b71aca1_836x.jpg?v=1620180029",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/GoldBagImage_532fc11b-bbf9-41da-a336-c1c14afd1eb3_836x.jpg?v=1624649044",
+    quantity: 100,
+    mainCategory: "Bulk",
+    subCategory: "Bulk Candy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "SPOOKY GOOD TIME MARSHMALLOW KEBOB",
+    description:
+      "Our kebobs got a sweet & spooky twist with fluffy Halloween-themed marshmallows",
+    price: 10.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0063_836x.jpg?v=1659984542",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0064_836x.jpg?v=1661869853",
+    quantity: 100,
+    mainCategory: "Halloween",
+    subCategory: "Marshmallow",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "NUT FREE TRICK OR TREAT PACKS",
+    description:
+      "Nut-free trick-or-treaters need not worry with this Halloween bag filled with nut-free chocolate foil pumpkins and milk chocolate drops. Be sure to bring this one to class parties & other places where allergens are a no-no",
+    price: 18.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0051-NUT-FREE_836x.jpg?v=1661285261",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0052-NUT-FREE_836x.jpg?v=1661285261",
+    quantity: 100,
+    mainCategory: "Halloween",
+    subCategory: "Mix",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "GUMMY SKULL & BONES BULK BAG",
+    description: "These treats are just as spooky as they are sweet!",
+    price: 6.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20210610-By-Asha-Fuller-DCB-0047_1_836x.jpg?v=1645106173",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/ECOMMBulk-GoldBag-Ecomm_3d63d575-566c-4e0e-9569-aca89a401a47_836x.jpg?v=1645106173",
+    quantity: 100,
+    mainCategory: "Halloween",
+    subCategory: "Gummy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "GUMMY WORMS BULK BAG",
+    description: "Stock up on chewy, fruity favorites!",
+    price: 6.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/780_090c08fc-6189-4969-82f0-26b4006af844_836x.jpg?v=1620742001",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/ECOMMBulk-GoldBag-Ecomm_3d63d575-566c-4e0e-9569-aca89a401a47_836x.jpg?v=1645106173",
+    quantity: 100,
+    mainCategory: "Halloween",
+    subCategory: "Gummy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "CANDY CORN BULK BAG",
+    description:
+      "Who said candy corn was just for Halloween? Enjoy the sweet bites year-round with our convenient resealable pouch",
+    price: 6.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/1999_836x.jpg?v=1624639074",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/ECOMMBulk-GoldBag-Ecomm_3d63d575-566c-4e0e-9569-aca89a401a47_836x.jpg?v=1645106173",
+    quantity: 100,
+    mainCategory: "Halloween",
+    subCategory: "Candy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "SUGAR FREE GUMMY WORMS BULK BAG",
+    description:
+      "Sugar free & ready to party! Our resealable pouch can go anywhere, so you’ll always have the perfect sweet, chewy treat on hand",
+    price: 7.0,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/31518_dabb83d4-ecb3-45e6-8d94-61a2499f18fb_836x.jpg?v=1620179994",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/ECOMMBulk-GoldBag-Ecomm_3d63d575-566c-4e0e-9569-aca89a401a47_836x.jpg?v=1645106173",
+    quantity: 100,
+    mainCategory: "Halloween",
+    subCategory: "Gummy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "FOILED FLORALS VEGAN ORGANIC CHOCOLATE GIFT SET",
+    description:
+      "These vegan chocolates are wrapped in stunning foils & ready to gift!",
+    price: 4.8,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220112-By-Asha-Fuller-DCB-0018_836x.jpg?v=1644595014",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220112-By-Asha-Fuller-DCB-0026_836x.jpg?v=1644595014",
+    quantity: 100,
+    mainCategory: "Sale",
+    subCategory: "Chocolate",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "BE MINE GUMMY KEBOB",
+    description:
+      "This chewy, fruity Gummy Kebob has double the hearts & double the love!",
+    price: 4.8,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20211116-By-Asha-Fuller-DCB-0036_836x.jpg?v=1639673664",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20211116-By-Asha-Fuller-DCB-0037_836x.jpg?v=1639673664",
+    quantity: 100,
+    mainCategory: "Sale",
+    subCategory: "Gummy",
+    reviews: Math.floor(Math.random() * 200),
+  },
+  {
+    name: "SEALED WITH A KISS PAINT CAN TRIO",
+    description:
+      "This kiss-worthy candy set is one of our sweetest gifts! Mini paint cans containing sour gummy lips, milk chocolate presents & gummy X’s & O’s are perfect for a special someone!",
+    price: 10.4,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20211117-By-Asha-Fuller-DCB-0052_836x.jpg?v=1643722817",
+    imageUrl2:
+      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20211117-By-Asha-Fuller-DCB-0055_836x.jpg?v=1643722817",
+    quantity: 100,
+    mainCategory: "Sale",
+    subCategory: "Gummy",
+    reviews: Math.floor(Math.random() * 200),
+  },
 ];
 
 /**

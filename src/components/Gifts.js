@@ -3,12 +3,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addCartThunk } from "../store/cart";
 import toast, { Toaster } from "react-hot-toast";
-import { getProductsThunk } from "../store/products";
+import { getGiftProductsThunk } from "../store/products";
 
-function AllProducts(props) {
+function Gifts(props) {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products.allProducts);
-  // const [show, setShow] = useState(true);
+  const products = useSelector((state) => state.products.gifts);
+
+  const bg =
+    "https://previews.123rf.com/images/jenifoto/jenifoto1909/jenifoto190900018/129730647-halloween-candy-double-border-banner-on-a-white-background-with-copy-space.jpg";
 
   const notify = (product, quantity) =>
     toast(`${quantity} ${product.name} Added To Cart!`, {
@@ -23,50 +25,25 @@ function AllProducts(props) {
   };
 
   useEffect(() => {
-    dispatch(getProductsThunk());
+    dispatch(getGiftProductsThunk());
   }, []);
 
   return (
     <div className="bg-white">
       <div
         style={{
+          width: "100%",
+          height: "500px",
+          backgroundImage: `url(${bg})`,
+          backgroundSize: "cover",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "125px",
         }}
       >
-        <div
-          style={{
-            fontSize: "42px",
-            fontFamily: "Special Elite, cursive",
-            color: "orange",
-          }}
-        >
-          WE'VE GOT CANDY FOR EVERYONE
+        <div style={{ fontFamily: "Special Elite, cursive", fontSize: "42px" }}>
+          Gifts, Gifts and more Gifts!
         </div>
-      </div>
-      <div style={{ width: "60%", margin: "auto auto" }}>
-        <video
-          width="100%"
-          height="100%"
-          autoplay="true"
-          loop="true"
-          muted="true"
-          webkit-playsinline=""
-          playsinline=""
-          preload="none"
-          className="shogun-image"
-        >
-          <source
-            src="https://i.shgcdn.com/c3411ee3-e114-4757-a10e-f67655c79bf0/gif2video/-/format/webm/-/quality/lighter/"
-            type="video/webm"
-          />
-          <source
-            src="https://i.shgcdn.com/c3411ee3-e114-4757-a10e-f67655c79bf0/gif2video/-/format/mp4/-/quality/lighter/"
-            type="video/mp4"
-          />
-        </video>
       </div>
 
       <div>
@@ -129,4 +106,4 @@ function AllProducts(props) {
   );
 }
 
-export default AllProducts;
+export default Gifts;

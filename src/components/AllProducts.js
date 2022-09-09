@@ -102,6 +102,8 @@ function AllProducts(props) {
                       justifyContent: "center",
                       alignItems: "center",
                       margin: "5px",
+                      position: "relative",
+                      bottom: "5%",
                     }}
                   >
                     <b style={{ margin: "5px" }}>${product.price}</b>

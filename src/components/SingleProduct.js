@@ -15,7 +15,7 @@ function SingleProduct(props) {
   const notify = (product, quantity) =>
     toast(`${quantity} ${product.name}(s) Added To Cart!`, {
       duration: 2000,
-      position: "top-right",
+      position: "bottom-right",
       style: { backgroundColor: "dodgerblue" },
     });
 
@@ -29,6 +29,7 @@ function SingleProduct(props) {
   };
 
   useEffect(() => {
+    window.scrollTo({ behavior: "smooth", top: "0px" });
     dispatch(getProductThunk(id));
   }, []);
 
@@ -224,15 +225,20 @@ function SingleProduct(props) {
               <h3 className="sr-only">Description</h3>
 
               <div className="space-y-6">
-                <p className="text-base text-gray-900">
-                  {singleProduct.fullDescription}
-                </p>
+                <b
+                  className="text-base text-gray-900"
+                  style={{ fontSize: "16px" }}
+                >
+                  {singleProduct.description}
+                </b>
               </div>
             </div>
-
+            <div style={{ padding: "20px 0px 20px 0px" }}>
+              <hr />
+            </div>
             <div className="mt-10">
               <h3 className="text-sm font-medium text-gray-900">
-                Product Highlights
+                Ingredients, Nutrition Facts and Allergens
               </h3>
 
               <div className="mt-4">
@@ -258,7 +264,7 @@ function SingleProduct(props) {
               </div>
             </div>
 
-            <SuggestedProducts />
+            {/* <SuggestedProducts /> */}
           </div>
         </div>
       </div>

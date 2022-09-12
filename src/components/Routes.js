@@ -16,6 +16,7 @@ import BulkCandy from "./BulkCandy";
 import Gifts from "./Gifts";
 import HalloweenProducts from "./HalloweenProducts";
 import SaleProducts from "./SaleProducts";
+import UnderConstruction from "./UnderConstruction";
 
 const RoutesComponent = () => {
   const dispatch = useDispatch();
@@ -50,6 +51,10 @@ const RoutesComponent = () => {
               <Route path="/gifts" element={<Gifts />} />
               <Route path="/halloween" element={<HalloweenProducts />} />
               <Route path="/sale" element={<SaleProducts />} />
+              <Route
+                path="/underconstruction"
+                element={<UnderConstruction />}
+              />
               <Route path="*" element={<Navigate to="/home" replace />} />
             </Routes>
           ) : (
@@ -65,6 +70,10 @@ const RoutesComponent = () => {
               <Route path="/gifts" element={<Gifts />} />
               <Route path="/halloween" element={<HalloweenProducts />} />
               <Route path="/sale" element={<SaleProducts />} />
+              <Route
+                path="/underconstruction"
+                element={<UnderConstruction />}
+              />
               <Route path="*" element={<Navigate to="/home" replace />} />
             </Routes>
           )}
@@ -83,6 +92,7 @@ const RoutesComponent = () => {
           <Route path="/gifts" element={<Gifts />} />
           <Route path="/halloween" element={<HalloweenProducts />} />
           <Route path="/sale" element={<SaleProducts />} />
+          <Route path="/underconstruction" element={<UnderConstruction />} />
           <Route path="/" element={<Navigate to="/home" replace />} />
         </Routes>
       )}

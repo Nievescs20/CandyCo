@@ -1,12 +1,15 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getThreeProductsThunk } from "../store/products";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function SuggestedProducts(props) {
+function SuggestedProducts() {
   const dispatch = useDispatch();
+  // const navigate = useNavigate();
   let threeProducts =
     useSelector((state) => state.products.threeProducts) || [];
+
+  console.log("three products", threeProducts);
 
   useEffect(() => {
     dispatch(getThreeProductsThunk());
@@ -23,14 +26,14 @@ function SuggestedProducts(props) {
           {threeProducts &&
             threeProducts.map((product) => (
               <div className="group relative" key={product.id}>
-                <div className="w-full min-h-80 bg-white aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                  <img
-                    src={product.imageUrl}
-                    alt={product.description}
-                    className="w-full h-full object-center lg:w-full lg:h-full object-contain"
-                  />
-                </div>
                 <Link to={`/products/${product.id}`}>
+                  <div className="w-full min-h-80 bg-white aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                    <img
+                      src={product.imageUrl}
+                      alt={product.description}
+                      className="w-full h-full object-center lg:w-full lg:h-full object-contain"
+                    />
+                  </div>
                   <div className="mt-4 ">
                     <div>
                       <h3 className="text-sm text-gray-700">

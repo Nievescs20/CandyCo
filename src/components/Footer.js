@@ -6,6 +6,7 @@ import {
 } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import { FaPinterest } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -49,32 +50,36 @@ const Footer = () => {
               width: "20vw",
             }}
           >
-            <div
-              className="container-1"
-              style={{
-                color: "orange",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-start",
-              }}
-            >
-              <button>Contact Us</button>
-              <button>Find a Store</button>
-              <button>Shipping Information</button>
-            </div>
-            <div
-              className="container-2"
-              style={{
-                color: "purple",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-start",
-              }}
-            >
-              <button>Our Brand</button>
-              <button>Our Blog</button>
-              <button>Careers</button>
-            </div>
+            <Link to="/underconstruction">
+              <div
+                className="container-1"
+                style={{
+                  color: "orange",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                }}
+              >
+                <button>Contact Us</button>
+                <button>Find a Store</button>
+                <button>Shipping Information</button>
+              </div>
+            </Link>
+            <Link to="/underconstruction">
+              <div
+                className="container-2"
+                style={{
+                  color: "purple",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                }}
+              >
+                <button>Our Brand</button>
+                <button>Our Blog</button>
+                <button>Careers</button>
+              </div>
+            </Link>
           </div>
           <div
             className="contact-container"
@@ -86,22 +91,46 @@ const Footer = () => {
           >
             <div className="top-row">
               <div className="icon-container">
-                <button>
+                <button
+                  onClick={() =>
+                    window.alert(
+                      "Sorry, No real social media associated with this site"
+                    )
+                  }
+                >
                   <IconContext.Provider value={{ color: "white", size: "2em" }}>
                     <AiFillFacebook />
                   </IconContext.Provider>
                 </button>
-                <button>
+                <button
+                  onClick={() =>
+                    window.alert(
+                      "Sorry, No real social media associated with this site"
+                    )
+                  }
+                >
                   <IconContext.Provider value={{ color: "white", size: "2em" }}>
                     <AiOutlineInstagram />
                   </IconContext.Provider>
                 </button>
-                <button>
+                <button
+                  onClick={() =>
+                    window.alert(
+                      "Sorry, No real social media associated with this site"
+                    )
+                  }
+                >
                   <IconContext.Provider value={{ color: "white", size: "2em" }}>
                     <AiOutlineTwitter />
                   </IconContext.Provider>
                 </button>
-                <button>
+                <button
+                  onClick={() =>
+                    window.alert(
+                      "Sorry, No real social media associated with this site"
+                    )
+                  }
+                >
                   <IconContext.Provider value={{ color: "white", size: "2em" }}>
                     <FaPinterest />
                   </IconContext.Provider>
@@ -129,6 +158,9 @@ const Footer = () => {
                     width: "100px",
                     height: "40px",
                   }}
+                  onClick={() =>
+                    window.alert("Sorry, No real email list to join")
+                  }
                 >
                   Submit
                 </button>

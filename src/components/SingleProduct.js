@@ -213,7 +213,7 @@ function SingleProduct(props) {
                 className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 "
                 onClick={handleAddProduct}
               >
-                Add to bag
+                Add To Cart
               </button>
             </div>
           </div>

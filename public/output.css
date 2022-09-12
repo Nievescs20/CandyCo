@@ -413,6 +413,15 @@ object {
 .sc-dkzDqf {
   background-color: lightgray;
 }
+
+.price-box {
+  position: absolute;
+  bottom: 5%;
+}
+
+.product-box {
+  position: relative;
+}
 /*
 Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
 */

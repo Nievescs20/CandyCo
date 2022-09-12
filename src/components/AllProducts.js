@@ -76,7 +76,7 @@ function AllProducts(props) {
         <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-32 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-32">
           {products.length > 0 &&
             products.map((product) => (
-              <div style={{ margin: "50px 0px" }}>
+              <div style={{ margin: "50px 0px", position: "relative" }}>
                 <Link to={`/products/${product.id}`} key={product.id}>
                   <div className="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8 m-30">
                     <img
@@ -93,7 +93,13 @@ function AllProducts(props) {
                     alignItems: "center",
                   }}
                 >
-                  <b style={{ marginTop: "10px", fontSize: "18px" }}>
+                  <b
+                    style={{
+                      marginTop: "10px",
+                      fontSize: "18px",
+                      marginBottom: "5vh",
+                    }}
+                  >
                     {product.name}
                   </b>
                   <div
@@ -102,8 +108,9 @@ function AllProducts(props) {
                       justifyContent: "center",
                       alignItems: "center",
                       margin: "5px",
-                      position: "relative",
-                      bottom: "5%",
+                      position: "absolute",
+                      bottom: "0px",
+                      textAlign: "center",
                     }}
                   >
                     <b style={{ margin: "5px" }}>${product.price}</b>

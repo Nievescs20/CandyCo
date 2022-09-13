@@ -66,8 +66,10 @@ User.findByToken = async function (token) {
 };
 
 User.beforeCreate(async (user) => {
-  user.firstName = user.firstName.toLowerCase();
-  user.lastName = user.lastName.toLowerCase();
+  if (user.firstName) {
+    user.firstName = user.firstName.toLowerCase();
+    user.lastName = user.lastName.toLowerCase();
+  }
 });
 
 const hashPassword = async (user) => {

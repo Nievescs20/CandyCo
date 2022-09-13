@@ -29,7 +29,16 @@ const Login = (props) => {
   };
 
   return (
-    <div id="logins" style={{ backgroundImage: `url(${bg})` }}>
+    <div
+      id="logins"
+      style={{
+        backgroundImage: `url(${bg})`,
+        minHeight: "60vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <div
         style={{
           backgroundColor: "white",
@@ -52,7 +61,7 @@ const Login = (props) => {
         >
           <div className="my-2">
             <label htmlFor="username">
-              <div style={{ color: "dodgerblue" }}>Username: </div>
+              <div style={{ color: "dodgerblue" }}>Email: </div>
             </label>
             <input
               className="rounded text-blue-500 bg-gray-200 "

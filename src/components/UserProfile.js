@@ -9,15 +9,23 @@ function UserProfile(props) {
   const bg = "/CandyCo-background.png";
 
   return (
-    <div style={{ width: "100%", marginBottom: "25vh" }}>
+    <div
+      style={{
+        width: "100%",
+        minHeight: "65vh",
+        backgroundImage: `url(${bg})`,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <div
-        className="flex grow justify-center h-1/4 mt-32"
-        style={{
-          backgroundImage: `url(${bg})`,
-          backgroundSize: "contain",
-          backgroundRepeat: "repeat",
-          // backgroundPosition: "center",
-        }}
+        className="flex grow justify-center h-1/4"
+        style={
+          {
+            // backgroundPosition: "center",
+          }
+        }
       >
         <div
           className="bg-white shadow overflow-hidden sm:rounded-lg"

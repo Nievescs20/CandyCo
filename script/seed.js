@@ -78,7 +78,7 @@ const products = [
     reviews: Math.floor(Math.random() * 200),
   },
   {
-    name: "7 ½” GUMMY BEAR BANK WITH GUMMY BEARS",
+    name: "7 ½” GUMMY BEAR BANK",
     description:
       "Giant bear container filled with chewy, fruity gummy bears is a perfect gift!",
     price: 22.0,
@@ -106,7 +106,7 @@ const products = [
     reviews: Math.floor(Math.random() * 200),
   },
   {
-    name: "BEST OF DYLAN'S CANDY BAR GIFT BASKET",
+    name: "CANDY CO CANDY BAR GIFT BASKET",
     description:
       "This ultimate goodie basket has all our Dylan’s Candy Bar faves and will satisfy anyone’s sweet tooth",
     price: 100.0,
@@ -147,7 +147,7 @@ const products = [
     reviews: Math.floor(Math.random() * 200),
   },
   {
-    name: '5" MINI BEAR BANK WITH SOUR TRIPLE BEARS',
+    name: "MINI BEAR BANK WITH SOUR BEARS",
     description:
       "Giant mini bear filled with fruity, marshmallowy Sour Triple Bears is an adorable treat!",
     price: 12.0,
@@ -343,7 +343,7 @@ const products = [
     reviews: Math.floor(Math.random() * 200),
   },
   {
-    name: "ANNIVERSARY FOILED CHOCOLATE COVERED COOKIE SET",
+    name: "FOILED CHOCOLATE COVERED COOKIE SET",
     description:
       "Delicious chocolate covered cookies delightfully decorated for any occassion",
     price: 35.0,
@@ -399,7 +399,7 @@ const products = [
     reviews: Math.floor(Math.random() * 200),
   },
   {
-    name: "CHOCOLATE COVERED COOKIE CRUMB BALLS BULK BAG",
+    name: "CHOCOLATE & COOKIE CRUMB BALLS BULK BAG",
     description:
       "We’re crazy for these chocolate-covered cookie balls! Keep this reusable pouch around for whenever you need a crunchy, chocolatey, totally delicious bite",
     price: 9.0,
@@ -427,7 +427,7 @@ const products = [
     reviews: Math.floor(Math.random() * 200),
   },
   {
-    name: "MILK CHOCOLATE SANDWICH COOKIES BULK BAG",
+    name: "MILK CHOCOLATE COOKIES BULK BAG",
     description:
       "Fan favorite chocolate sandwich cookies just got a chocolate upgrade! It’s a good thing these come in bulk—it’s impossible to eat just one",
     price: 9.0,
@@ -441,7 +441,7 @@ const products = [
     reviews: Math.floor(Math.random() * 200),
   },
   {
-    name: "SPOOKY GOOD TIME MARSHMALLOW KEBOB",
+    name: "SPOOKY TIME MARSHMALLOW KEBOB",
     description:
       "Our kebobs got a sweet & spooky twist with fluffy Halloween-themed marshmallows",
     price: 10.0,
@@ -523,7 +523,7 @@ const products = [
     reviews: Math.floor(Math.random() * 200),
   },
   {
-    name: "FOILED FLORALS VEGAN ORGANIC CHOCOLATE GIFT SET",
+    name: "FOILED VEGAN ORGANIC CHOCOLATE SET",
     description:
       "These vegan chocolates are wrapped in stunning foils & ready to gift!",
     price: 4.8,

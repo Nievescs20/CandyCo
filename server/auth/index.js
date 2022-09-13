@@ -17,11 +17,12 @@ router.post("/login", async (req, res, next) => {
 
 router.post("/signup", async (req, res, next) => {
   try {
-    const { username, password, email } = req.body;
+    const { username, password, firstName, lastName } = req.body;
     const user = await User.create({
-      username,
+      email: username,
       password,
-      email,
+      firstName,
+      lastName,
     });
     res.send({ token: await user.generateToken() });
   } catch (err) {

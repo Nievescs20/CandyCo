@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Badge } from "@material-ui/core";
 import { AddShoppingCart } from "@material-ui/icons";
-import { StyledButton } from "./CartDrawer/CartDrawer.styles";
+import { StyledButton } from "./Application/Application.styles";
 import { logout } from "../store";
 import Slide from "react-reveal/Slide";
 import Flip from "react-reveal/Flip";

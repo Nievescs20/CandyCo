@@ -89,7 +89,7 @@ const Cart = ({ setCartOpen }) => {
             <h2>${shipping}</h2>
             <h2>
               {cart.length
-                ? `${(calculateTotal(cart) * tax + shipping).toFixed(2)}`
+                ? `$${(calculateTotal(cart) * tax + shipping).toFixed(2)}`
                 : "$0.00"}
             </h2>
           </div>

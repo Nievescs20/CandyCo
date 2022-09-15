@@ -30,7 +30,7 @@ const Home = () => {
         "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220614-By-Asha-Fuller-DCB0040_836x.jpg?v=1660147193",
       imageUrl2:
         "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0036_836x.jpg?v=1661192633",
-      productId: 3,
+      id: 3,
     },
     {
       name: "Monster Mash Crispy Pop",
@@ -41,7 +41,7 @@ const Home = () => {
         "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0055_836x.jpg?v=1660076741",
       imageUrl2:
         "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0060_836x.jpg?v=1660076758",
-      productId: 2,
+      id: 2,
     },
     {
       name: "Creepy Candy Coffin",
@@ -51,7 +51,7 @@ const Home = () => {
         "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0034_836x.jpg?v=1661192633",
       imageUrl2:
         "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0036_836x.jpg?v=1661192633",
-      productId: 1,
+      id: 1,
     },
     {
       name: "Graveyard Grub Mix",
@@ -62,14 +62,14 @@ const Home = () => {
         "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220803-By-Asha-Fuller-DCB-0095_836x.jpg?v=1661183435",
       imageUrl2:
         "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220803-By-Asha-Fuller-DCB-0100_836x.jpg?v=1661183435",
-      productId: 4,
+      id: 4,
     },
   ];
 
   const notify = (product, quantity) =>
     toast(`${quantity} ${product.name} Added To Cart!`, {
       duration: 2000,
-      position: "top-right",
+      position: "bottom-right",
       style: { backgroundColor: "dodgerblue" },
     });
 

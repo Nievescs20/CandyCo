@@ -83,8 +83,11 @@ function AllProducts(props) {
         <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 gap-x-32 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-40">
           {products.length > 0 &&
             currentProducts.map((product) => (
-              <div style={{ margin: "100px 0px", position: "relative" }}>
-                <Link to={`/products/${product.id}`} key={product.id}>
+              <div
+                style={{ margin: "100px 0px", position: "relative" }}
+                key={product.id}
+              >
+                <Link to={`/products/${product.id}`}>
                   <div className="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8 m-30">
                     <img
                       src={product.imageUrl}

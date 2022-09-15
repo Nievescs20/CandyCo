@@ -1,0 +1,2 @@
+export const stripePub =
+  "pk_test_51LfnXoEpCZl0D0FKmgxLqDVSmlvk0xjzoKmsR058UJRbH9gzwwFBS8GrqhUClwZfcHKPP2NCp35iXmCIUU8y4FuP00NSsk9ZMj";

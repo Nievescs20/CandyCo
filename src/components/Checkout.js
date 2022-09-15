@@ -3,6 +3,8 @@ import { useDispatch, usedispatch, useSelector } from "react-redux";
 import { getCartThunk, closeOrderThunk } from "../store/cart";
 import { setCustomerInfoThunk } from "../store/customerInfo";
 import { useNavigate } from "react-router-dom";
+import { stripePub } from "../../key";
+import { setOrderInfoThunk } from "../store/successfulOrder";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 
@@ -65,6 +67,15 @@ function Checkout(props) {
   const success = () => {
     dispatch(
       closeOrderThunk({
+        customerId: user.id ? user.id : -1,
+        orderNumber: cart[0].orderId ? cart[0].orderId : -1,
+        customerName: customerInfo.name,
+        customerEmail: customerInfo.email,
+        total: calculatedTotal,
+      })
+    );
+    dispatch(
+      setOrderInfoThunk({
         customerId: user.id ? user.id : -1,
         orderNumber: cart[0].orderId ? cart[0].orderId : -1,
         customerName: customerInfo.name,
@@ -309,7 +320,7 @@ function Checkout(props) {
           ) : (
             <StripeCheckout
               disabled
-              stripeKey={process.env.STRIPEPUB}
+              stripeKey={stripePub}
               token={handleToken}
               amount={calculatedTotal * 100}
               name="Payment"

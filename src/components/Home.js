@@ -30,7 +30,7 @@ const Home = () => {
         "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220614-By-Asha-Fuller-DCB0040_836x.jpg?v=1660147193",
       imageUrl2:
         "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0036_836x.jpg?v=1661192633",
-      id: 3,
+      id: 2,
     },
     {
       name: "Monster Mash Crispy Pop",
@@ -41,7 +41,7 @@ const Home = () => {
         "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0055_836x.jpg?v=1660076741",
       imageUrl2:
         "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0060_836x.jpg?v=1660076758",
-      id: 2,
+      id: 3,
     },
     {
       name: "Creepy Candy Coffin",
@@ -223,7 +223,7 @@ const Home = () => {
           >
             {sweets.map((candy) => (
               <div key={candy.name}>
-                <Link to={`/products/${candy.productId}`}>
+                <Link to={`/products/${candy.id}`}>
                   <img src={candy.imageUrl} alt={candy.imageUrl} />
                   <div>{candy.name}</div>
                   <div>${candy.price.toFixed(2)}</div>

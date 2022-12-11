@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 
 function UserProfile(props) {
   const user = useSelector((state) => state.auth);
-  // const dispatch = useDispatch();
-  console.log("user", user);
 
   const bg = "/CandyCo-background.png";
 

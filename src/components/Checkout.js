@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, usedispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getCartThunk, closeOrderThunk } from "../store/cart";
 import { setCustomerInfoThunk } from "../store/customerInfo";
 import { useNavigate } from "react-router-dom";
@@ -15,9 +15,6 @@ function Checkout(props) {
   const user = useSelector((state) => state.auth);
   const customerInfo = useSelector((state) => state.customerInfo);
   const [paymentStatus, setPaymentStatus] = useState();
-  console.log("payment status", paymentStatus);
-
-  console.log("FE", process.env.STRIPEPUB);
 
   const tax = 1.0725;
   const shipping = 7.99;
@@ -44,7 +41,6 @@ function Checkout(props) {
     shoppingCart.reduce((acc, product) => acc + Number(product.totalPrice), 0);
 
   const calculatedTotal = (calculateSubTotal(cart) * tax + shipping).toFixed(2);
-  console.log("total", calculatedTotal);
 
   const handleToken = async (token) => {
     const response = await axios.post("/api/payments", {
@@ -52,7 +48,6 @@ function Checkout(props) {
       product: { price: calculatedTotal, name: "Candy & Sweets" },
     });
     const { status } = response.data;
-    console.log("Response:", response.data);
     if (status === "success") {
       console.log("Success! Check email for details");
 

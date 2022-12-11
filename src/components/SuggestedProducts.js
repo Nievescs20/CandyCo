@@ -1,15 +1,13 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getThreeProductsThunk } from "../store/products";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function SuggestedProducts() {
   const dispatch = useDispatch();
   // const navigate = useNavigate();
   let threeProducts =
     useSelector((state) => state.products.threeProducts) || [];
-
-  console.log("three products", threeProducts);
 
   useEffect(() => {
     dispatch(getThreeProductsThunk());

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getProductThunk } from "../store/singleProduct";
-import SuggestedProducts from "./SuggestedProducts";
 import { addCartThunk } from "../store/cart";
 import toast, { Toaster } from "react-hot-toast";
 

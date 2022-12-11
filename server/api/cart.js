@@ -113,7 +113,6 @@ router.post("/deleteItem", requireToken, async (req, res, next) => {
 });
 
 router.post("/completeOrder", async (req, res, next) => {
-  console.log("body", req.body);
   try {
     let order = await Order.findOne({
       where: {

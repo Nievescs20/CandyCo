@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-// import Routes from "./components/Routes";
 import Application from "./components/Application/Application";
 
 const App = () => {

@@ -8,9 +8,6 @@ const stripe = require("stripe")(
 );
 
 router.post("/", async (req, res) => {
-  console.log("Request:", req.body);
-
-  console.log("stripe keyyy", process.env.STRIPEPUB);
   let error;
   let status;
   try {
@@ -44,7 +41,6 @@ router.post("/", async (req, res) => {
         idempotency_key,
       }
     );
-    console.log("Charge:", { charge });
     status = "success";
   } catch (error) {
     console.error("Error:", error);

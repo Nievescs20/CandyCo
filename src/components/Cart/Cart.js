@@ -2,18 +2,8 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { getCartThunk } from "../../store/cart";
-import { Button } from "@material-ui/core";
-
-// import { CartItemType } from "../App";
 import CartItem from "../CartItem/CartItem";
-
 import { Wrapper } from "./Cart.styles";
-
-// type Props = {
-//   cartItems: CartItemType[];
-//   addToCart: (clickedItem: CartItemType) => void;
-//   removeFromCart: (id: number) => void;
-// };
 
 const Cart = ({ setCartOpen }) => {
   const dispatch = useDispatch();
@@ -52,12 +42,7 @@ const Cart = ({ setCartOpen }) => {
           </p>
         ) : null}
         {cart.map((item) => (
-          <CartItem
-            key={item.productName}
-            item={item}
-            // addToCart={addToCart}
-            // removeFromCart={removeFromCart}
-          />
+          <CartItem key={item.productName} item={item} />
         ))}
       </div>
       <div
@@ -65,10 +50,8 @@ const Cart = ({ setCartOpen }) => {
           backgroundColor: "gray",
           position: "fixed",
           bottom: "5%",
-          // display: "flex",
           padding: "2%",
           width: "460px",
-          // justifyContent: "space-between",
         }}
       >
         <div

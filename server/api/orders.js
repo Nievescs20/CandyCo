@@ -164,8 +164,6 @@ router.put("/update", async (req, res, next) => {
 router.delete("/delete/:orderId", async (req, res, next) => {
   const orderId = req.params.orderId;
 
-  console.log(orderId);
-
   try {
     await OrderProduct.destroy({
       where: {

@@ -83,7 +83,6 @@ export const removeItemThunk = (id) => {
 export const addCartThunk = (product, quantity) => {
   return async (dispatch) => {
     const cost = product.price * quantity;
-    console.log("HIT");
     try {
       const token = window.localStorage.getItem("token");
       if (token) {

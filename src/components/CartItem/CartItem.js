@@ -1,22 +1,9 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  addCartThunk,
-  removeItemThunk,
-  changeCartQuantityThunk,
-} from "../../store/cart";
+import { useDispatch } from "react-redux";
+import { removeItemThunk, changeCartQuantityThunk } from "../../store/cart";
 import { Button } from "@material-ui/core";
 import { AiFillCloseCircle } from "react-icons/ai";
-
-// import { CartItemType } from "../App";
-
 import { Wrapper } from "./CartItem.styles";
-
-// type Props = {
-//   item: CartItemType;
-//   addToCart: (clickedItem: CartItemType) => void;
-//   removeFromCart: (id: number) => void;
-// };
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();

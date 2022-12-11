@@ -9,7 +9,6 @@ const SALT_ROUNDS = 5;
 
 router.get("/", async (req, res, next) => {
   try {
-    console.log("get req.headers", req.headers);
     const user = await User.findByToken(req.headers.authorization);
     if (user.isAdmin) {
       const users = await User.findAll({

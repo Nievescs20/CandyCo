@@ -1,10 +1,8 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
-function Confirmation(props) {
-  const { customerName, customerEmail, total } = useSelector(
-    (state) => state.orderInfo
-  );
+function Confirmation() {
+  const { customerName, total } = useSelector((state) => state.orderInfo);
 
   const bg = "/confirmation-background.jpg";
 

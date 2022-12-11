@@ -2,17 +2,9 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { authenticate } from "../store";
-import { useParams, useLocation, useNavigate } from "react-router-dom";
 
 const Login = (props) => {
   const dispatch = useDispatch();
-  // let location = useLocation();
-  // let navigate = useNavigate();
-  // let params = useParams();
-
-  // console.log("location", location);
-  // console.log("navigate", navigate);
-  // console.log("params", params);
 
   const { error } = useSelector((state) => {
     return state.auth;

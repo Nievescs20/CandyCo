@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Badge, Drawer } from "@material-ui/core";
-import { AddShoppingCart } from "@material-ui/icons";
+import { Drawer } from "@material-ui/core";
 import { Wrapper, StyledButton } from "./Application.styles";
 import Routes from "../Routes";
 import Cart from "../Cart/Cart";
@@ -13,7 +12,6 @@ import Footer from "../Footer";
 const Application = ({ setCartOpen, cartOpen }) => {
   const dispatch = useDispatch();
   // const [cartOpen, setCartOpen] = useState(false);
-  const cart = useSelector((state) => state.cart.products);
 
   useEffect(() => {
     dispatch(getCartThunk());

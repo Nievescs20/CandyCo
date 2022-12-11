@@ -2,7 +2,6 @@ const router = require("express").Router();
 const User = require("../db/models/User");
 
 router.post("/login", async (req, res, next) => {
-  console.log(User);
   try {
     res.send({
       token: await User.authenticate({

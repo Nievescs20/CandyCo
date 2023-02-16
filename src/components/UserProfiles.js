@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUsersFromDb } from "../store/users";
 
-function UserProfiles(props) {
+function UserProfiles() {
   const users = useSelector((state) => state.users);
   const dispatch = useDispatch();
 

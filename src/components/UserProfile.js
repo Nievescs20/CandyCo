@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-function UserProfile(props) {
+function UserProfile() {
   const user = useSelector((state) => state.auth);
 
   const bg = "/CandyCo-background.png";
@@ -17,14 +17,7 @@ function UserProfile(props) {
         alignItems: "center",
       }}
     >
-      <div
-        className="flex grow justify-center h-1/4"
-        style={
-          {
-            // backgroundPosition: "center",
-          }
-        }
-      >
+      <div className="flex grow justify-center h-1/4">
         <div
           className="bg-white shadow overflow-hidden sm:rounded-lg"
           style={{ border: "2px solid tomato", opacity: "0.9" }}

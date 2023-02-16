@@ -8,7 +8,7 @@ import { setOrderInfoThunk } from "../store/successfulOrder";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 
-function Checkout(props) {
+function Checkout() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const cart = useSelector((state) => state.cart.products);
@@ -107,7 +107,6 @@ function Checkout(props) {
             ) : (
               <p class="text-gray-800 font-medium">Shipping Information</p>
             )}
-            {/* <p class="text-gray-800 font-medium">Shipping Information</p> */}
             <div class="">
               <label class="block text-sm text-gray-00" for="name">
                 Name

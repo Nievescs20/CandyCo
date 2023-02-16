@@ -80,14 +80,11 @@ const Cart = ({ setCartOpen }) => {
         <div>
           <Link to="/checkout">
             <button
-              // type="submit"
               className={
                 cart.length
                   ? "mt-10 w-full cart-btn border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   : "mt-10 w-full bg-gray-500 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white"
               }
-              // className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              // disabled={cart.length ? false : true}
               onClick={() => setCartOpen(false)}
             >
               Checkout

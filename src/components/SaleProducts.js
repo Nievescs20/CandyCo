@@ -6,7 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { getSaleProductsThunk } from "../store/products";
 import Pagination from "./Pagination";
 
-function SaleProducts(props) {
+function SaleProducts() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.saleProducts);
 

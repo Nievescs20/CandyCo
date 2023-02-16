@@ -33,8 +33,6 @@ const Footer = () => {
       >
         <div
           style={{
-            // position: "absolute",
-            // bottom: "0",
             backgroundColor: "black",
             width: "60%",
             height: "vh",

@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const {
-  models: { User, Order, Product, OrderProduct, OrderHistory },
+  models: { Order, OrderProduct, OrderHistory },
 } = require("../db");
 const { requireToken } = require("./middleware");
 

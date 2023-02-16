@@ -8,13 +8,6 @@ import LightSpeed from "react-reveal/LightSpeed";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { username } = useSelector((state) => {
-    return state.auth;
-  });
-
-  const isLoggedIn = useSelector((state) => {
-    return !!state.auth.id;
-  });
 
   const graveyardBg =
     "https://cdn.shopify.com/s/files/1/0150/8992/6198/files/Halloweem-HERO-BANNER-DESKTOP-Recovered_8fc1ba7d-0649-4b64-b4b4-f3788ab2fe05_1024x.gif?v=1661864214";

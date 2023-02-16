@@ -5,7 +5,7 @@ import { getProductThunk } from "../store/singleProduct";
 import { addCartThunk } from "../store/cart";
 import toast, { Toaster } from "react-hot-toast";
 
-function SingleProduct(props) {
+function SingleProduct() {
   const singleProduct = useSelector((state) => state.singleProduct);
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();

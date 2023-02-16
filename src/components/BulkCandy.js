@@ -6,7 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { getBulkProductsThunk } from "../store/products";
 import Pagination from "./Pagination";
 
-function BulkCandy(props) {
+function BulkCandy() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.bulkProducts);
   const [currentPage, setCurrentPage] = useState(1);

@@ -6,7 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { getGiftProductsThunk } from "../store/products";
 import Pagination from "./Pagination";
 
-function Gifts(props) {
+function Gifts() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.gifts);
 

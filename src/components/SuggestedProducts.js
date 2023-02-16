@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 function SuggestedProducts() {
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
   let threeProducts =
     useSelector((state) => state.products.threeProducts) || [];
 

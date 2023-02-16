@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { authenticate } from "../store";
 
-const Login = (props) => {
+const Login = () => {
   const dispatch = useDispatch();
 
   const { error } = useSelector((state) => {
@@ -41,7 +41,6 @@ const Login = (props) => {
         }}
       >
         <form
-          // className="loginForm flex flex-col justify-center align-middle"
           onSubmit={handleSubmit}
           name="login"
           style={{

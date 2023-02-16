@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Badge } from "@material-ui/core";
@@ -10,7 +10,6 @@ import Flip from "react-reveal/Flip";
 
 const Navbar = ({ setCartOpen }) => {
   const dispatch = useDispatch();
-  // const [cartOpen, setCartOpen] = useState(false);
   const cart = useSelector((state) => state.cart.products);
 
   const isLoggedIn = useSelector((state) => {

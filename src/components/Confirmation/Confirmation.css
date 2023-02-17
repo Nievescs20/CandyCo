@@ -1,0 +1,20 @@
+.confirmation {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmation__text__container {
+  background-color: lightpink;
+  padding: 10px;
+}
+
+.confirmation__text {
+  color: dodgerblue;
+  font-size: 24px;
+  font-family: Special Elite, cursive;
+}

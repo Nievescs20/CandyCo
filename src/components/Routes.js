@@ -6,8 +6,8 @@ import AllProducts from "./AllProducts/AllProducts";
 import Home from "./Home/Home";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
-import SingleProduct from "./SingleProduct";
-import UserProfile from "./UserProfile";
+import SingleProduct from "./SingleProduct/SingleProduct";
+import UserProfile from "./UserProfile/UserProfile";
 import UserProfiles from "./UserProfiles";
 import Cart from "./Cart/Cart";
 import Checkout from "./Checkout/Checkout";
@@ -16,7 +16,7 @@ import BulkCandy from "./BulkCandy/BulkCandy";
 import Gifts from "./Gifts/Gifts";
 import HalloweenProducts from "./HalloweenProducts/HalloweenProducts";
 import SaleProducts from "./SaleProducts/SaleProducts";
-import UnderConstruction from "./UnderConstruction";
+import UnderConstruction from "./UnderConstruction/UnderConstruction";
 
 const RoutesComponent = () => {
   const dispatch = useDispatch();

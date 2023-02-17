@@ -1,0 +1,13 @@
+.under-construction {
+  min-height: 65vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.under-construction__text {
+  font-family: Special Elite, cursive;
+  color: white;
+  font-size: 38px;
+  padding: 20px 0 0 20px;
+}

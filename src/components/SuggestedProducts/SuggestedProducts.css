@@ -1,0 +1,18 @@
+.suggested-product__product__container {
+  min-height: 60vh;
+}
+
+.suggested-product__button__container {
+  margin-top: 15px;
+  align-self: flex-end;
+}
+
+.suggested-product__button {
+  width: 100px;
+  background-color: purple;
+  border: 2px solid hotpink;
+  margin: 5px;
+  border-radius: 6px;
+  color: white;
+  padding: 3px;
+}

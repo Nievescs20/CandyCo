@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { addCartThunk } from "../store/cart";
 import toast, { Toaster } from "react-hot-toast";
 import { getSaleProductsThunk } from "../store/products";
-import Pagination from "./Pagination";
+import Pagination from "./Pagination/Pagination";
 
 function SaleProducts() {
   const dispatch = useDispatch();

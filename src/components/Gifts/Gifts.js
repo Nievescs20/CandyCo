@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { addCartThunk } from "../../store/cart";
 import { getGiftProductsThunk } from "../../store/products";
-import Pagination from "../Pagination";
+import Pagination from "../Pagination/Pagination";
 import "./Gifts.css";
 
 function Gifts() {

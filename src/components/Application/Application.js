@@ -7,7 +7,7 @@ import Cart from "../Cart/Cart";
 import "./Application.styles";
 import { getCartThunk } from "../../store/cart";
 import Navbar from "../Navbar";
-import Footer from "../Footer";
+import Footer from "../Footer/Footer";
 
 const Application = ({ setCartOpen, cartOpen }) => {
   const dispatch = useDispatch();

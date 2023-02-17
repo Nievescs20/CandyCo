@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addCartThunk } from "../store/cart";
 import toast, { Toaster } from "react-hot-toast";
-import { getSaleProductsThunk } from "../store/products";
-import Pagination from "./Pagination/Pagination";
+import { addCartThunk } from "../../store/cart";
+import { getSaleProductsThunk } from "../../store/products";
+import Pagination from "../Pagination/Pagination";
+import "./SaleProducts.css";
 
 function SaleProducts() {
   const dispatch = useDispatch();
@@ -35,23 +36,16 @@ function SaleProducts() {
   }, []);
 
   return (
-    <div className="bg-white">
-      <div style={{ width: "100%" }}>
+    <div className="sale-products">
+      <div className="sale-products__header__image__container">
         <img
           src="https://cdn.accentuate.io/92194897974/1637831962110/2022-Sale-Desktop--300-1.jpg?v=1649256567242"
           alt="falling candy"
-          style={{ width: "100%" }}
+          className="sale-products__header__image"
         />
       </div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <div
-          style={{
-            fontFamily: "Special Elite, cursive",
-            color: "green",
-            padding: "30px",
-            fontSize: "42px",
-          }}
-        >
+      <div className="sale-products__header__text__container">
+        <div className="sale-products__header__text">
           Whats Better Than Sweets For LESS!
         </div>
       </div>
@@ -63,7 +57,10 @@ function SaleProducts() {
         <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-32 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-32">
           {products.length > 0 &&
             currentProducts.map((product) => (
-              <div style={{ margin: "50px 0px" }} key={product.id}>
+              <div
+                className="sale-products__product__container"
+                key={product.id}
+              >
                 <Link to={`/products/${product.id}`}>
                   <div className="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8 m-30">
                     <img
@@ -73,35 +70,16 @@ function SaleProducts() {
                     />
                   </div>
                 </Link>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                  }}
-                >
-                  <b style={{ marginTop: "10px", fontSize: "18px" }}>
+                <div className="sale-products__product-info__container">
+                  <b className="sale-products__product-info__container__text">
                     {product.name}
                   </b>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      margin: "5px",
-                    }}
-                  >
-                    <b style={{ margin: "5px" }}>${product.price}</b>
+                  <div className="sale-products__product-info__container__bottom">
+                    <b className="sale-products__product-info__container__bottom__price">
+                      ${product.price}
+                    </b>
                     <button
-                      style={{
-                        width: "150px",
-                        backgroundColor: "purple",
-                        border: "2px solid hotpink",
-                        margin: "5px",
-                        borderRadius: "6px",
-                        color: "white",
-                        padding: "3px",
-                      }}
+                      className="sale-products__product-info__container__bottom__button"
                       onClick={() => handleAdd(product, 1)}
                     >
                       Add To Cart

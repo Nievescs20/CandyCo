@@ -5,7 +5,7 @@ import { me } from "../store";
 import AllProducts from "./AllProducts/AllProducts";
 import Home from "./Home/Home";
 import Login from "./Login/Login";
-import Signup from "./Signup";
+import Signup from "./Signup/Signup";
 import SingleProduct from "./SingleProduct";
 import UserProfile from "./UserProfile";
 import UserProfiles from "./UserProfiles";
@@ -15,7 +15,7 @@ import Confirmation from "./Confirmation/Confirmation";
 import BulkCandy from "./BulkCandy/BulkCandy";
 import Gifts from "./Gifts/Gifts";
 import HalloweenProducts from "./HalloweenProducts/HalloweenProducts";
-import SaleProducts from "./SaleProducts";
+import SaleProducts from "./SaleProducts/SaleProducts";
 import UnderConstruction from "./UnderConstruction";
 
 const RoutesComponent = () => {

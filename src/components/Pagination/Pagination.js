@@ -1,4 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import "./Pagination.css";
 
 const Pagination = ({ numberOfPages, currentPage, setCurrentPage }) => {
   const pageNumbers = [...Array(numberOfPages + 1).keys()].slice(1);
@@ -11,35 +13,16 @@ const Pagination = ({ numberOfPages, currentPage, setCurrentPage }) => {
   };
 
   return (
-    <div style={{ paddingBottom: "50px" }}>
-      <nav
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <ul style={{ display: "flex" }}>
-          <li
-            onClick={prevPage}
-            style={{
-              padding: "10px",
-              width: "80px",
-              textAlign: "center",
-            }}
-          >
+    <div className="pagination">
+      <nav className="pagination__nav">
+        <ul className="pagination__nav__list">
+          <li onClick={prevPage} className="pagination__nav__list__first-last">
             prev
           </li>
           {pageNumbers.map((page) => (
             <li
               key={page}
-              style={{
-                padding: "10px",
-                width: "50px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
+              className="pagination__nav__list__pages"
               onClick={() => setCurrentPage(page)}
             >
               <a
@@ -50,14 +33,7 @@ const Pagination = ({ numberOfPages, currentPage, setCurrentPage }) => {
               </a>
             </li>
           ))}
-          <li
-            onClick={nextPage}
-            style={{
-              padding: "10px",
-              width: "80px",
-              textAlign: "center",
-            }}
-          >
+          <li onClick={nextPage} className="pagination__nav__list__first-last">
             next
           </li>
         </ul>

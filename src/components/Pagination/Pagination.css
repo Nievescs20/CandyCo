@@ -1,0 +1,28 @@
+.pagination {
+  padding-bottom: 50px;
+}
+
+.pagination__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination__nav__list {
+  display: flex;
+}
+
+.pagination__nav__list__first-last {
+  padding: 10px;
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.pagination__nav__list__pages {
+  padding: 10px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

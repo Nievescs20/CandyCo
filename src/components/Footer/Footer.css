@@ -1,0 +1,85 @@
+.footer {
+  background-color: black;
+  margin-top: auto;
+}
+
+.footer__promotion__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: purple;
+}
+
+.footer__promotion__text {
+  color: white;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+}
+
+.footer__container__container {
+  background-color: black;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__container__link__container {
+  display: flex;
+  justify-content: space-between;
+  width: 20vw;
+}
+
+.footer__container__container-1 {
+  color: orange;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer__container__container-2 {
+  color: purple;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer__container__contact__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer__container__contact__middle-row {
+  color: yellow;
+}
+
+.footer__container__contact__input__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__container__contact__input {
+  height: 40px;
+}
+
+.footer__container__contact__input__button {
+  color: white;
+  background-color: purple;
+  padding: 6px;
+  border-radius: 4px;
+  width: 100px;
+  height: 40px;
+}
+
+.footer__container__contact__bottom-row-1 {
+  color: seagreen
+}
+
+.footer__container__contact__bottom-row-2 {
+  color: white
+}

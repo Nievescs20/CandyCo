@@ -1,0 +1,66 @@
+.navbar__promotion__conatiner {
+  background-color: darkgreen;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar__promotion__text {
+  color: white;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  background-color: black;
+}
+
+.navbar__container__container {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar__container__logo {
+  height: 70px;
+  width: 157.5px;
+  margin-right: 20px;
+}
+
+.navbar__container__shopping-links {
+  flex: 3;
+}
+
+.navbar__shopping-links__arrangement {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar__cart-login__container {
+  flex: 2;
+}
+
+.navbar__cart-login__container__container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar__cart-login__user-name {
+  margin: 10px;
+  color: gold;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__cart-login__user-name__svg__container {
+  height: 25px;
+  width: 25px;
+  margin-left: 5px;
+}
+
+.navbar__cart-login__logout-button {
+  margin: 10px;
+  color: hotpink;
+}

@@ -6,8 +6,8 @@ import Routes from "../Routes";
 import Cart from "../Cart/Cart";
 import "./Application.styles";
 import { getCartThunk } from "../../store/cart";
-import Navbar from "../Navbar";
-import Footer from "../Footer";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 const Application = ({ setCartOpen, cartOpen }) => {
   const dispatch = useDispatch();

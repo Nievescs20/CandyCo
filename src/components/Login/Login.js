@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { authenticate } from "../store";
+import { authenticate } from "../../store";
+import "./Login.css";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -21,38 +22,12 @@ const Login = () => {
   };
 
   return (
-    <div
-      id="logins"
-      style={{
-        backgroundImage: `url(${bg})`,
-        minHeight: "60vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <div
-        style={{
-          backgroundColor: "white",
-          opacity: "0.95",
-          width: "40vw",
-          border: "2px solid hotpink",
-          borderRadius: "8px",
-        }}
-      >
-        <form
-          onSubmit={handleSubmit}
-          name="login"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+    <div style={{ backgroundImage: `url(${bg})` }} className="login">
+      <div className="login__container">
+        <form onSubmit={handleSubmit} name="login" className="login__form ">
           <div className="my-2">
             <label htmlFor="username">
-              <div style={{ color: "dodgerblue" }}>Email: </div>
+              <div className="login__form__text">Email: </div>
             </label>
             <input
               className="rounded text-blue-500 bg-gray-200 "
@@ -62,7 +37,7 @@ const Login = () => {
           </div>
           <div className="my-2">
             <label htmlFor="password">
-              <div style={{ color: "dodgerblue" }}>Password: </div>
+              <div className="login__form__text">Password: </div>
             </label>
             <input
               className="rounded text-blue-500 bg-gray-200"
@@ -71,30 +46,18 @@ const Login = () => {
             />
           </div>
           <div>
-            <button
-              className=" text-green-300 py-1 px-4"
-              style={{
-                color: "dodgerblue",
-                border: "1px solid hotpink",
-                borderRadius: "4px",
-              }}
-            >
-              Login
-            </button>
+            <button className=" login__form__button py-1 px-4">Login</button>
           </div>
           <p>
             Dont have an account?{" "}
             <Link className="underline underline-offset-4" to="/signup">
-              <button
-                className="underline py-1 px-3 rounded"
-                style={{ color: "lightblue" }}
-              >
+              <button className="underline py-1 px-3 rounded login__form__signup__button">
                 Sign Up
               </button>
             </Link>
           </p>
           {error && error.response && (
-            <div style={{ color: "red" }}> {error.response.data} </div>
+            <div className="login__form__error"> {error.response.data} </div>
           )}
         </form>
       </div>

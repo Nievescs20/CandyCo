@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCartThunk, closeOrderThunk } from "../store/cart";
-import { setCustomerInfoThunk } from "../store/customerInfo";
 import { useNavigate } from "react-router-dom";
-import { stripePub } from "../../key";
-import { setOrderInfoThunk } from "../store/successfulOrder";
 import StripeCheckout from "react-stripe-checkout";
+import { getCartThunk, closeOrderThunk } from "../../store/cart";
+import { setCustomerInfoThunk } from "../../store/customerInfo";
+import { stripePub } from "../../../key";
+import { setOrderInfoThunk } from "../../store/successfulOrder";
+import "./Checkout.css";
 import axios from "axios";
 
 function Checkout() {
@@ -82,37 +83,25 @@ function Checkout() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "flex-start",
-        minHeight: "65vh",
-      }}
-    >
-      <div
-        className="payment-info"
-        style={{
-          flex: 1,
-          padding: "0px 30px 0px 30px",
-        }}
-      >
+    <div className="checkout__container">
+      <div className="checkout__payment-info">
         <br />
-        <div class="leading-loose">
+        <div>
           <form
-            class="max-w-xl m-4 p-10 bg-white rounded shadow-xl"
+            className="max-w-xl m-4 p-10 bg-white rounded shadow-xl indent-2"
             onSubmit={handleSubmit}
           >
             {paymentStatus?.status ? (
               success()
             ) : (
-              <p class="text-gray-800 font-medium">Shipping Information</p>
+              <p className="text-gray-800 font-medium">Shipping Information</p>
             )}
-            <div class="">
-              <label class="block text-sm text-gray-00" for="name">
+            <div className="">
+              <label className="block text-sm text-gray-00" for="name">
                 Name
               </label>
               <input
-                class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
+                className="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
                 id="cus_name"
                 name="name"
                 type="text"
@@ -121,12 +110,12 @@ function Checkout() {
                 aria-label="Name"
               />
             </div>
-            <div class="mt-2">
-              <label class="block text-sm text-gray-600" for="email">
+            <div className="mt-2">
+              <label className="block text-sm text-gray-600" for="email">
                 Email
               </label>
               <input
-                class="w-full px-5  py-2 text-gray-700 bg-gray-200 rounded"
+                className="w-full px-5  py-2 text-gray-700 bg-gray-200 rounded"
                 id="cus_email"
                 name="email"
                 type="text"
@@ -135,12 +124,12 @@ function Checkout() {
                 aria-label="Email"
               />
             </div>
-            <div class="mt-2">
-              <label class=" block text-sm text-gray-600" for="address">
+            <div className="mt-2">
+              <label className=" block text-sm text-gray-600" for="address">
                 Address
               </label>
               <input
-                class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
+                className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
                 id="cus_email"
                 name="street"
                 type="text"
@@ -149,12 +138,12 @@ function Checkout() {
                 aria-label="Email"
               />
             </div>
-            <div style={{ margin: "5px, 0px, 5px, 0px" }}>
-              <label class="hidden text-sm block text-gray-600" for="city">
+            <div>
+              <label className=" text-sm block text-gray-600" for="city">
                 City
               </label>
               <input
-                class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
+                className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
                 id="cus_email"
                 name="city"
                 type="text"
@@ -163,12 +152,12 @@ function Checkout() {
                 aria-label="Email"
               />
             </div>
-            <div class="inline-block mt-2 w-1/2 pr-1">
-              <label class="hidden block text-sm text-gray-600" for="country">
+            <div className="inline-block mt-2 w-1/2 pr-1">
+              <label className=" block text-sm text-gray-600" for="country">
                 Country
               </label>
               <input
-                class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
+                className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
                 id="cus_email"
                 name="country"
                 type="text"
@@ -178,14 +167,14 @@ function Checkout() {
               />
             </div>
             <div
-              class="inline-block mt-2 pl-1 w-1/2"
+              className="inline-block mt-2 pl-1 w-1/2"
               style={{ marginLeft: "4px" }}
             >
-              <label class="hidden block text-sm text-gray-600" for="zip">
+              <label className=" block text-sm text-gray-600" for="zip">
                 Zip
               </label>
               <input
-                class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
+                className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
                 id="cus_email"
                 name="zip"
                 type="text"
@@ -195,71 +184,36 @@ function Checkout() {
               />
             </div>
 
-            <div class="mt-4">
-              <button
-                type="submit"
-                style={{
-                  backgroundColor: "lightblue",
-                  border: "2px solid dodgerblue",
-                  width: "300px",
-                  borderRadius: "4px",
-                  padding: "10px",
-                }}
-              >
+            <div className="checkout__payment__button__container">
+              <button type="submit" className="checkout__payment__button">
                 Save Shipping Information
               </button>
             </div>
           </form>
         </div>
       </div>
-      <div
-        className="order-info"
-        style={{
-          flex: 1,
-          padding: " 0px 30px 0px 30px",
-          borderLeft: "2px solid black",
-        }}
-      >
+      <div className="checkout__order-info">
         <br />
-        <div style={{ marginTop: "30px" }}>
+        <div className="checkout__order-info__products-container">
           {cart.map((product) => (
             <div
               key={product.name}
-              className="product-container"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                border: "1px solid navy",
-                borderRadius: "8px",
-                padding: "10px",
-                margin: "5px 0px 5px 0px",
-              }}
+              className="checkout__order-info__product-container"
             >
-              <div className="image-container" style={{ width: "10%" }}>
+              <div className="checkout__order-info__product-image__container ">
                 <img
                   src={product.imageUrl}
                   alt="Candy"
-                  style={{ height: "50px", width: "50px" }}
+                  className="checkout__order-info__product-image"
                 />
               </div>
-              <div
-                className="product-info-container"
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  width: "90%",
-                }}
-              >
+              <div className="checkout__order-info__product-info__container">
                 <div>{product.productName}</div>
-                <div
-                  style={{
-                    display: "flex",
-                    width: "30%",
-                    justifyContent: "flex-end",
-                  }}
-                >
-                  <div style={{ width: "30%" }}>Qty: {product.quantity}</div>
-                  <div style={{ width: "50%", textAlign: "end" }}>
+                <div className="checkout__order-info__product__price__qty__container">
+                  <div className="checkout__order-info__product__qty">
+                    Qty: {product.quantity}
+                  </div>
+                  <div className="checkout__order-info__product__price">
                     ${Number(product.totalPrice).toFixed(2)}
                   </div>
                 </div>
@@ -267,27 +221,14 @@ function Checkout() {
             </div>
           ))}
         </div>
-        <div
-          className="total-container"
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            margin: "40px 0px 40px 0px",
-          }}
-        >
+        <div className="checkout__order-info__total__container">
           <div>
             <div>Subtotal</div>
             <div>Shipping</div>
             <div>Tax</div>
             <div>Total</div>
           </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-end",
-            }}
-          >
+          <div className="checkout__order-info__total__right__container">
             <div>${calculateSubTotal(cart).toFixed(2)}</div>
             <div>${shipping}</div>
             <div>{(calculateSubTotal(cart) * 0.0725).toFixed(2)}</div>

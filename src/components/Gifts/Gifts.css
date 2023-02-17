@@ -1,0 +1,53 @@
+.gifts {
+  background-color: white;
+}
+
+.gifts__header {
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gifts__header__text {
+  font-family: Special Elite, cursive;
+  font-size: 42px;
+}
+
+.gifts__product__conatiner {
+  margin: 50px 0;
+}
+
+.gifts__product-info__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gifts__product-info__container__text {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.gifts__product-info__container__bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.gifts__product-info__container__bottom__price {
+  margin: 5px;
+}
+
+.gifts__product-info__container__bottom__button {
+  width: 150px;
+  background-color: purple;
+  border: 2px solid hotpink;
+  margin: 5px;
+  border-radius: 6px;
+  color: white;
+  padding: 3px;
+}

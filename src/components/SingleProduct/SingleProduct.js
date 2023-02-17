@@ -1,9 +1,12 @@
+/* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getProductThunk } from "../store/singleProduct";
-import { addCartThunk } from "../store/cart";
 import toast, { Toaster } from "react-hot-toast";
+import { getProductThunk } from "../../store/singleProduct";
+import { addCartThunk } from "../../store/cart";
+// import SuggestedProducts from "../SuggestedProducts/SuggestedProducts";
+import "./SingleProduct.css";
 
 function SingleProduct() {
   const singleProduct = useSelector((state) => state.singleProduct);
@@ -33,7 +36,7 @@ function SingleProduct() {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div className="single-product">
       <div>
         <Toaster />
       </div>
@@ -224,15 +227,12 @@ function SingleProduct() {
               <h3 className="sr-only">Description</h3>
 
               <div className="space-y-6">
-                <b
-                  className="text-base text-gray-900"
-                  style={{ fontSize: "16px" }}
-                >
+                <b className="text-base text-gray-900 single-product__description__text">
                   {singleProduct.description}
                 </b>
               </div>
             </div>
-            <div style={{ padding: "20px 0px 20px 0px" }}>
+            <div className="single-product__hr-container">
               <hr />
             </div>
             <div className="mt-10">
@@ -262,7 +262,7 @@ function SingleProduct() {
                 </ul>
               </div>
             </div>
-
+            {/*TODO: Work in progress*/}
             {/* <SuggestedProducts /> */}
           </div>
         </div>

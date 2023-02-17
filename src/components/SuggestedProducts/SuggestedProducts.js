@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getThreeProductsThunk } from "../store/products";
 import { Link } from "react-router-dom";
+import { getThreeProductsThunk } from "../../store/products";
+import "./SuggestedProducts.css";
 
 function SuggestedProducts() {
   const dispatch = useDispatch();
@@ -22,7 +23,10 @@ function SuggestedProducts() {
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {threeProducts &&
             threeProducts.map((product) => (
-              <div className="group relative" key={product.id}>
+              <div
+                className="group relative suggested-product__product__container"
+                key={product.id}
+              >
                 <Link to={`/products/${product.id}`}>
                   <div className="w-full min-h-80 bg-white aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                     <img
@@ -43,11 +47,16 @@ function SuggestedProducts() {
                         </div>
                       </h3>
                     </div>
-                    <p className="text-sm font-medium text-gray-900">
-                      ${product.price}
-                    </p>
                   </div>
                 </Link>
+                <div className="suggested-product__button__container">
+                  <p className="text-sm font-medium text-gray-900">
+                    ${product.price}
+                  </p>
+                  <button className="suggested-product__button">
+                    Add To Cart
+                  </button>
+                </div>
               </div>
             ))}
         </div>

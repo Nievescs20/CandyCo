@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { authenticateSignUp } from "../store";
+import { authenticateSignUp } from "../../store";
+import "./Signup.css";
 
 const Signup = () => {
   const [passwordError, setPasswordError] = useState("");
@@ -34,94 +35,69 @@ const Signup = () => {
   return (
     <div
       id="signups"
-      style={{
-        backgroundImage: `url(${bg})`,
-        minHeight: "60vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      style={{ backgroundImage: `url(${bg})` }}
+      className="signup"
     >
-      <div
-        style={{
-          backgroundColor: "white",
-          opacity: "0.95",
-          width: "40vw",
-          border: "2px solid hotpink",
-          borderRadius: "8px",
-        }}
-      >
-        <form
-          id="signupForm"
-          onSubmit={handleSubmit}
-          name="signup"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+      <div className="signup__container">
+        <form onSubmit={handleSubmit} name="signup" className="signup__form">
           <div className="my-2">
             <label htmlFor="username">
-              <div style={{ color: "dodgerblue" }}>Email:</div>
+              <div className="signup__form__text">Email:</div>
             </label>
             <input
               name="username"
               type="text"
+              required
               className="rounded text-blue-500 bg-gray-200"
             />
           </div>
           <div className="my-2">
             <label htmlFor="firstName">
-              <div style={{ color: "dodgerblue" }}>First Name:</div>
+              <div className="signup__form__text">First Name:</div>
             </label>
             <input
               name="firstName"
               type="text"
+              required
               className="rounded text-blue-500 bg-gray-200"
             />
           </div>
           <div className="my-2">
             <label htmlFor="lastName">
-              <div style={{ color: "dodgerblue" }}>Last Name:</div>
+              <div className="signup__form__text">Last Name:</div>
             </label>
             <input
               name="lastName"
               type="text"
+              required
               className="rounded text-blue-500 bg-gray-200"
             />
           </div>
           <div className="my-2">
             <label htmlFor="password">
-              <div style={{ color: "dodgerblue" }}>Password:</div>
+              <div className="signup__form__text">Password:</div>
             </label>
             <input
               name="password"
               type="password"
+              required
               className="rounded text-blue-500 bg-gray-200"
             />
           </div>
           <div className="my-2">
             <label htmlFor="confirmPassword">
-              <div style={{ color: "dodgerblue" }}>Confirm Password:</div>
+              <div className="signup__form__text">Confirm Password:</div>
             </label>
             <input
               name="confirmPassword"
               type="password"
+              required
               className="rounded text-blue-500 bg-gray-200"
             />
           </div>
 
           <div>
-            <button
-              className=" text-green-300 py-1 px-4"
-              style={{
-                color: "dodgerblue",
-                border: "1px solid hotpink",
-                borderRadius: "4px",
-              }}
-            >
+            <button className=" text-green-300 py-1 px-4 signup__form__button">
               Sign Up
             </button>
           </div>
@@ -129,18 +105,20 @@ const Signup = () => {
             Already have an account?{" "}
             <Link to="/login">
               {" "}
-              <button
-                className="underline py-1 px-3 rounded"
-                style={{ color: "lightblue" }}
-              >
+              <button className="underline py-1 px-3 rounded signup__form__login__button">
                 Login
               </button>
             </Link>
           </p>
           {error && error.response && (
-            <div style={{ color: "red" }}> {error.response.data} </div>
+            <div className="signup__form__error"> {error.response.data} </div>
           )}
-          <div style={{ color: "red" }}>{passwordError}</div>
+          <div
+            className="signup__form__error
+          "
+          >
+            {passwordError}
+          </div>
         </form>
       </div>
     </div>

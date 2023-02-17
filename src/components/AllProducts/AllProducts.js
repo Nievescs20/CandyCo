@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addCartThunk } from "../store/cart";
+import { addCartThunk } from "../../store/cart";
 import toast, { Toaster } from "react-hot-toast";
-import { getProductsThunk } from "../store/products";
-import Pagination from "./Pagination";
+import { getProductsThunk } from "../../store/products";
+import Pagination from "../Pagination";
+import "./AllProducts.css";
 
 function AllProducts() {
   const dispatch = useDispatch();
@@ -34,26 +35,13 @@ function AllProducts() {
   }, []);
 
   return (
-    <div className="bg-white">
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "125px",
-        }}
-      >
-        <div
-          style={{
-            fontSize: "42px",
-            fontFamily: "Special Elite, cursive",
-            color: "orange",
-          }}
-        >
+    <div className="all-products">
+      <div className="all-products__header__container">
+        <div className="all-products__header__text">
           WE'VE GOT CANDY FOR EVERYONE
         </div>
       </div>
-      <div style={{ width: "60%", margin: "auto auto" }}>
+      <div className="all-products__video__container">
         <video
           width="100%"
           height="100%"
@@ -83,10 +71,7 @@ function AllProducts() {
         <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 gap-x-32 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-40">
           {products.length > 0 &&
             currentProducts.map((product) => (
-              <div
-                style={{ margin: "100px 0px", position: "relative" }}
-                key={product.id}
-              >
+              <div className="all-products__product-container" key={product.id}>
                 <Link to={`/products/${product.id}`}>
                   <div className="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8 m-30">
                     <img
@@ -96,44 +81,16 @@ function AllProducts() {
                     />
                   </div>
                 </Link>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                  }}
-                >
-                  <b
-                    style={{
-                      marginTop: "10px",
-                      fontSize: "18px",
-                      marginBottom: "5vh",
-                    }}
-                  >
+                <div className="all-products__product__text__container">
+                  <b className="all-products__product__text-top">
                     {product.name}
                   </b>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      margin: "5px",
-                      position: "absolute",
-                      bottom: "0px",
-                      textAlign: "center",
-                    }}
-                  >
-                    <b style={{ margin: "5px" }}>${product.price}</b>
+                  <div className="all-products__product__text-bottom__container">
+                    <b className="all-products__product__text-bottom__price">
+                      ${product.price}
+                    </b>
                     <button
-                      style={{
-                        width: "150px",
-                        backgroundColor: "purple",
-                        border: "2px solid hotpink",
-                        margin: "5px",
-                        borderRadius: "6px",
-                        color: "white",
-                        padding: "3px",
-                      }}
+                      className="all-products__product__text-bottom__button"
                       onClick={() => handleAdd(product, 1)}
                     >
                       Add To Cart

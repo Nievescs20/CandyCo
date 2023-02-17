@@ -1,0 +1,70 @@
+.bulk-candy {
+  background-color: white;
+}
+
+.bulk-candy__video__container {
+  width: 100%
+}
+
+.bulk-candy__video {
+  width: 100%
+}
+
+.bulk-candy__header__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 125px;
+}
+
+.bulk-candy__header__text {
+  font-size: 42px;
+  font-family: Special Elite, cursive;
+  color: orange;
+}
+
+/* .bulk-candy__video__container {
+  width: 60%;
+  margin: auto auto;
+} */
+
+.bulk-candy__product-container {
+  margin: 100px 0;
+  position: relative;
+}
+
+.bulk-candy__product__text__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+
+.bulk-candy__product__text-top {
+  font-size: 18px;
+  margin: 10px 0 5vh 0;
+}
+
+.bulk-candy__product__text-bottom__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+}
+
+.bulk-candy__product__text-bottom__price {
+  margin: 5px;
+}
+
+.bulk-candy__product__text-bottom__button {
+  width: 150px;
+  background-color: purple;
+  border: 2px solid hotpink;
+  margin: 5px;
+  border-radius: 6px;
+  color: white;
+  padding: 3px;
+}

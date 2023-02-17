@@ -194,7 +194,7 @@ const products = [
       "This vintage-style gumball machine is a nostalgic gift that's on everyone’s list!",
     price: 75.0,
     imageUrl:
-      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220805-By-Asha-Fuller-DCB-0011_836x.jpg?v=1661443480",
+      "https://cdn11.bigcommerce.com/s-xun5w23utl/images/stencil/1280x1280/products/726/1563/red-gumball-machines__88455.1607806870.jpg?c=1",
     imageUrl2:
       "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20210719-By-Asha-Fuller-DCB-0022_836x.jpg?v=1661443480",
     quantity: 100,
@@ -446,7 +446,7 @@ const products = [
       "Our kebobs got a sweet & spooky twist with fluffy Halloween-themed marshmallows",
     price: 10.0,
     imageUrl:
-      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0063_836x.jpg?v=1659984542",
+      "https://cdn.shopify.com/s/files/1/0013/5689/0184/products/44190-97_2_1024x1024@2x.jpg?v=1664462746",
     imageUrl2:
       "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20220613-By-Asha-Fuller-DCB-0064_836x.jpg?v=1661869853",
     quantity: 100,

@@ -1,0 +1,104 @@
+.home {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  ;
+}
+
+.home__castle-bg__text__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding-top: 100px;
+}
+
+.home__castle-bg__text {
+  margin-bottom: 50px;
+}
+
+.home__castle-bg__text__box {
+  display: flex;
+}
+
+.home__castle-bg__text__box--bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__castle-bg__text__lettering {
+  color: orange;
+  font-size: 42px;
+  font-family: Special Elite, cursive;
+  margin-right: 10px;
+}
+
+.home__castle-bg__text__container__button {
+  background-color: purple;
+  color: white;
+  border-radius: 8px;
+  padding: 6px;
+  width: 100px;
+}
+
+.home__grave-bg__container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.home__grave-bg__text__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.home__grave-bg__text {
+  color: white;
+  font-size: 32px;
+  ;
+}
+
+.home__grave-bg__text__container__button {
+  background-color: none;
+  color: orange;
+  font-size: 26px;
+}
+
+.home__candy__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+
+.home__candy__container__text {
+  margin-top: 5vh;
+  margin-bottom: 3vh;
+  font-size: 42px;
+}
+
+.home__candy__slide {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 50px;
+}
+
+.home__candy__slide__button {
+  width: 150px;
+  background-color: purple;
+  border: 2px solid hotpink;
+  margin: 5px;
+  border-radius: 6px;
+  color: white;
+  padding: 3px;
+}

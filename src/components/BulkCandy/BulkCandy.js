@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addCartThunk } from "../store/cart";
+import { addCartThunk } from "../../store/cart";
 import toast, { Toaster } from "react-hot-toast";
-import { getBulkProductsThunk } from "../store/products";
-import Pagination from "./Pagination";
+import { getBulkProductsThunk } from "../../store/products";
+import Pagination from "../Pagination";
+import "./BulkCandy.css";
 
 function BulkCandy() {
   const dispatch = useDispatch();
@@ -34,23 +35,16 @@ function BulkCandy() {
   }, []);
 
   return (
-    <div className="bg-white">
-      <div style={{ width: "100%" }}>
+    <div className="bulk-candy">
+      <div className="bulk-candy__video__container">
         <img
           src="https://cdn.accentuate.io/174691221558/1634743616440/2020_CatergoryBanner_BulkCandySpill_1440x350_6e56ec1f-0ae3-4771-80c1-2d87207b7821.gif?v=0"
           alt="falling candy"
-          style={{ width: "100%" }}
+          className="bulk-candy__video"
         />
       </div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <div
-          style={{
-            fontFamily: "Special Elite, cursive",
-            color: "gold",
-            padding: "30px",
-            fontSize: "42px",
-          }}
-        >
+      <div className="bulk-candy__header__container">
+        <div className="bulk-candy__header__text">
           More Is Better, Buy In Bulk
         </div>
       </div>
@@ -62,8 +56,8 @@ function BulkCandy() {
         <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 gap-x-32 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-40">
           {products.length > 0 &&
             currentProducts.map((product) => (
-              <div style={{ margin: "100px 0px", position: "relative" }}>
-                <Link to={`/products/${product.id}`} key={product.id}>
+              <div className="bulk-candy__product-container" key={product.id}>
+                <Link to={`/products/${product.id}`}>
                   <div className="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8 m-30">
                     <img
                       src={product.imageUrl}
@@ -72,39 +66,16 @@ function BulkCandy() {
                     />
                   </div>
                 </Link>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    marginBottom: "5vh",
-                  }}
-                >
-                  <b style={{ marginTop: "10px", fontSize: "18px" }}>
+                <div className="bulk-candy__product__text__container">
+                  <b className="bulk-candy__product__text-top">
                     {product.name}
                   </b>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      margin: "5px",
-                      position: "absolute",
-                      bottom: "0px",
-                      textAlign: "center",
-                    }}
-                  >
-                    <b style={{ margin: "5px" }}>${product.price}</b>
+                  <div className="bulk-candy__product__text-bottom__container">
+                    <b className="bulk-candy__product__text-bottom__price">
+                      ${product.price}
+                    </b>
                     <button
-                      style={{
-                        width: "150px",
-                        backgroundColor: "purple",
-                        border: "2px solid hotpink",
-                        margin: "5px",
-                        borderRadius: "6px",
-                        color: "white",
-                        padding: "3px",
-                      }}
+                      className="bulk-candy__product__text-bottom__button"
                       onClick={() => handleAdd(product, 1)}
                     >
                       Add To Cart

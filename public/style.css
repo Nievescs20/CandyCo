@@ -27,12 +27,7 @@ body {
   flex-direction: row;
 }
 
-#logins {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  border: 2px solid black
-}
+
 
 #home {
   display: flex;
@@ -92,6 +87,7 @@ input {
   height: 100%;
   overflow: hidden;
 }
+
 .panel {
   height: 100%;
   width: 100%;

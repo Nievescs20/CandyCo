@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Badge } from "@material-ui/core";
 import { AddShoppingCart } from "@material-ui/icons";
-import { StyledButton } from "./Application/Application.styles";
-import { logout } from "../store";
 import Slide from "react-reveal/Slide";
 import Flip from "react-reveal/Flip";
+import { StyledButton } from "../Application/Application.styles";
+import { logout } from "../../store";
+import "./Navbar.css";
 
 const Navbar = ({ setCartOpen }) => {
   const dispatch = useDispatch();
@@ -22,40 +23,20 @@ const Navbar = ({ setCartOpen }) => {
 
   return (
     <div>
-      <div
-        style={{
-          backgroundColor: "darkgreen",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <div style={{ color: "white" }}>
+      <div className="navbar__promotion__conatiner">
+        <div className="navbar__promotion__text">
           Purchase Any Two Gift Baskets Of Value $50 Or More And Receive A Free
           CancyCo Tote!
         </div>
       </div>
-      <div
-        className=""
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "10vh",
-          backgroundColor: "black",
-        }}
-      >
-        <div style={{ flex: "2", display: "flex", justifyContent: "center" }}>
+      <div className="navbar__container">
+        <div className="navbar__container__container">
           <Flip bottom>
             <Link to="/home">
               <div className="">
                 <img
-                  style={{
-                    height: "70px",
-                    width: "157.5px",
-                    marginRight: "20px",
-                  }}
                   src="/CandyCo-background-white.png"
-                  className=""
+                  className="navbar__container__logo"
                   alt="Candy Co Logo"
                 />
               </div>
@@ -63,17 +44,16 @@ const Navbar = ({ setCartOpen }) => {
           </Flip>
         </div>
         <Slide right>
-          <div style={{ flex: "3" }}>
+          <div className="navbar__container__shopping-links">
             {isLoggedIn ? (
               <div
                 style={{
                   flex: "2",
                 }}
+                q
               >
                 {user.isAdmin ? (
-                  <div
-                    style={{ display: "flex", justifyContent: "space-between" }}
-                  >
+                  <div className="navbar__shopping-links__arrangement">
                     <Link to="/products">
                       <div style={{ color: "lightgreen" }}>ALL PRODUCTS</div>
                     </Link>
@@ -87,9 +67,7 @@ const Navbar = ({ setCartOpen }) => {
                     </Link>
                   </div>
                 ) : (
-                  <div
-                    style={{ display: "flex", justifyContent: "space-between" }}
-                  >
+                  <div className="navbar__shopping-links__arrangement">
                     <Link to="/products">
                       <button style={{ color: "lightgreen" }}>SHOP</button>
                     </Link>
@@ -110,7 +88,7 @@ const Navbar = ({ setCartOpen }) => {
                 )}
               </div>
             ) : (
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <div className="navbar__shopping-links__arrangement">
                 <Link to="/products">
                   <button style={{ color: "lightgreen" }}>SHOP</button>
                 </Link>
@@ -130,21 +108,11 @@ const Navbar = ({ setCartOpen }) => {
               </div>
             )}
           </div>
-          <div
-            style={{
-              flex: "2",
-            }}
-          >
+          <div className="navbar__cart-login__container">
             {isLoggedIn ? (
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "flex-end",
-                  alignItems: "center",
-                }}
-              >
+              <div className="navbar__cart-login__container__container">
                 <Link to="/profile">
-                  <div style={{ margin: "10px", color: "gold" }}>
+                  <div className="navbar__cart-login__user-name">
                     {`Weclome ${user.firstName
                       .slice(0, 1)
                       .toUpperCase()}${user.firstName.slice(1)}`}
@@ -160,19 +128,13 @@ const Navbar = ({ setCartOpen }) => {
                 </StyledButton>
                 <button
                   onClick={() => dispatch(logout())}
-                  style={{ margin: "10px", color: "hotpink" }}
+                  className="navbar__cart-login__logout-button"
                 >
                   Logout
                 </button>
               </div>
             ) : (
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "flex-end",
-                  alignItems: "center",
-                }}
-              >
+              <div className="navbar__cart-login__container__container">
                 <StyledButton
                   onClick={() => setCartOpen(true)}
                   style={{ padding: "15px", backgroundColor: "orange" }}
@@ -183,12 +145,7 @@ const Navbar = ({ setCartOpen }) => {
                 </StyledButton>
                 <div>
                   <Link to="/login">
-                    <button
-                      style={{
-                        margin: "10px",
-                        color: "hotpink",
-                      }}
-                    >
+                    <button className="navbar__cart-login__logout-button">
                       Login / Sign Up
                     </button>
                   </Link>

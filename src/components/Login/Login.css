@@ -1,0 +1,39 @@
+.login {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__container {
+  background-color: white;
+  opacity: 0.95;
+  width: 40vw;
+  border: 2px solid hotpink;
+  border-radius: 8px;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__form__text {
+  color: dodgerblue;
+}
+
+.login__form__button {
+  color: dodgerblue;
+  border: 1px solid hotpink;
+  border-radius: 4px;
+}
+
+.login__form__signup__button {
+  color: lightblue;
+}
+
+.login__form__error {
+  color: red;
+}

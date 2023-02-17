@@ -4,7 +4,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import { me } from "../store";
 import AllProducts from "./AllProducts/AllProducts";
 import Home from "./Home/Home";
-import Login from "./Login";
+import Login from "./Login/Login";
 import Signup from "./Signup";
 import SingleProduct from "./SingleProduct";
 import UserProfile from "./UserProfile";

@@ -8,7 +8,7 @@ import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 import SingleProduct from "./SingleProduct/SingleProduct";
 import UserProfile from "./UserProfile/UserProfile";
-import UserProfiles from "./UserProfiles";
+import UserProfiles from "./UserProfiles/UserProfiles";
 import Cart from "./Cart/Cart";
 import Checkout from "./Checkout/Checkout";
 import Confirmation from "./Confirmation/Confirmation";

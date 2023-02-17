@@ -50,6 +50,14 @@
 .navbar__cart-login__user-name {
   margin: 10px;
   color: gold;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__cart-login__user-name__svg__container {
+  height: 25px;
+  width: 25px;
+  margin-left: 5px;
 }
 
 .navbar__cart-login__logout-button {

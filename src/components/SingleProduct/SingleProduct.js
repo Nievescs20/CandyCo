@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { getProductThunk } from "../../store/singleProduct";
 import { addCartThunk } from "../../store/cart";
-import SuggestedProducts from "../SuggestedProducts/SuggestedProducts";
+// import SuggestedProducts from "../SuggestedProducts/SuggestedProducts";
 import "./SingleProduct.css";
 
 function SingleProduct() {

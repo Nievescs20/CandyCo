@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addCartThunk } from "../store/cart";
 import toast, { Toaster } from "react-hot-toast";
-import { getGiftProductsThunk } from "../store/products";
-import Pagination from "./Pagination";
+import { addCartThunk } from "../../store/cart";
+import { getGiftProductsThunk } from "../../store/products";
+import Pagination from "../Pagination";
+import "./Gifts.css";
 
 function Gifts() {
   const dispatch = useDispatch();
@@ -38,21 +39,9 @@ function Gifts() {
   }, []);
 
   return (
-    <div className="bg-white">
-      <div
-        style={{
-          width: "100%",
-          height: "500px",
-          backgroundImage: `url(${bg})`,
-          backgroundSize: "cover",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <div style={{ fontFamily: "Special Elite, cursive", fontSize: "42px" }}>
-          Gifts, Gifts and more Gifts!
-        </div>
+    <div className="gifts">
+      <div style={{ backgroundImage: `url(${bg})` }} className="gifts__header">
+        <div className="gifts__header__text">Gifts, Gifts and more Gifts!</div>
       </div>
 
       <div>
@@ -62,7 +51,7 @@ function Gifts() {
         <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-32 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-32">
           {products.length > 0 &&
             currentProducts.map((product) => (
-              <div style={{ margin: "50px 0px" }} key={product.id}>
+              <div className="gifts__product__conatiner" key={product.id}>
                 <Link to={`/products/${product.id}`}>
                   <div className="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8 m-30">
                     <img
@@ -72,35 +61,16 @@ function Gifts() {
                     />
                   </div>
                 </Link>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                  }}
-                >
-                  <b style={{ marginTop: "10px", fontSize: "18px" }}>
+                <div className="gifts__product-info__container">
+                  <b className="gifts__product-info__container__text">
                     {product.name}
                   </b>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      margin: "5px",
-                    }}
-                  >
-                    <b style={{ margin: "5px" }}>${product.price}</b>
+                  <div className="gifts__product-info__container__bottom">
+                    <b className="gifts__product-info__container__bottom__price ">
+                      ${product.price}
+                    </b>
                     <button
-                      style={{
-                        width: "150px",
-                        backgroundColor: "purple",
-                        border: "2px solid hotpink",
-                        margin: "5px",
-                        borderRadius: "6px",
-                        color: "white",
-                        padding: "3px",
-                      }}
+                      className="gifts__product-info__container__bottom__button"
                       onClick={() => handleAdd(product, 1)}
                     >
                       Add To Cart

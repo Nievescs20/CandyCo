@@ -13,8 +13,8 @@ import Cart from "./Cart/Cart";
 import Checkout from "./Checkout/Checkout";
 import Confirmation from "./Confirmation/Confirmation";
 import BulkCandy from "./BulkCandy/BulkCandy";
-import Gifts from "./Gifts";
-import HalloweenProducts from "./HalloweenProducts";
+import Gifts from "./Gifts/Gifts";
+import HalloweenProducts from "./HalloweenProducts/HalloweenProducts";
 import SaleProducts from "./SaleProducts";
 import UnderConstruction from "./UnderConstruction";
 

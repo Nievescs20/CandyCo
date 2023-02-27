@@ -348,9 +348,9 @@ const products = [
       "Delicious chocolate covered cookies delightfully decorated for any occassion",
     price: 35.0,
     imageUrl:
-      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20211215-By-Asha-Fuller-DCB-0023_836x.jpg?v=1650384189",
+      "https://cdn.shopify.com/s/files/1/0636/2519/9866/products/128861-01_madelaine-assorted-colors-foiled-milk-chocolate-hearts-5lb-bag.jpg?v=1674631297",
     imageUrl2:
-      "https://cdn.shopify.com/s/files/1/0150/8992/6198/products/20211215-By-Asha-Fuller-DCB-0015_836x.jpg?v=1644612467",
+      "https://cdn.shopify.com/s/files/1/0636/2519/9866/products/128861-04_madelaine-assorted-colors-foiled-milk-chocolate-hearts-5lb-bag.jpg?v=1674631304",
     quantity: 100,
     mainCategory: "Gift",
     subCategory: "Snack",

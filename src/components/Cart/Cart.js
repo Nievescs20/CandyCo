@@ -9,7 +9,6 @@ const Cart = ({ setCartOpen }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart?.products) || [];
   const tax = 1.0725;
-  const shipping = 7.99;
 
   useEffect(() => {
     dispatch(getCartThunk());
@@ -63,16 +62,14 @@ const Cart = ({ setCartOpen }) => {
           <div style={{ color: "white", fontFamily: "Special Elite, cursive" }}>
             <h2>Subtotal:</h2>
             <h2>Tax:</h2>
-            <h2>Flat Rate Shipping:</h2>
             <h2>Total:</h2>
           </div>
           <div style={{ color: "white", fontFamily: "Special Elite, cursive" }}>
             <h2>${calculateTotal(cart).toFixed(2)}</h2>
             <h2>${(calculateTotal(cart) * 0.0725).toFixed(2)}</h2>
-            <h2>${shipping}</h2>
             <h2>
               {cart.length
-                ? `$${(calculateTotal(cart) * tax + shipping).toFixed(2)}`
+                ? `$${(calculateTotal(cart) * tax).toFixed(2)}`
                 : "$0.00"}
             </h2>
           </div>

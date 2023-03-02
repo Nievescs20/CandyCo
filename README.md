@@ -12,12 +12,17 @@ Seed Database: npm run seed
 
 ## To run this project locally you will need to:
 
-  -signup for a stripe account and aquire an api key
-    Store this key in a .env file in the root of the project
-    Environment variable should be named STRIPE="YOUR KEY HERE"
+  Signup for a stripe account and aquire an api key
 
-  -create an environment variable for your local server URL
-    Environment variable should be named SERVER_URL=http://localhost:8000
+  Store this key in a .env file in the root of the project
+
+  Environment variable should be named STRIPE="YOUR KEY HERE"
+
+<br/>
+
+  Create an environment variable for your local server URL
+
+  Environment variable should be named SERVER_URL=http://localhost:8000
 
 <br/>
 

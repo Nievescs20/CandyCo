@@ -40,3 +40,7 @@ Seed Database: npm run seed
 
 ## Web Preview
 ![alt text](https://github.com/nievescs20/CandyCo/blob/main/public/HomeScreen.ScreenShot.png?raw=false)
+
+## Future plans for this project:
+
+-Responsive Design

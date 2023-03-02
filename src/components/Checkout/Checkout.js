@@ -11,56 +11,36 @@ import axios from "axios";
 
 function Checkout() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const cart = useSelector((state) => state.cart.products);
   const user = useSelector((state) => state.auth);
   const customerInfo = useSelector((state) => state.customerInfo);
+  console.log("customer info", customerInfo);
   const [paymentStatus, setPaymentStatus] = useState();
 
   const tax = 1.0725;
-  const shipping = 7.99;
 
   useEffect(() => {
     dispatch(getCartThunk());
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(
-      setCustomerInfoThunk({
-        name: e.target.name.value,
-        email: e.target.email.value,
-        street: e.target.street.value,
-        city: e.target.city.value,
-        country: e.target.country.value,
-        zip: e.target.zip.value,
-      })
-    );
-  };
-
-  const calculateSubTotal = (shoppingCart) =>
-    shoppingCart.reduce((acc, product) => acc + Number(product.totalPrice), 0);
-
-  const calculatedTotal = (calculateSubTotal(cart) * tax + shipping).toFixed(2);
-
-  const handleToken = async (token) => {
-    const response = await axios.post("/api/payments", {
-      token,
-      product: { price: calculatedTotal, name: "Candy & Sweets" },
-    });
-    const { status } = response.data;
-    if (status === "success") {
-      console.log("Success! Check email for details");
-
-      setPaymentStatus({ status: "Success! Check email for details" });
-    } else {
-      console.log("Something went wrong");
-
-      setPaymentStatus({ status: "Something went wrong" });
-    }
-  };
+  //TODO: Future Plans to save order history to DB
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   dispatch(
+  //     setCustomerInfoThunk({
+  //       name: e.target.name.value,
+  //       email: e.target.email.value,
+  //       street: e.target.street.value,
+  //       city: e.target.city.value,
+  //       country: e.target.country.value,
+  //       zip: e.target.zip.value,
+  //     })
+  //   );
+  // };
 
   const success = () => {
+    console.log("success");
     dispatch(
       closeOrderThunk({
         customerId: user.id ? user.id : -1,
@@ -79,7 +59,65 @@ function Checkout() {
         total: calculatedTotal,
       })
     );
-    navigate("/confirmation");
+    // navigate("/confirmation");
+  };
+
+  const handleCheckout = (e) => {
+    e.preventDefault();
+    dispatch(
+      setCustomerInfoThunk({
+        name: e.target.name.value,
+        email: e.target.email.value,
+        street: e.target.street.value,
+        city: e.target.city.value,
+        country: e.target.country.value,
+        zip: e.target.zip.value,
+      })
+    );
+    fetch("/api/stripe/create-checkout-session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(cart),
+    })
+      .then((res) => {
+        if (res.ok) return res.json();
+        return res.json().then((json) => Promise.reject(json));
+      })
+      .then(({ url }) => {
+        success();
+        let cart = JSON.parse(window.localStorage.getItem("cart"));
+        console.log("cart", cart);
+        if (cart.products.length > 0) {
+          window.localStorage.setItem("cart", JSON.stringify({ products: [] }));
+        }
+        window.location = url;
+      })
+      .catch((e) => {
+        console.error(e.error);
+      });
+    // console.log(e.target.name.value);
+  };
+
+  const calculateSubTotal = (shoppingCart) =>
+    shoppingCart.reduce((acc, product) => acc + Number(product.totalPrice), 0);
+
+  const calculatedTotal = (calculateSubTotal(cart) * tax).toFixed(2);
+
+  const handleToken = async (token) => {
+    const response = await axios.post("/api/payments", {
+      token,
+      product: { price: calculatedTotal, name: "Candy & Sweets" },
+    });
+    const { status } = response.data;
+    if (status === "success") {
+      console.log("Success! Check email for details");
+
+      setPaymentStatus({ status: "Success! Check email for details" });
+    } else {
+      console.log("Something went wrong");
+
+      setPaymentStatus({ status: "Something went wrong" });
+    }
   };
 
   return (
@@ -89,7 +127,8 @@ function Checkout() {
         <div>
           <form
             className="max-w-xl m-4 p-10 bg-white rounded shadow-xl indent-2"
-            onSubmit={handleSubmit}
+            // onSubmit={handleSubmit}
+            onSubmit={handleCheckout}
           >
             {paymentStatus?.status ? (
               success()
@@ -185,8 +224,12 @@ function Checkout() {
             </div>
 
             <div className="checkout__payment__button__container">
-              <button type="submit" className="checkout__payment__button">
-                Save Shipping Information
+              <button
+                type="submit"
+                className="checkout__payment__button"
+                // onClick={handleCheckout}
+              >
+                Proceed To Checkout
               </button>
             </div>
           </form>
@@ -224,18 +267,16 @@ function Checkout() {
         <div className="checkout__order-info__total__container">
           <div>
             <div>Subtotal</div>
-            <div>Shipping</div>
             <div>Tax</div>
             <div>Total</div>
           </div>
           <div className="checkout__order-info__total__right__container">
             <div>${calculateSubTotal(cart).toFixed(2)}</div>
-            <div>${shipping}</div>
             <div>{(calculateSubTotal(cart) * 0.0725).toFixed(2)}</div>
             <div>${calculatedTotal}</div>
           </div>
         </div>
-        <div style={{ textAlign: "center" }}>
+        {/* <div style={{ textAlign: "center" }}>
           {customerInfo?.name ? (
             <StripeCheckout
               stripeKey={process.env.STRIPEPUB}
@@ -270,7 +311,7 @@ function Checkout() {
               }}
             />
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );
